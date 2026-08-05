@@ -46,4 +46,4 @@ your classmates can see the answer too.
 ## Questions?
 
 Use [GitHub Discussions](../../discussions) for course-content questions.
-For grading or personal matters, contact <email>.
+For grading or personal matters, contact TAs/Piazza.
