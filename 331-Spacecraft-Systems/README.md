@@ -1,8 +1,9 @@
 # ASTE 331 — Spacecraft Systems Engineering
 
-**Term:** Fall 
-**Instructor:** Jim Chase, Danielle Marsh
-**Meeting Time/Location:** Friday, 1:00-4:40pm
+**Term:** Fall<br> 
+**Instructor:** Jim Chase, Danielle Marsh<br>
+**TAs:** Arianna A., Sarah G., Brian P., Jonathan H., Mia C., Sandra H., Elizabeth.<br>
+**Meeting Time/Location:** Fridays, 1:00-4:40pm<br>
 
 ## About This Course
 
