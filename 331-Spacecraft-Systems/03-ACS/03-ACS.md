@@ -119,8 +119,8 @@ The GRAIL ACS example contains:
 - 1 sun-sensor assembly with multiple heads
 - Approximate ACS mass:
 
-```math
-\sim5\text{ kg}
+```text
+sim5 kg
 ```
 ### Common ACS Components
 
@@ -190,11 +190,11 @@ Ground or Autonomous Commands
 
 The attitude error is:
 
-# \$\$ \text{Attitude Error}
+# Attitude Error
 
-## \text{Commanded Attitude}
+## Commanded Attitude
 
-\text{Measured Attitude} \$\$
+\text{Measured Attitude} \\
 
 The controller uses the difference between desired and measured attitude
 to command actuators that correct the spacecraft orientation.
@@ -353,15 +353,15 @@ position and attitude relative to Bennu.
 
 - Thermal spectrometer:
 
-```math
-5.7\text{–}100\ \mu\text{m}
+```text
+5.7–100\ μm
 ```
 **OVIRS**
 
 - Visible and IR spectrometer:
 
-```math
-0.4\text{–}4.3\ \mu\text{m}
+```text
+0.4–4.3\ μm
 ```
 **REXIS**
 
@@ -492,8 +492,8 @@ A repeat asteroid sample-return mission could require:
 
 Total:
 
-```math
-\geq10\text{–}20\text{ years}
+```text
+≥10–20 years
 ```
 ### Data Rate Changes
 
@@ -507,20 +507,20 @@ Possible approaches for increasing uplink/downlink include:
 
 Expected touchdown speed:
 
-```math
-0.4\text{ m/s}
+```text
+0.4 m/s
 ```
 Comparisons:
 
 - Phoenix:
 
-```math
-\sim1.5\text{ m/s}
+```text
+sim1.5 m/s
 ```
 - MER rovers with airbags:
 
-```math
-<26\text{ m/s}
+```text
+<26 m/s
 ```
 ### Bennu Orbit
 
@@ -528,8 +528,8 @@ OSIRIS-REx did orbit Bennu.
 
 Approximate period:
 
-```math
-62\text{ hr/orbit}
+```text
+62 hr/orbit
 ```
 Features on Bennu could be used for attitude knowledge.
 
@@ -553,14 +553,14 @@ forces.
 They are often modeled as a force acting at a center of pressure offset
 from the center of mass.
 
-# \$\$ \boldsymbol{\tau}
+# torque
 
-\mathbf{r}\_{CP}\times\mathbf{F} \$\$
+\mathbf{r}\_{CP}\times\mathbf{F} \\
 
 where:
 
-- $\mathbf{r}_{CP}$ = vector from center of mass to center of pressure
-- $\mathbf{F}$ = applied force
+- r_CP = vector from center of mass to center of pressure
+- F = applied force
 
 Examples:
 
@@ -581,9 +581,9 @@ Examples:
 Aerodynamic force can act through a center of pressure that does not
 coincide with the center of mass, creating a weather-vane-like torque.
 
-# \$\$ \boldsymbol{\tau}\_a
+# torque_a
 
-\mathbf{r}\_{CP}\times\mathbf{F}\_a \$\$
+\mathbf{r}\_{CP}\times\mathbf{F}\_a \\
 
 The aerodynamic force is related to atmospheric density, spacecraft
 velocity, projected area, and drag coefficient.
@@ -591,13 +591,13 @@ velocity, projected area, and drag coefficient.
 The slide's example states that at approximately 400-km altitude, a
 torque of:
 
-```math
-3.11\times10^{-5}\text{ N·m}
+```text
+3.11×10^(-5) N·m
 ```
 could produce an attitude error of approximately:
 
-```math
-82^\circ
+```text
+82^circ
 ```
 after one orbit if uncorrected.
 
@@ -615,17 +615,17 @@ experience slightly different gravitational forces.
 
 The slide gives typical example values including:
 
-```math
-\Delta I=1000\text{ kg·m}^2
+```text
+Δ I=1000 kg·m^2
 ```
-```math
-n=0.001\text{ s}^{-1}
+```text
+n=0.001 s^(-1)
 ```
 and a representative gravity-gradient torque sensitivity of
 approximately:
 
-```math
-6.7\times10^{-5}\text{ N·m/deg}
+```text
+6.7×10^(-5) N·m/deg
 ```
 Gravity gradient can therefore be either:
 
@@ -641,25 +641,25 @@ Gravity gradient can therefore be either:
 Magnetic torque is relevant around bodies with substantial magnetic
 fields, including Earth and Jupiter.
 
-# \$\$ \boldsymbol{\tau}\_m
+# torque_m
 
-\mathbf{M}\times\mathbf{B} \$\$
+\mathbf{M}\times\mathbf{B} \\
 
 where:
 
-- $\mathbf{M}$ = spacecraft magnetic dipole moment
-- $\mathbf{B}$ = planetary magnetic-field vector
+- M = spacecraft magnetic dipole moment
+- B = planetary magnetic-field vector
 
 Representative small-spacecraft LEO values:
 
-```math
-B=3\times10^{-5}\text{ T}
+```text
+B=3×10^(-5) T
 ```
-```math
-M=0.1\text{ A·m}^2
+```text
+M=0.1 A·m^2
 ```
-```math
-\tau_m\approx3\times10^{-6}\text{ N·m}
+```text
+τ_m≈3×10^(-6) N·m
 ```
 ------------------------------------------------------------------------
 
@@ -671,9 +671,9 @@ Solar radiation produces force on exposed spacecraft surfaces.
 
 The torque is:
 
-# \$\$ \boldsymbol{\tau}\_s
+# torque_s
 
-\mathbf{r}\times\mathbf{F}\_s \$\$
+\mathbf{r}\times\mathbf{F}\_s \\
 
 The solar-radiation force depends on:
 
@@ -719,9 +719,9 @@ Mass expulsion includes:
 
 Mass-expulsion torque:
 
-# \$\$ \boldsymbol{\tau}\_{ME}
+# torque_ME
 
-\mathbf{r}*{CP}\times\mathbf{F}*{ME} \$\$
+\mathbf{r}*{CP}\times\mathbf{F}*{ME} \\
 
 If sufficiently large, mass expulsion can dominate the disturbance
 environment and require changes in the ACS design.
@@ -803,9 +803,9 @@ The major pointing concerns are:
 
 A typical spacecraft body-fixed coordinate system uses:
 
-- $x_b$
-- $y_b$
-- $z_b$
+- x_b
+- y_b
+- z_b
 
 with rotations described as:
 
@@ -975,29 +975,29 @@ This couples:
 
 A typical spacecraft slew-rate requirement is approximately:
 
-```math
-1^\circ/\text{s}
+```text
+1^circ/s
 ```
 A representative range is:
 
-```math
-0.25^\circ/\text{s}
-\text{ to }
-3^\circ/\text{s}
+```text
+0.25^circ/s
+to
+3^circ/s
 ```
 Faster slew rates generally require additional settling time before fine
 stability requirements are achieved.
 
 ISS slew rate:
 
-```math
-<0.1^\circ/\text{s}
+```text
+<0.1^circ/s
 ```
 Typical pointing requirements for telescopes, antennas, and detectors
 may range approximately:
 
-```math
-0.001^\circ\text{ to }0.1^\circ
+```text
+0.001^circ to 0.1^circ
 ```
 Whenever a spacecraft is holding attitude against disturbances, its ACS
 actuators are working.
@@ -1026,7 +1026,7 @@ Mission-design and navigation engineers typically produce geometry plots
 along with:
 
 - Trajectory design
-- $\Delta V$ budgets
+- Delta-V budgets
 
 ### Asteroid Rendezvous Example
 
@@ -1035,13 +1035,13 @@ The example plot indicates:
 - Rendezvous occurs at favorable science phase angle.
 - Communications blackout when:
 
-```math
-SEP<2^\circ
+```text
+SEP<2^circ
 ```
 - SPE varies approximately:
 
-```math
-0^\circ\text{–}45^\circ
+```text
+0^circ–45^circ
 ```
 This suggests articulated solar arrays and/or antennas may be needed to
 simultaneously maintain power and communications.
@@ -1054,8 +1054,8 @@ simultaneously maintain power and communications.
   supports science lighting.
 - Example science incidence range:
 
-```math
-30^\circ\text{–}60^\circ
+```text
+30^circ–60^circ
 ```
 **SPE**
 
@@ -1109,8 +1109,8 @@ Approximate categories:
 
 Typical accuracy near:
 
-```math
-0.1^\circ
+```text
+0.1^circ
 ```
 Examples:
 
@@ -1120,15 +1120,15 @@ Examples:
 
 Approximate cost scale:
 
-```math
-<\$100\text{k}
+```text
+<\$100k
 ```
 ### Medium
 
 Typical accuracy near:
 
-```math
-0.01^\circ
+```text
+0.01^circ
 ```
 Examples:
 
@@ -1139,15 +1139,15 @@ Examples:
 
 Approximate cost scale:
 
-```math
-<\$1\text{M}
+```text
+<\$1M
 ```
 ### High
 
 Typical accuracy near:
 
-```math
-0.001^\circ
+```text
+0.001^circ
 ```
 Examples:
 
@@ -1156,8 +1156,8 @@ Examples:
 
 Approximate cost scale:
 
-```math
-<\$10\text{M}
+```text
+<\$10M
 ```
 Custom sensors or payload instruments may also be used for attitude
 determination.
@@ -1184,13 +1184,13 @@ Four sensors can provide approximately hemispherical coverage.
 - Digitized by spacecraft
 - Performance:
 
-```math
-1.5^\circ
+```text
+1.5^circ
 ```
 - Mass:
 
-```math
-0.12\text{ kg}
+```text
+0.12 kg
 ```
 The output is converted to angle in software using a cosine
 relationship.
@@ -1199,13 +1199,13 @@ relationship.
 
 Performance:
 
-```math
-<0.016^\circ
+```text
+<0.016^circ
 ```
 approximately:
 
-```math
-1\text{ arcmin}
+```text
+1 arcmin
 ```
 ------------------------------------------------------------------------
 
@@ -1226,8 +1226,8 @@ Typical fixed star trackers:
 - Electronically scan the star field or use spacecraft motion.
 - Field of view:
 
-```math
-5^\circ\text{–}20^\circ
+```text
+5^circ–20^circ
 ```
 - Process and calibrate images.
 - Output attitude, commonly as quaternions.
@@ -1235,13 +1235,13 @@ Typical fixed star trackers:
 
 Performance:
 
-```math
-0.001^\circ\text{–}1^\circ
+```text
+0.001^circ–1^circ
 ```
 Mass:
 
-```math
-1\text{–}10\text{ kg}
+```text
+1–10 kg
 ```
 Precision star trackers can be:
 
@@ -1275,8 +1275,8 @@ Measured values are compared against a magnetic-field model.
 
 Representative precision:
 
-```math
-1.5^\circ\pm0.5^\circ
+```text
+1.5^circ±0.5^circ
 ```
 They are commonly paired with magnetic torquers.
 
@@ -1309,18 +1309,18 @@ Example: **LN-200 IMU**
 
 - Mass:
 
-```math
-0.7\text{ kg}
+```text
+0.7 kg
 ```
 - Power:
 
-```math
-10\text{ W}
+```text
+10 W
 ```
 - Approximate dimensions:
 
-```math
-9\times9\text{ cm}
+```text
+9×9 cm
 ```
 Gyro internal processing uses:
 
@@ -1334,8 +1334,8 @@ Error grows over time without an external reference.
 
 Representative drift:
 
-```math
-0.1^\circ/\text{hr}
+```text
+0.1^circ/hr
 ```
 ------------------------------------------------------------------------
 
@@ -1348,26 +1348,26 @@ GPS is increasingly used for attitude knowledge.
 The slide identifies operation for spacecraft velocities up to
 approximately:
 
-```math
-16{,}000\text{ m/s}
+```text
+16,000 m/s
 ```
 Performance varies with distance from approximately:
 
-```math
-200\text{ km to }45{,}000\text{ km}
+```text
+200 km to 45,000 km
 ```
 Representative LEO attitude performance:
 
-```math
-<0.1^\circ
+```text
+<0.1^circ
 ```
 Example receiver:
 
 - GD Sentinel M-Code GPS Receiver
 - Mass:
 
-```math
-2.5\text{ kg}
+```text
+2.5 kg
 ```
 ------------------------------------------------------------------------
 
@@ -1428,8 +1428,8 @@ Normally:
 
 Performance:
 
-```math
-0.0001^\circ\text{–}0.1^\circ
+```text
+0.0001^circ–0.1^circ
 ```
 - Low torque
 - High accuracy
@@ -1447,25 +1447,25 @@ such as thrusters or magnetic torque rods.
 
 Representative reaction-wheel torque range:
 
-```math
-0.01\text{–}1\text{ N·m}
+```text
+0.01–1 N·m
 ```
 Example disturbance / maneuver values from the slide:
 
 Magnetic torque:
 
-```math
-2.1\times10^{-5}\text{ N·m}
+```text
+2.1×10^(-5) N·m
 ```
 Slew torque:
 
-```math
-2.9\times10^{-4}\text{ N·m}
+```text
+2.9×10^(-4) N·m
 ```
 Gravity-gradient momentum accumulation:
 
-```math
-0.039\text{ N·m·s}
+```text
+0.039 N·m·s
 ```
 Reaction-wheel torque must exceed the disturbance torque to maintain
 attitude.
@@ -1486,8 +1486,8 @@ Characteristics:
 
 - Performance:
 
-```math
-0.1^\circ\text{–}2.0^\circ
+```text
+0.1^circ–2.0^circ
 ```
 - Similar to heavier reaction wheels operating at approximately constant
   speed
@@ -1508,8 +1508,8 @@ Characteristics:
 
 - Performance:
 
-```math
-0.001^\circ\text{–}0.1^\circ
+```text
+0.001^circ–0.1^circ
 ```
 - Wheel operates at nearly steady high speed.
 - Control authority can be up to approximately 100 times greater than a
@@ -1570,8 +1570,8 @@ Electric propulsion can provide attitude control.
 
 Dawn's three electric-propulsion thrusters can provide approximately:
 
-```math
-90\text{ mN}
+```text
+90 mN
 ```
 Electric propulsion is regularly used for attitude/orbit functions in
 GEO because:
@@ -1581,20 +1581,20 @@ GEO because:
 
 The slide cites:
 
-```math
-I_{sp}>3000\text{ s}
+```text
+I_sp>3000 s
 ```
 Representative small-spacecraft GEO disturbances:
 
 Gravity gradient:
 
-```math
-5\times10^{-9}\text{ N·m}
+```text
+5×10^(-9) N·m
 ```
 Solar-radiation pressure:
 
-```math
-6\times10^{-6}\text{ N·m}
+```text
+6×10^(-6) N·m
 ```
 ------------------------------------------------------------------------
 
@@ -1609,8 +1609,8 @@ Characteristics:
 
 - Performance:
 
-```math
-1^\circ\text{–}10^\circ
+```text
+1^circ–10^circ
 ```
 - No consumable propellant
 - Useful for momentum dumping
@@ -1632,8 +1632,8 @@ Characteristics:
 
 - Performance:
 
-```math
-0.1^\circ\text{–}5^\circ
+```text
+0.1^circ–5^circ
 ```
 - Many thrust levels available
 - Propellant limited
@@ -1658,7 +1658,7 @@ Primary uses:
 A spacecraft may therefore use:
 
 - Small RCS thrusters for ACS
-- Main engines for large $\Delta V$
+- Main engines for large Delta-V
 - Intermediate thrusters for TVC or other functions
 
 ------------------------------------------------------------------------
@@ -1870,7 +1870,7 @@ EDL:
 
 Thrusters include multiple classes for:
 
-- $\Delta V$
+- Delta-V
 - Pitch/yaw
 - Roll/pitch/yaw
 - Descent
@@ -2025,7 +2025,7 @@ Changes in:
 For spacecraft this relates to:
 
 - Position in a gravity field
-- $\Delta V$
+- Delta-V
 - Thrust
 
 ### Rotational Motion
@@ -2065,16 +2065,16 @@ spacecraft rotational motion.
 
 > **Source: Slide 74**
 
-For rotation about the $z$ axis:
+For rotation about the z axis:
 
-```math
-K=\frac{1}{2}I_z\omega^2
+```text
+K=1/2I_zω^2
 ```
 where:
 
-- $K$ = rotational kinetic energy
-- $I_z$ = moment of inertia about $z$
-- $\omega$ = angular velocity
+- K = rotational kinetic energy
+- I_z = moment of inertia about z
+- ω = angular velocity
 
 Moment of inertia plays a role analogous to mass in translational
 physics.
@@ -2090,29 +2090,29 @@ angular acceleration.
 
 For a simple fixed-axis case:
 
-```math
-\tau=I\alpha
+```text
+τ=Iα
 ```
 where:
 
-- $\tau$ = torque
-- $I$ = moment of inertia
-- $\alpha$ = angular acceleration
+- τ = torque
+- I = moment of inertia
+- α = angular acceleration
 
 Moment of inertia is calculated from mass distribution.
 
-For rotation about $z$:
+For rotation about z:
 
-```math
-I_z=\int(x^2+y^2)\,dm
+```text
+I_z=int(x^2+y^2) dm
 ```
-For a continuous body with density $\rho$, the integration can be
+For a continuous body with density ρ, the integration can be
 performed over the body's volume.
 
 Units:
 
-```math
-\text{kg·m}^2
+```text
+kg·m^2
 ```
 ------------------------------------------------------------------------
 
@@ -2125,7 +2125,7 @@ ring.
 
 For a thin ring about its center axis:
 
-```math
+```text
 I=MR^2
 ```
 Published formulas exist for many basic shapes.
@@ -2150,14 +2150,14 @@ The parallel-axis theorem allows the inertia about an offset axis to be
 calculated from inertia about a parallel axis through the center of
 mass.
 
-```math
-I=I_{CM}+Md^2
+```text
+I=I_CM+Md^2
 ```
 where:
 
-- $I_{CM}$ = inertia about the center-of-mass axis
-- $M$ = body mass
-- $d$ = perpendicular offset between axes
+- I_CM = inertia about the center-of-mass axis
+- M = body mass
+- d = perpendicular offset between axes
 
 The slide applies this to the moment of inertia of a disk about its
 edge.
@@ -2168,25 +2168,25 @@ edge.
 
 > **Source: Slide 81**
 
-For a thin flat plate in the $x$-$y$ plane:
+For a thin flat plate in the x-y plane:
 
-```math
+```text
 I_z=I_x+I_y
 ```
 For a symmetric thin disk:
 
-```math
+```text
 I_x=I_y
 ```
 and:
 
-```math
-I_z=\frac{1}{2}MR^2
+```text
+I_z=1/2MR^2
 ```
 therefore:
 
-```math
-I_x=I_y=\frac{1}{4}MR^2
+```text
+I_x=I_y=1/4MR^2
 ```
 This theorem is particularly useful for thin planar objects.
 
@@ -2201,10 +2201,10 @@ tensor rather than one scalar inertia.
 
 The inertia tensor includes:
 
-- $I_x$
-- $I_y$
-- $I_z$
-- Products of inertia such as $I_{xy}$, $I_{xz}$, and $I_{yz}$
+- I_x
+- I_y
+- I_z
+- Products of inertia such as I_xy, I_xz, and I_yz
 
 The diagonal terms are always positive.
 
@@ -2215,8 +2215,8 @@ perpendicular to that symmetry plane may be zero.
 
 Angular momentum is related to the inertia tensor and angular velocity:
 
-```math
-\mathbf{h}=\mathbf{I}\boldsymbol{\omega}
+```text
+h=Iω
 ```
 ------------------------------------------------------------------------
 
@@ -2228,18 +2228,18 @@ Angular momentum is the rotational analogue of linear momentum.
 
 Linear:
 
-```math
+```text
 p=mv
 ```
 Rotational:
 
-```math
-\mathbf{h}=\mathbf{I}\boldsymbol{\omega}
+```text
+h=Iω
 ```
 Momentum may be written as:
 
-- $h$
-- $L$
+- h
+- L
 
 Conservation of angular momentum is fundamental to understanding:
 
@@ -2260,9 +2260,9 @@ For attitude hold, disturbances must be offset by counter-torques.
 
 Conceptually:
 
-# \$\$ \boldsymbol{\tau}
+# torque
 
-\frac{d\mathbf{h}}{dt} \$\$
+\frac{d\mathbf{h}}{dt} \\
 
 for the appropriate rigid-body formulation/reference.
 
@@ -2290,8 +2290,8 @@ They relate:
 
 The lecture emphasizes:
 
-```math
-\mathbf{h}=\mathbf{I}\boldsymbol{\omega}
+```text
+h=Iω
 ```
 Euler's equations can be used to build an attitude-control simulation
 that predicts how spacecraft angular momentum and attitude evolve under
@@ -2527,8 +2527,8 @@ In safe mode:
 - Spacecraft +Y axis pointed toward the Sun.
 - Spacecraft rotated once every:
 
-```math
-4\text{ hours}
+```text
+4 hours
 ```
 This was called the **sunline ACS state**.
 
@@ -2560,8 +2560,8 @@ discontinuously.
 
 The two jumps were approximately:
 
-```math
-11\text{–}12\text{ min}
+```text
+11–12 min
 ```
 apart.
 
@@ -2578,16 +2578,16 @@ The attitude-estimate jumps coincided with star-tracker outages.
 
 The interval corresponded to approximately:
 
-```math
-19^\circ
+```text
+19^circ
 ```
 which matched the relative alignment of the star trackers and suggested
 a systematic issue.
 
 Star-tracker data suggested the Sun was approximately:
 
-```math
-90^\circ
+```text
+90^circ
 ```
 from its expected location.
 
@@ -2613,8 +2613,8 @@ Documentation review found a coordinate-frame transformation error.
 
 A:
 
-```math
-90^\circ
+```text
+90^circ
 ```
 rotation needed to translate from the mechanical frame to spacecraft
 frame had been omitted.
@@ -2665,8 +2665,8 @@ However:
 - The catalog was therefore truncated.
 - Stars above approximately:
 
-```math
-80^\circ
+```text
+80^circ
 ```
 declination were missing.
 
@@ -2764,11 +2764,11 @@ Commanded Attitude
 
 The controller seeks to minimize:
 
-# \$\$ \text{Attitude Error}
+# Attitude Error
 
-## \text{Commanded Attitude}
+## Commanded Attitude
 
-\text{Measured Attitude} \$\$
+\text{Measured Attitude} \\
 
 Spacecraft ACS design is driven by both the mission and the disturbance
 environment.
@@ -2784,9 +2784,9 @@ Major disturbances include:
 
 The general disturbance relationship is:
 
-# \$\$ \boldsymbol{\tau}
+# torque
 
-\mathbf{r}\times\mathbf{F} \$\$
+\mathbf{r}\times\mathbf{F} \\
 
 Pointing requirements are generated by:
 
@@ -2858,18 +2858,18 @@ Fault / Redundancy Analysis
 
 Spacecraft rotational dynamics are based on relationships including:
 
-```math
-K=\frac{1}{2}I\omega^2
+```text
+K=1/2Iω^2
 ```
-```math
-\tau=I\alpha
+```text
+τ=Iα
 ```
-```math
-\mathbf{h}=\mathbf{I}\boldsymbol{\omega}
+```text
+h=Iω
 ```
-# \$\$ \boldsymbol{\tau}
+# torque
 
-\frac{d\mathbf{h}}{dt} \$\$
+\frac{d\mathbf{h}}{dt} \\
 
 For complex spacecraft, inertia is represented as a tensor and
 rotational motion is described using Euler's moment equations.
