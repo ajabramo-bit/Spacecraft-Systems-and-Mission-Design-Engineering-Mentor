@@ -2,10 +2,10 @@
 
 **Course:** ASTE-331 — Spacecraft Systems Engineering  
 **Lecture:** 03 — Attitude Control System (ACS)  
-**Instructors:** Jim Chase, Danielle Marsh   
+**Instructors:** Jim Chase, Danielle Marsh 
 **Source:** `331_03_ACS_20250926.pdf`
 
-------------------------------------------------------------------------
+-----------------------------------------------------------------------
 
 ## Lecture Overview
 
