@@ -3,9 +3,6 @@
 **Course:** ASTE-331a — Spacecraft Systems Engineering  
 **Lecture:** 01 — Introduction to Space Systems  
 **Instructors:** Jim Chase, Danielle Marsh  
-**Teaching Assistants:** Daejah Dandrich, Luis Diaz, Liam Kerrigan,
-Emerson Lo  
-**Date:** August 29, 2025  
 **Source:** `331_01_SpaceSystemsIntro_20250829.pdf`
 
 ------------------------------------------------------------------------
