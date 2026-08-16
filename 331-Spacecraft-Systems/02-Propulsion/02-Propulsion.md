@@ -4,13 +4,7 @@
 **Lecture:** Propulsion System\
 **Date:** September 5, 2025\
 **Instructors:** Jim Chase, Danielle Marsh\
-**TAs:** Daejah Dandrich, Luis Diaz, Liam Kerrigan, Emerson Lo\
 **Source:** `331_02_Propulsion_20250905.pdf`
-
-> **Source distribution notice:** The presentation states that this
-> content is protected and may not be shared, uploaded, or distributed.
-> Confirm that you have permission before publishing this document
-> publicly.
 
 ------------------------------------------------------------------------
 
