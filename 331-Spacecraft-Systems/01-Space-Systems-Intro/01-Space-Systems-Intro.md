@@ -30,41 +30,9 @@ requirements.
 ## Table of Contents
 
 - [1. Spacecraft Systems Engineering](#1-spacecraft-systems-engineering)
-  - [Introduction to Space Systems](#introduction-to-space-systems)
-  - [Examples of Space Systems](#examples-of-space-systems)
-  - [System Design and Development](#system-design-and-development)
-  - [Typical Project Organization](#typical-project-organization)
 - [2. GRAIL Conceptual Design](#2-grail-conceptual-design)
-  - [GRAIL Mission Introduction](#grail-mission-introduction)
-  - [Study Objectives](#study-objectives)
-  - [Mission Objectives](#mission-objectives)
-  - [Basic Concept of Operations](#basic-concept-of-operations)
-  - [Payload Description](#payload-description)
-  - [Mission Design](#mission-design)
-  - [Propulsion Trades](#propulsion-trades)
-  - [Orbit Maintenance and
-    Operations](#orbit-maintenance-and-operations)
-  - [Updated Mission Requirements](#updated-mission-requirements)
-  - [Survey of Industry Spacecraft](#survey-of-industry-spacecraft)
-  - [Spacecraft Bus RFI and
-    Selection](#spacecraft-bus-rfi-and-selection)
-- [3. Overview of Spacecraft
-  Subsystems](#3-overview-of-spacecraft-subsystems)
-  - [Propulsion](#propulsion)
-  - [Attitude Control System (ACS)](#attitude-control-system-acs)
-  - [Telecommunications](#telecommunications)
-  - [Control and Data Handling (C&DH)](#control-and-data-handling-cdh)
-  - [Electrical Power System (EPS)](#electrical-power-system-eps)
-  - [Thermal](#thermal)
-  - [Mechanical](#mechanical)
+- [3. Overview of Spacecraft Subsystems](#3-overview-of-spacecraft-subsystems)
 - [4. Mission Requirements Flow-Down](#4-mission-requirements-flow-down)
-  - [Requirements Introduction](#requirements-introduction)
-  - [Questions About Requirements](#questions-about-requirements)
-  - [Requirements Hierarchy](#requirements-hierarchy)
-  - [Requirements Level Definitions](#requirements-level-definitions)
-  - [Deriving Next-Level
-    Requirements](#deriving-next-level-requirements)
-  - [Example Requirements Flow-Down](#example-requirements-flow-down)
 
 ------------------------------------------------------------------------
 

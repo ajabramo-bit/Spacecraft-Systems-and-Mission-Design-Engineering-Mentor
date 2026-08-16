@@ -3,7 +3,7 @@
 **Course:** ASTE-331a — Spacecraft Systems Engineering  
 **Lecture:** 02 — Propulsion System (aka Propulsion or simply Prop)  
 **Instructors:** Jim Chase, Danielle Marsh   
-**Source:** `331_02_Propulsion_20250905(1).pdf`
+**Source:** `331_02_Propulsion_20250905.pdf`
 
 ------------------------------------------------------------------------
 
