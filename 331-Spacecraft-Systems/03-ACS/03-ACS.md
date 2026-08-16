@@ -2,7 +2,7 @@
 
 **Course:** ASTE-331 — Spacecraft Systems Engineering  
 **Lecture:** 03 — Attitude Control System (ACS)  
-**Instructors:** Jim Chase, Danielle Marsh    
+**Instructors:** Jim Chase, Danielle Marsh   
 **Source:** `331_03_ACS_20250926.pdf`
 
 ------------------------------------------------------------------------
@@ -2975,3 +2975,4 @@ wheels. It is an integrated spacecraft control system in which mission
 geometry, physics, sensors, actuators, software, coordinate frames,
 interfaces, disturbances, simulation fidelity, redundancy, and fault
 response must all work together.
+
