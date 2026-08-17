@@ -2,7 +2,7 @@
 
 **Term:** Fall  
 **Instructors:** Jim Chase, Danielle Marsh  
-**TAs:** Arianna A, Sarah G, Brian P, Jonathan H, Sandra H, Mia C, Elizabeth B
+**TAs:** Arianna A, Sarah G, Brian P, Jonathan H, Sandra H, Mia C, Elizabeth B <br>
 **Meeting Time/Location:** Fridays, 1:00–4:40 PM  
 
 ---
