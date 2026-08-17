@@ -420,14 +420,3 @@ The Markdown files are intended to supplement the original course materials by i
 
 They are not intended to replace the original lecture slides.
 
----
-
-## Questions?
-
-Use [GitHub Discussions](../../discussions) for course-content questions.
-
-When asking about lecture material, include the **course, lecture, source PDF, and slide number** whenever possible.
-
-For questions that cross between ASTE 331 and ASTE 421, include references from **both courses** when possible.
-
-For grading or personal matters, contact the course staff through the appropriate private course channel.
