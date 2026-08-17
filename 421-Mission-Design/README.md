@@ -270,7 +270,7 @@ to locate the exact material associated with the question.
 
 ## Asking Questions
 
-For course-content questions, use [GitHub Discussions](../../discussions).
+For course-content questions, use [Piazza](https://piazza.com/class/mp5es26r4qwau).
 
 When possible, include the lecture and slide reference described above.
 
@@ -308,7 +308,7 @@ This format makes questions easier to:
 - reference later; and
 - reuse when another student has the same question.
 
-For **grading, accommodations, or personal matters**, contact the course staff through the appropriate private course channel rather than GitHub Discussions.
+For **grading, accommodations, or personal matters**, contact the course staff through the appropriate private course channel rather than Piazza.
 
 ---
 
