@@ -912,419 +912,363 @@ For the simplified model, use the **power dissipated within the spacecraft** and
 Similarly, if an instrument is located at the end of a long boom, subtract the power provided to that instrument across the boom/harness interface from the spacecraft dissipated-power term if the instrument is being treated separately.
 
 
-# 11. Multi-Layer Insulation
+# 13. Multi-Layer Insulation
 
 > **Source: Slide 14**
 
-Multi-Layer Insulation is one of the most recognizable spacecraft thermal-control technologies.
+Multi-Layer Insulation (MLI) is used extensively on spacecraft for thermal control.
 
-MLI consists of multiple thin reflective layers separated to reduce radiative heat transfer.
+The slide shows two examples:
 
-The slide shows:
+- a close-up of the layered construction of an MLI blanket; and
+- a spacecraft covered with MLI blankets.
 
-- A close-up of the layered blanket construction
-- A spacecraft covered extensively in gold-colored thermal blankets
+The close-up shows that MLI consists of multiple thin layers of material rather than a single layer of insulation.
 
-MLI is used to reduce radiative exchange between the spacecraft and its environment.
-
-Typical purposes include:
-
-- Reduce heat loss from warm spacecraft regions
-- Reduce absorbed environmental heat
-- Thermally isolate spacecraft surfaces
-- Reduce sensitivity to changing external conditions
-
-The gold appearance commonly associated with spacecraft is often produced by thin-film blanket materials rather than solid metallic spacecraft structure.
+**Figure description:** The spacecraft shown on the slide is extensively covered with gold-colored MLI. The close-up image shows the multiple individual layers that make up the blanket.
 
 ---
 
-# 12. Heat Pipes
+# 14. Heat Pipes
 
 > **Source: Slide 15**
 
-Heat pipes move thermal energy from one location to another.
+Heat pipes are used to transfer heat through the spacecraft.
 
-## Constant-Conductance Heat Pipes
+Two types are identified in the lecture:
 
-Transfer heat primarily in one direction from a hot region to a colder rejection region.
+- **Constant-conduction heat pipes** transfer heat in one direction.
+- **Loop heat pipes** recirculate liquid and vapor.
 
-## Loop Heat Pipes
+## Loop Heat Pipe
 
-Loop heat pipes recirculate liquid and vapor.
+The loop heat pipe shown on the slide contains:
 
-The diagram on the slide identifies:
-
-- Cylindrical evaporator
 - Compensation chamber
+- Cylindrical evaporator
 - Vapor line
+- Vapor-line temperature measurement
 - Condenser
 - Cold plate
 - Liquid return line
+- Liquid-line temperature measurement
 
-A simplified operating cycle is:
-
-```text
-Heat enters evaporator
-↓
-Working fluid evaporates
-↓
-Vapor travels toward condenser
-↓
-Heat is rejected
-↓
-Vapor condenses to liquid
-↓
-Liquid returns to evaporator
-```
-
-Heat pipes allow thermal energy to be moved efficiently without requiring a conventional mechanically pumped fluid loop.
+**Figure description:** The diagram shows the cylindrical evaporator and compensation chamber connected to a vapor line. The vapor line carries the working fluid toward the condenser mounted to the cold plate. A liquid return line then returns the fluid toward the evaporator, creating a circulating liquid/vapor loop.
 
 ---
 
-# 13. Louvers
+# 15. Louvers
 
 > **Source: Slide 16**
 
-Thermal louvers regulate radiated heat using reflective blinds over a radiator.
+Louvers are used to control the amount of heat radiated from the spacecraft.
 
-The lecture states that louvers can provide approximately:
+The lecture notes that louvers:
+
+- can provide approximately a **5× reduction in heat transfer**; and
+- can be either **active or passive**.
+
+A passive approach can use:
+
+- bimetallic strips; or
+- shape-memory materials.
+
+The amount of radiated heat depends on the position of the louver blinds.
 
 ```text
-5× reduction in heat transfer
+Radiated Heat = f(blinds)
 ```
 
-depending on louver position.
-
-Conceptually:
-
-```text
-Spacecraft → Radiator → Louvers → Space
-```
-
-Radiated heat becomes a function of the blind position.
-
-Louvers can be:
-
-- Active
-- Passive
-
-## Passive Louvers
-
-Passive systems can use:
-
-- Bimetallic strips
-- Shape-memory materials
-
-Temperature changes mechanically alter the louver position.
-
-When heat rejection should be reduced, louvers cover more of the radiator.
-
-When more heat rejection is needed, the louvers open to expose the radiator more directly to space.
+**Figure description:** The slide compares the louver system to reflective "Venetian blinds" installed over a spacecraft radiator. Changing the position of the blinds changes how directly the radiator is exposed to space and therefore changes the amount of heat radiated away from the spacecraft.
 
 ---
 
-# 14. Heaters and Thermostats
+# 16. Heaters
 
 > **Source: Slide 17**
 
-Electrical heaters provide active thermal control.
+Heaters provide active thermal control for spacecraft hardware.
 
-The slide shows flexible heater elements and heaters mounted to spacecraft hardware.
+The lecture specifically notes that **survival heaters often use mechanical thermostats for control**.
 
-A major application is **survival heating**.
+This ensures that minimum temperatures can be maintained **independently of flight software**.
 
-Survival heaters often use mechanical thermostats so that minimum temperatures can be maintained independently of flight software.
+In other words, survival heating does not necessarily depend on the spacecraft computer being available to command the heater.
 
-This provides fault tolerance.
-
-A simplified control loop is:
-
-```text
-Temperature decreases
-↓
-Mechanical thermostat closes
-↓
-Heater receives power
-↓
-Hardware warms
-↓
-Upper thermostat threshold reached
-↓
-Heater turns off
-```
-
-This is especially important when the spacecraft computer:
-
-- Is powered off
-- Is in safe mode
-- Has experienced a software fault
+**Figure description:** The slide shows a flexible electrical heater element and examples of heater elements installed directly onto spacecraft hardware.
 
 ---
 
-# 15. Thermal Modeling
+# 17. Thermal Modeling
 
 > **Source: Slide 18**
 
-Thermal models divide the spacecraft into surfaces, components, and nodes with assigned thermal properties.
+Thermal modeling is used to represent the thermal behavior of the spacecraft.
 
-The slide shows a detailed spacecraft thermal model with surfaces color-coded by infrared emissivity.
+The slide shows a spacecraft thermal model with surfaces represented using different thermal properties.
 
-A thermal model can include:
+The displayed model is specifically color-coded according to **IR emissivity**.
 
-- Spacecraft geometry
-- Surface optical properties
-- Conductive connections
-- Internal power dissipation
-- Solar input
-- Planetary albedo
-- Planetary infrared radiation
-- Radiative view factors
-- Heaters
-- Radiators
-- Thermal-control coatings
-
-The purpose is to predict component and structural temperatures for mission conditions before flight.
-
-Thermal modeling supports:
-
-- Hot-case analysis
-- Cold-case analysis
-- Radiator sizing
-- Heater sizing
-- Material/coating selection
-- Operational constraints
-- TVAC test planning
-- Model correlation after testing
+**Figure description:** Two views of the spacecraft thermal model show the spacecraft body and solar arrays divided into individual modeled surfaces. A color scale labeled **IR Emissivity** ranges from values near 0 to values greater than approximately 0.87. Different spacecraft surfaces are assigned different emissivity values based on their materials and surface treatments.
 
 ---
 
-# 16. Mission Example
+# 18. Mission Example
 
 > **Source: Slides 19–20**
 
-The lecture uses the Exo-C observatory concept as a thermal-design example.
+The lecture uses the **Exo-C observatory** as a mission example.
 
-The system includes:
+The system shown on the slide includes:
 
 - Coronagraph instrument
 - Imaging detector
-- Optical system
+- Optical layout of the coronagraph
+- Mechanical layout of the coronagraph instrument
 - Spacecraft bus
 - Telescope
 - Primary mirror
 - Barrel assembly
-- Solar shielding
+- Solar panels
 - Launch configuration
 
-The thermal model evaluates temperature distributions throughout the observatory.
+## Solar-Panel Configuration
 
----
-
-## Solar-Shield Geometry
-
-The solar panels are configured so the barrel assembly receives approximately the same solar thermal power at spacecraft attitudes of:
+The Exo-C solar panels are configured so that the barrel assembly receives approximately the same solar thermal power at:
 
 ```text
-+15°
++15° relative to the Sun
 ```
 
 and:
 
 ```text
--15°
+−15° relative to the Sun
 ```
-
-relative to the Sun.
 
 The resulting thermal stability is intended to provide approximately:
 
 ```text
-10^{-10}
+10⁻¹⁰ contrast stability
 ```
 
-contrast stability for differential image-speckle subtraction.
+for differential image-speckle subtraction.
 
-This demonstrates how thermal design can directly support science performance.
+**Figure description:** The mission overview shows the spacecraft bus supporting a large telescope and coronagraph instrument. Thermal maps are shown for the approximately 1.4-m primary mirror and barrel assembly. A separate view shows the observatory folded inside the launch vehicle.
 
 ---
 
-## Telescope Heater Power
+## Exo-C Thermal Model
 
 > **Source: Slide 20**
 
-The required heater power depends strongly on the selected temperature set points.
-
-| Telescope Heater Location | Number of Heaters | Set Point | Peak Power |
-|---|---:|---:|---:|
-| Primary Support Structure | 3 | 200 K | 118 W |
-| Lower Barrel | 18 | 190 K | 63 W |
-| Upper Barrel | 11 | 170 K | 56 W |
-| Barrel Scarf | 8 | 150 K | 111 W |
-| Primary Mirror | 6 | 240 K | 33 W |
-| Primary Mirror Bipods | 6 | 240 K | 5 W |
-| Secondary Mirror | 2 | 240 K | 1 W |
-| **Total** | **60** | — | **387 W** |
-| **Total with 30% contingency** | — | — | **503 W** |
-
-The table illustrates a major thermal-power coupling:
-
-**Temperature set points directly affect heater power and therefore spacecraft power-system sizing.**
-
-The Exo-C thermal model includes:
+The Exo-C observatory thermal model includes:
 
 - Spacecraft bus
 - Telescope
-- Vibration-isolation system
+  - Including the vibration-isolation system
 - Instrument bench
-- Flat solar panel acting as a sunshield
+- Flat solar panel that also serves as a sunshield
 
-The spacecraft and instrument bench are modeled as constant-temperature boundary conditions while telescope stability is evaluated across changing Sun angles.
+The spacecraft and instrument bench are modeled as **constant-temperature boundary conditions**.
+
+The thermal stability of the telescope is simulated over varying Sun angles.
+
+**Figure description:** The thermal model shows the telescope structure mounted above the spacecraft bus with the large flat solar-panel/sunshield structure alongside it. Different colors represent the modeled thermal conditions across the structure.
 
 ---
 
-# 17. Thermal Trade Study
+## Telescope Heater Power Analysis
+
+The required heater power depends strongly on the **set-point temperatures**.
+
+| Telescope Heater Location | Number of Heaters | Set Point (K) | Peak Power (W) |
+|---|---:|---:|---:|
+| Primary Support Structure | 3 | 200 | 118 |
+| Lower Barrel | 18 | 190 | 63 |
+| Upper Barrel | 11 | 170 | 56 |
+| Barrel Scarf | 8 | 150 | 111 |
+| Primary Mirror | 6 | 240 | 33 |
+| Primary Mirror Bipods | 6 | 240 | 5 |
+| Secondary Mirror | 2 | 240 | 1 |
+| **Total** | **60** | — | **387** |
+| **Total with 30% contingency** | — | — | **503** |
+
+The total peak heater power is:
+
+```text
+387 W
+```
+
+With a 30% contingency, the total becomes:
+
+```text
+503 W
+```
+
+---
+
+# 19. Example Trade Study
 
 > **Source: Slide 21**
 
-The lecture compares three solar-shield configurations:
+The lecture compares three different solar-shield configurations:
 
-1. Outer barrel
-2. MLI tent
-3. Flat solar panel
+1. **Outer barrel**
+2. **MLI tent**
+3. **Flat solar panel**
 
-## Trade Results
+The configurations are compared using:
 
-| Criterion | Outer Barrel | MLI Tent | Flat Solar Panel |
+- Mass
+- Fast recovery from thermal transients
+- Contrast stability at steady state
+- Contrast stability over 30° roll and 45° pitch
+
+| Trade Criterion | Outer Barrel | MLI Tent | Flat Solar Panel |
 |---|---|---|---|
 | Mass | Poor | Good | Good |
 | Fast recovery from thermal transient | Poor | Good | Good |
 | Contrast stability at steady state | Good | Good | Good |
-| Contrast stability over 30° roll and 45° pitch | Not analyzed | ~2–5 × 10^-9 stability | >10^-10 stability |
+| Contrast stability over 30° roll and 45° pitch | Not analyzed | ~2–5 × 10⁻⁹ stability | >10⁻¹⁰ stability |
 
-The flat solar-panel configuration provides the best stated contrast stability over the roll/pitch attitude range while also performing well in mass and transient recovery.
+**Figure description:** The slide shows thermal models of all three sunshield configurations above the trade table: a passive outer barrel, a Kepler-like MLI tent, and a flat solar panel.
 
-This trade demonstrates that thermal architecture can be driven by highly sensitive payload-performance requirements rather than simply component survival.
+The flat solar-panel configuration performs well for:
 
----
-
-# 18. Thermal-Vacuum Testing
-
-> **Source: Slides 22–23**
-
-Thermal-vacuum testing reproduces two defining features of the space environment:
-
-- Vacuum
-- Temperature extremes
-
-The lecture shows:
-
-- Mars 2020 / Perseverance hardware in JPL TVAC
-- ESA's Euclid mission in a thermal-vacuum facility
-
-TVAC testing is used to:
-
-- Verify thermal performance
-- Verify survival
-- Exercise hardware over temperature
-- Validate thermal models
-- Identify workmanship or integration problems
-- Demonstrate mission-like operation
+- Mass
+- Thermal-transient recovery
+- Steady-state contrast stability
+- Contrast stability over the specified roll and pitch range
 
 ---
 
-## Example Thermal-Vacuum Cycle
+# 20. Testing in Thermal-Vacuum
+
+> **Source: Slide 22**
+
+Thermal-vacuum testing, or **TVAC**, is used to test spacecraft in a vacuum chamber under controlled thermal conditions.
+
+The slide shows two spacecraft examples undergoing TVAC testing:
+
+- Mars 2020 / Perseverance rover hardware in JPL TVAC
+- ESA's Euclid mission
+
+**Figure description:** The Mars 2020 hardware is suspended inside a large JPL thermal-vacuum chamber. The Euclid spacecraft is shown positioned inside another large thermal-vacuum test facility.
+
+---
+
+# 21. Thermal-Vacuum Test Profile
 
 > **Source: Slide 23**
 
-The DAXSS CubeSat example shows an initial survival cycle followed by repeated operational hot/cold cycles.
+The lecture provides a **DAXSS CubeSat Thermal Vacuum Cycle Test Profile** as an example.
 
-### Hot Survival
+The test begins with survival-temperature testing and then proceeds through repeated operational thermal cycles.
 
-Approximately:
+## Survival Temperatures
+
+### Hot Survival Cycle
 
 ```text
 +60 °C
 ```
 
-### Cold Survival
-
-Approximately:
+### Cold Survival Cycle
 
 ```text
--40 °C
+−40 °C
 ```
 
-### Hot Operational Condition
+## Operational Temperatures
 
-Approximately:
+### Hot Operational Temperature
 
 ```text
 +35 °C
 ```
 
-### Cold Operational Condition
-
-Approximately:
+### Cold Operational Temperature
 
 ```text
--20 °C
+−20 °C
 ```
 
-The profile includes eight operational cycles.
+The example contains:
 
-During the cycles, the test performs activities such as:
+```text
+8 hot operational cycles
+```
 
-- Power cycling
-- Aliveness testing
+and:
+
+```text
+8 cold operational cycles
+```
+
+## Activities During Testing
+
+The test profile identifies several activities performed at different points during the thermal cycles:
+
+- Power Cycle with Aliveness Test
 - CPT
 - LPT
-- Mission simulation
-- Hot and cold dwells
+- Mission Simulation
 
-The plot also shows different spacecraft voltage values during selected test points.
+The spacecraft is operated at several voltage levels during the test, including values shown on the plot such as:
 
-The key idea is that TVAC does not simply expose hardware to one hot and one cold temperature. A representative program can combine:
+- 7.7 V
+- 7.0 V
+- 8.4 V
 
-- Survival extremes
-- Operational extremes
-- Repeated cycles
-- Dwell periods
-- Functional testing
-- Mission simulations
+Mission simulations are performed during approximately:
+
+```text
+3-hour dwells
+```
+
+The plot also identifies specific eclipse-related test configurations.
+
+**Figure description:** The test profile plots temperature against the sequence of thermal cycles. The spacecraft is first exposed to the hot and cold survival limits, then repeatedly cycled between approximately −20 °C and +35 °C while functional tests and mission simulations are performed.
 
 ---
 
-# 19. Thermal Design Process
+# 22. Thermal Design Steps
 
 > **Source: Slide 24**
 
-The lecture closes with a preliminary thermal-design workflow.
+The thermal design process begins by reviewing and understanding the available design information.
 
 ## Review and Understand Design Information
 
-Start with:
+Review:
 
-- Mission description
-- Concept of Operations
+- Mission Description and Concept of Operations
 - System requirements
 - Subsystem requirements
+
+Important inputs include:
+
 - Mission geometry
 - Payload temperature requirements
 - Subsystem temperature requirements
 
----
-
 ## Create a Preliminary Design
 
-### Identify Preliminary Architecture
+Identify a preliminary thermal architecture.
 
-Select target temperatures.
+### Select Target Temperatures
 
-Examples:
+Representative target temperatures may include:
 
 ```text
 +20 °C
--20 °C
+```
+
+or:
+
+```text
+−20 °C
 ```
 
 Determine whether the design should use:
@@ -1334,15 +1278,15 @@ Determine whether the design should use:
 
 ### Consider Cryogenic Elements
 
-Cryogenic elements may operate approximately in the range:
+Cryogenic elements may operate approximately within:
 
 ```text
 3–120 K
 ```
 
-Their operability must be considered separately from conventional spacecraft electronics.
+Their operability must be considered as part of the thermal architecture.
 
-### Select Thermal-Control Technologies
+### Consider Thermal-Control Options
 
 Consider:
 
@@ -1351,266 +1295,64 @@ Consider:
 - Radiators
 - Heat pipes
 
-### Perform Back-of-the-Envelope Estimates
+### Create Back-of-the-Envelope Heat-Transfer Estimates
 
-Estimate heat transfer before creating a high-fidelity model.
+Use preliminary calculations to estimate thermal behavior before completing the detailed thermal model.
 
----
+## Preliminary Sizing
 
-## Preliminary Hardware Sizing
-
-Size components such as:
+Perform preliminary sizing of:
 
 - Radiators
 - MLI
 - Heat pipes
-- Heaters
-
----
+- Other thermal-control hardware
 
 ## Create Thermal Balance Model
 
-Develop the thermal model using:
+Develop the spacecraft thermal-balance model.
 
-- External heat inputs
-- Internal dissipation
-- Surface properties
-- Geometry
-- Heat rejection
-- Mission attitude
-
-Optimize for:
+Optimize the design with respect to:
 
 - Robustness
 - Fault scenarios
-- Operational flexibility
-
----
+- Other mission-specific considerations
 
 ## Create Component Mass List
 
-Thermal-control hardware contributes to spacecraft mass and must be captured in the subsystem mass estimate.
-
----
+Include thermal-control components in the spacecraft mass estimate.
 
 ## Review and Iterate with the Broader Team
 
-Thermal design is highly coupled to:
+Thermal design is iterative.
 
-- Mechanical configuration
-- Power
-- Avionics
-- Payload
-- ACS
-- Propulsion
-- Mission operations
-
-Revisit alternatives such as:
+Revisit other options as needed, including:
 
 - Heat straps
 - Heat switches
 - Louvers
-- Different radiator locations
-- Different coatings
-- Different temperature set points
+- Other thermal-control approaches
 
-The process is iterative rather than linear.
-
----
-
-# 20. Lecture Summary
-
-> **Source: Slides 1–24**
-
-The thermal-control subsystem keeps spacecraft hardware within required operating and survival temperature limits.
-
-Temperature control supports:
-
-- Battery chemistry
-- Propellant and lubricant phase/viscosity
-- Electronics
-- Precision alignment
-- Mechanical properties
-- Cryogenic sensors
-
-The thermal architecture should:
-
-- Maximize spacecraft operability
-- Minimize pointing restrictions
-- Minimize power-system constraints
-- Remain robust to environmental variation
-- Remain robust to small design changes
-
-Spacecraft thermal design is dominated by:
-
-- **Conduction at the component level**
-- **Radiation at the spacecraft level**
-
-Convection is generally negligible in the vacuum environment of space.
-
-Radiative surface behavior is characterized by:
-
-- Reflectivity
-- Absorptivity
-- Transmissivity
-- Emissivity
-
-with conservation of incident radiation:
-
-```math
-\rho + \alpha + \tau = 1
-```
-
-For opaque spacecraft surfaces:
-
-```math
-\tau \approx 0
-```
-
-and therefore:
-
-```math
-\rho + \alpha \approx 1
-```
-
-The spacecraft thermal power balance is:
-
-```math
-Q_{\text{out}}
-=
-Q_{\text{in}}
-```
-
-with:
-
-```math
-Q_{\text{out}}
-=
-Q_{\text{rad}}
-+
-Q_{\text{vent}}
-```
-
-and:
-
-```math
-Q_{\text{in}}
-=
-Q_s
-+
-Q_{rs}
-+
-Q_p
-+
-Q_d
-+
-Q_o
-```
-
-The emitted thermal radiation is governed by the Stefan-Boltzmann relationship:
-
-```math
-Q_{\text{rad}}
-=
-A\epsilon\sigma T^4
-```
-
-Direct absorbed solar energy is:
-
-```math
-Q_s
-=
-A G_s\alpha
-```
-
-Reflected planetary solar energy is:
-
-```math
-Q_{rs}
-=
-A G_{rs}\alpha
-```
-
-and planetary infrared heating is:
-
-```math
-Q_p
-=
-A G_p\alpha
-```
-
-Planetary heating depends on spacecraft altitude and orientation through the planetary view factor and effective area.
-
-Thermal-control hardware includes:
-
-- Surface coatings
-- Optical Solar Reflectors
-- Paint
-- Kapton
-- Multi-Layer Insulation
-- Radiators
-- Heat pipes
-- Louvers
-- Heat switches
-- Heaters
-- Thermostats
-- Temperature sensors
-
-Cold biasing intentionally creates a naturally cold design and uses heaters for positive temperature control and margin.
-
-Thermal models predict spacecraft temperatures by combining:
-
-- Geometry
-- Surface properties
-- Conductive paths
-- Radiation
-- Solar heating
-- Planetary heating
-- Internal dissipation
-- Operational modes
-
-The Exo-C example demonstrates the direct relationship between thermal stability and science performance. Solar-shield architecture and heater set points affect:
-
-- Contrast stability
-- Heater power
-- Spacecraft power sizing
-- Mass
-- Operational attitude range
-
-Thermal-vacuum testing validates the spacecraft across:
-
-- Hot survival conditions
-- Cold survival conditions
-- Hot operational conditions
-- Cold operational conditions
-- Repeated thermal cycles
-- Functional tests
-- Mission simulations
-
-The overall thermal design process is:
+The overall process is:
 
 ```text
-Mission and System Requirements
+Review Mission and System Information
 ↓
-Temperature Requirements and Mission Geometry
+Identify Preliminary Thermal Architecture
 ↓
-Preliminary Thermal Architecture
+Select Target Temperatures
 ↓
-Materials / Coatings / Radiators / Heat Pipes
+Consider Materials and Thermal-Control Hardware
 ↓
-Back-of-the-Envelope Heat Transfer
+Create Back-of-the-Envelope Heat-Transfer Estimates
 ↓
 Preliminary Hardware Sizing
 ↓
-Thermal Balance Model
+Create Thermal Balance Model
 ↓
-Robustness and Fault Optimization
+Optimize for Robustness and Fault Scenarios
 ↓
-Mass Estimate
+Create Component Mass List
 ↓
-Broader System Review
-↓
-Iterate
+Review and Iterate with Broader Team
 ```
-
-Thermal design is therefore a spacecraft-level systems-engineering activity. Spacecraft attitude, payload performance, electrical power, mechanical configuration, component lifetime, and mission operations all depend on maintaining a workable thermal balance.
