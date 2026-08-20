@@ -46,7 +46,7 @@ The lecture develops the spacecraft thermal power balance, defines the optical p
 
 > **Source: Slide 2**
 
-## Function
+### Function
 
 The thermal subsystem provides appropriate thermal control throughout the spacecraft.
 
@@ -65,7 +65,7 @@ All components must remain within their qualification temperature limits.
 
 ---
 
-## GRAIL Example
+### GRAIL Example
 
 The GRAIL thermal subsystem includes:
 
@@ -78,40 +78,31 @@ The GRAIL thermal subsystem includes:
 - Temperature sensors
 - Other thermal-control hardware
 
-Total thermal subsystem mass:
-
-```text
-~10 kg
-```
+Total thermal subsystem mass: ~10 kg
 
 ---
 
-## Common Components
+### Common Components
 
-### Surface Coatings and Treatments
+Surface Coatings and Treatments
+- Examples:
+    - Films
+    - Paints
+    - Multi-layer insulation
 
-Examples:
+Conductors and Insulators
+- Used to control the path and magnitude of heat transfer.
 
-- Films
-- Paints
-- Multi-layer insulation
-
-### Conductors and Insulators
-
-Used to control the path and magnitude of heat transfer.
-
-### Heat-Transfer Regulators
-
-Examples:
-
-- Heat pipes
-- Louvers
-- Phase-change devices
-- Heat switches
+Heat-Transfer Regulators
+- Examples:
+    - Heat pipes
+    - Louvers
+    - Phase-change devices
+    - Heat switches
 
 ---
 
-## Key Trades and Analyses
+### Key Trades and Analyses
 
 - Active vs. passive thermal control
 - Thermal analysis
@@ -119,7 +110,7 @@ Examples:
 - Radiator location
 - Thermal margins
 
-## Key Parameters
+### Key Parameters
 
 - Mass
 - Power
