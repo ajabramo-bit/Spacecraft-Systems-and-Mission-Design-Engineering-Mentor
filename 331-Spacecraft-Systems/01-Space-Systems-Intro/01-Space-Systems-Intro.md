@@ -497,10 +497,8 @@ another.
 | Parameter            | Value                                          |
 |----------------------|------------------------------------------------|
 | Instrument           | Enhanced Ka-Band Ranging & Instrument Assembly |
-| Mass                 | 15 kg                                          |
-| Mass basis           | 10 kg + 50% contingency                        |
-| Power                | 15 W                                           |
-| Power basis          | 10 W + 50% contingency                         |
+| Mass                 | 15 kg (10 kg + 50% contingency)                |
+| Power                | 15 W (10 W + 50% contingency)                  |
 | Pointing Control     | 0.25 deg                                       |
 | Pointing Knowledge   | 200 arcsec                                     |
 | Instrument Data Rate | 10 MB/day                                      |
@@ -543,42 +541,21 @@ approximately **10 samples/s**.
 
 #### Option 2: Staging
 
-- Launch-vehicle insertion to approximately:
-
-$$
-185 \times 43{,}800\text{ km}
-$$
-
+- Launch-vehicle insertion to approximately: 185 x 43,800 km
 - Five chemical burns to spiral outward to lunar rendezvous.
 
 ### Trade 2 — Direct Insertion vs. Low Energy
 
 #### Option 1: Direct Insertion
 
-- Lunar-orbit insertion to approximately:
-
-$$
-100 \times 8{,}000\text{ km}
-$$
-
-- Five chemical burns to spiral inward to the final:
-
-$$
-50 \times 50\text{ km}
-$$
-
-lunar orbit.
+- Lunar-orbit insertion to approximately: 100 x 8,000 km
+- Five chemical burns to spiral inward to the final 50 × 50 km lunar orbit.
 
 #### Option 2: Low Energy
 
 - Uses Lagrangian points.
 - Launch-vehicle insertion into a low-energy trajectory.
-- Lunar-orbit insertion to approximately:
-
-$$
-100 \times 8{,}000\text{ km}
-$$
-
+- Lunar-orbit insertion to approximately: 100 x 8,000 km
 - Five chemical burns to spiral inward to the 50 × 50 km lunar orbit.
 
 ### Low-Energy Trajectory Figure
@@ -704,13 +681,7 @@ Candidate launch vehicles:
 - Taurus 3113
 - Delta II
 
-The slide notes an approximately:
-
-$$
-\$50\text{ M}
-$$
-
-difference at the time.
+The slide notes an approximately: $50M difference at the time.
 
 **Figure description:** Taurus and Delta II launch vehicles are shown
 side by side with a height scale, emphasizing their substantial
@@ -726,17 +697,8 @@ size/capability difference.
 
 - 2 spacecraft
 - 50 × 50 km polar orbit
-- Period:
-
-$$
-113.0\text{ minutes}
-$$
-
-- Separation distance:
-
-$$
-50\text{ km}
-$$
+- Period: 113.0 minutes
+- Separation distance: 50 km
 
 ### Mission Operations
 
@@ -894,11 +856,7 @@ thumb**.
 - The result was that **Lockheed** was chosen with a bus derived from
   its prior **XSS-11 spacecraft**.
 - The initial study concluded that the concept was feasible.
-- Likely budget estimate:
-
-$$
-\$310\text{–}\$350\text{ M}
-$$
+- Likely budget estimate: $310-$350 M
 
 The slide notes that this was very close to the final cost.
 
@@ -944,11 +902,7 @@ Slide 25 begins **Part 3: Overview of Spacecraft Subsystems**.
 - Warm gas generator
 - Fuel tank
 - Miscellaneous hardware
-- Total:
-
-$$
-\sim 15\text{ kg}
-$$
+- Total: ~15 kg
 
 ### Common Components
 
@@ -1020,11 +974,7 @@ Other names include:
 - 3 reaction wheels
 - 1 inertial measurement unit (IMU)
 - 1 sun sensor
-- Total:
-
-$$
-\sim 5\text{ kg}
-$$
+- Total: ~5 kg
 
 ### Common Components
 
@@ -1083,11 +1033,7 @@ The GRAIL attitude-control block shows an **Inertial Measurement Unit**,
 - S-band transponder and diplexer
 - Low-gain antenna (LGA)
 - Miscellaneous hardware
-- Total:
-
-$$
-\sim 5\text{ kg}
-$$
+- Total: ~5 kg
 
 ### Common Components
 
@@ -1143,11 +1089,7 @@ transponder** and **diplexer**.
 - Converters
 - Backplane
 - Chassis assembly
-- Total:
-
-$$
-\sim 5\text{ kg}
-$$
+- Total: ~5 kg
 
 ### Common Components
 
@@ -1215,11 +1157,7 @@ EPS is often paired with C&DH under **Avionics**.
   - Converters
 - 1 × 30 Ahr battery
 - 2 solar arrays
-- Total:
-
-$$
-\sim 30\text{ kg}
-$$
+- Total: ~30 kg
 
 ### Common Components
 
@@ -1291,11 +1229,7 @@ limits.
 - Thermostats
 - Sensors
 - Related hardware
-- Total:
-
-$$
-\sim 10\text{ kg}
-$$
+- Total: ~10 kg
 
 ### Common Components
 
@@ -1363,11 +1297,7 @@ i.e. wiring.
 - Tank support and fittings
 - Solar-array deployment mechanism
 - Launch-vehicle separation system
-- Total:
-
-$$
-\sim 35\text{ kg}
-$$
+- Total: ~35 kg
 
 ### Common Components
 
