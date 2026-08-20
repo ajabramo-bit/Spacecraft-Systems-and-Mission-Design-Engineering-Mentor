@@ -88,11 +88,7 @@ Example propulsion hardware:
 - Warm-gas generator
 - Propellant tank
 - Miscellaneous hardware
-- Total mass:
-
-$$
-\sim 13\text{ kg}
-$$
+- Total mass: ~13 kg
 
 ### Common Components
 
@@ -353,8 +349,9 @@ Gases are used in propulsion systems:
 - Directly as propellant, such as in cold-gas systems.
 - Indirectly as pressurant for liquid propellants.
 
-Thrusters require gas or liquid propellant to enter at a specified
-pressure.
+To function within specifications, thrusters require
+gas/liquid propellant to enter the thruster at a
+specified pressure.
 
 The ideal gas law is used to estimate required pressurant mass and
 volume:
@@ -366,7 +363,7 @@ $$
 where:
 
 - $P$ = pressure, Pa
-- $V$ = volume, m$^3$
+- $V$ = volume, m³
 - $T$ = temperature, K
 - $n$ = gas mass, kg
 - $R_s$ = specific gas constant, J/(kg·K)
@@ -852,25 +849,10 @@ Adelis-SAMSON satellite cold-gas propulsion system.
 
 ### Requirements
 
-- Total impulse:
-
-$$
-\geq150\text{ N·s}
-$$
-
-- Propulsion-system mass:
-
-$$
-\leq2\text{ kg}
-$$
-
+- Total impulse: ≥ 150 N·s
+- Propulsion-system mass: ≤ 2 kg
 - Non-toxic, non-flammable, non-explosive propellant
-- Total thrust:
-
-$$
-80\text{ mN}
-$$
-
+- Total thrust: 80 mN
 - Propellant: **Krypton**
 
 ### Pressure Levels
@@ -1303,18 +1285,8 @@ Additional propellant may be required for:
 Residual / hold-up propellant is non-usable.
 
 Typical values:
-
-- Monopropellant:
-
-$$
-1\%
-$$
-
-- Bipropellant:
-
-$$
-3.5\%
-$$
+- Monopropellant: 1%
+- Bipropellant: 3.5%
 
 ### Splitting Bipropellant Load
 
@@ -1471,9 +1443,9 @@ $$
 
 The slide derives:
 
-# \$\$ \frac{V\_{EOM}}{V\_{\text{propellant}}}
+### End-of-Mission Volume Relationship
 
-\frac{P\_{BOM}}{P\_{BOM}-P\_{EOM}} \$\$
+V_EOM / V_propellant = P_BOM / (P_BOM − P_EOM)
 
 This can be used to solve tank volume and then pressurant mass.
 
