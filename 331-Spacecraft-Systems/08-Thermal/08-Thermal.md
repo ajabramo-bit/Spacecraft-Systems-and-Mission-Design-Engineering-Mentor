@@ -83,22 +83,14 @@ Total thermal subsystem mass: ~10 kg
 ---
 
 ### Common Components
-
 Surface Coatings and Treatments
-- Examples:
-    - Films
-    - Paints
-    - Multi-layer insulation
+- Examples: Films, Paints, Multi-layer insulation
 
 Conductors and Insulators
 - Used to control the path and magnitude of heat transfer.
 
 Heat-Transfer Regulators
-- Examples:
-    - Heat pipes
-    - Louvers
-    - Phase-change devices
-    - Heat switches
+- Examples: Heat pipes, Louvers, Phase-change devices, Heat switches
 
 ---
 
@@ -380,21 +372,9 @@ Range:
 0 \le \rho \le 1
 ```
 
-If:
+If: ρ = 1 all incoming energy is reflected.
 
-```math
-\rho = 1
-```
-
-all incoming energy is reflected.
-
-If:
-
-```math
-\rho = 0
-```
-
-none of the incoming energy is reflected.
+If: ρ = 0 none of the incoming energy is reflected.
 
 ---
 
@@ -408,21 +388,9 @@ Range:
 0 \le \alpha \le 1
 ```
 
-If:
+If: α = 1 all incoming energy is absorbed.
 
-```math
-\alpha = 1
-```
-
-all incoming energy is absorbed.
-
-If:
-
-```math
-\alpha = 0
-```
-
-none is absorbed.
+If: α = 0 none is absorbed.
 
 ---
 
@@ -436,21 +404,9 @@ Range:
 0 \le \tau \le 1
 ```
 
-If:
+If: τ = 1 all incident energy passes through.
 
-```math
-\tau = 1
-```
-
-all incident energy passes through.
-
-If:
-
-```math
-\tau = 0
-```
-
-none passes through.
+If: τ = 0 none passes through.
 
 For many spacecraft thermal calculations, transmissivity is assumed to be zero.
 
@@ -680,11 +636,23 @@ The spacecraft reaches a thermal condition determined by the balance of these in
 
 # 10. Radiated Emissions and Solar Flux
 
-> **Source: Slide 12**
+> **Source: Slides 12–13**
 
-## Stefan-Boltzmann Law
+The spacecraft thermal balance depends on the heat it radiates to space and the heat it receives from external and internal sources.
 
-Thermal radiation emitted by a spacecraft surface is:
+The major terms developed in this section are:
+
+- **Qrad** — thermal radiation emitted by the spacecraft
+- **Qs** — absorbed direct solar radiation
+- **Qrs** — absorbed solar radiation reflected from a planet
+- **Qp** — absorbed planetary infrared radiation
+- **Qd** — electrical power dissipated onboard the spacecraft
+
+Together, these terms describe the major heat flows used in the simplified spacecraft thermal model.
+
+## Radiated Thermal Energy
+
+Thermal radiation emitted by a spacecraft surface is described by the **Stefan-Boltzmann Law**:
 
 ```math
 Q_{\text{rad}}
@@ -694,17 +662,15 @@ A\epsilon\sigma T^4
 
 where:
 
-- `Qrad` = radiated heat in W
-- `A` = surface area in m²
-- `ε` = emissivity
-- `σ` = Stefan-Boltzmann constant
-- `T` = absolute temperature in K
+- **Qrad** = radiated heat, W
+- **A** = radiating surface area, m²
+- **ε** = surface emissivity
+- **σ** = Stefan-Boltzmann constant
+- **T** = absolute surface temperature, K
 
-The fourth-power temperature dependence means radiated heat changes rapidly with temperature.
+The fourth-power dependence on temperature means that radiated heat changes rapidly as surface temperature changes.
 
----
-
-## Direct Solar Flux
+## Direct Solar Radiation
 
 Direct absorbed solar power is:
 
@@ -716,27 +682,43 @@ A G_s \alpha
 
 where:
 
-- `A` = illuminated surface area
-- `Gs` = solar flux
-- `α` = solar absorptivity
+- **Qs** = absorbed direct solar power, W
+- **A** = illuminated surface area, m²
+- **Gs** = incident solar flux, W/m²
+- **α** = solar absorptivity of the spacecraft surface
 
 At approximately 1 AU, the lecture assumes:
 
 ```math
-G_s \approx 1370\ \frac{W}{m^2}
+G_s
+\approx
+1370\ \frac{W}{m^2}
 ```
 
----
+Therefore, the amount of direct solar energy absorbed by a spacecraft surface depends primarily on:
 
-## Reflected Solar Flux
+- the incident solar flux;
+- the illuminated area; and
+- the absorptivity of the surface.
 
-Reflected solar radiation from a planet contributes:
+## Reflected Solar Radiation
+
+A planet can reflect incident sunlight toward the spacecraft.
+
+The absorbed reflected-solar power is:
 
 ```math
 Q_{rs}
 =
 A G_{rs}\alpha
 ```
+
+where:
+
+- **Qrs** = absorbed reflected-solar power, W
+- **A** = effective illuminated area, m²
+- **Grs** = reflected solar flux from the planet, W/m²
+- **α** = absorptivity of the spacecraft surface
 
 The reflected solar flux is:
 
@@ -748,15 +730,17 @@ a K G_s \sin^2\rho
 
 where:
 
-- `a` = planetary albedo
-- `K` = correction factor for reflected planetary energy
-- `Gs` = direct solar flux
-- `ρ` = angular radius of the planet
+- **a** = planetary albedo
+- **K** = correction factor for reflected planetary energy
+- **Gs** = direct solar flux, W/m²
+- **ρ** = angular radius of the planet as viewed from the spacecraft
 
 For Earth, the lecture uses approximately:
 
 ```math
-a \approx 0.3
+a
+\approx
+0.3
 ```
 
 The correction factor is:
@@ -771,15 +755,17 @@ K
 0.203\rho^2
 ```
 
-The factor:
+The term:
 
 ```math
 \sin^2\rho
 ```
 
-represents the planetary view factor and ranges from 0 to 1.
+represents the planetary view-factor contribution and ranges from 0 to 1.
 
-The angular radius is:
+## Planetary Angular Radius
+
+The angular radius of the planet is:
 
 ```math
 \rho
@@ -789,20 +775,36 @@ The angular radius is:
 
 where:
 
-- `Rp` = radius of the planet
-- `r` = spacecraft distance from the planet center
+- **ρ** = angular radius of the planet
+- **Rp** = radius of the planet
+- **r** = distance from the center of the planet to the spacecraft
 
 For Earth, the lecture uses:
 
 ```math
-R_p \approx 6370\ km
+R_p
+\approx
+6370\ \text{km}
 ```
 
----
+As spacecraft altitude increases, **ρ decreases**, meaning the planet occupies a smaller portion of the spacecraft's field of view.
 
-## Infrared Energy from a Planet
+At lower altitude:
 
-Planetary infrared heating is:
+- the planet fills a larger portion of the spacecraft's field of view;
+- reflected solar heating can be greater; and
+- planetary infrared heating can be greater.
+
+At larger distances:
+
+- the planet occupies a smaller portion of the field of view; and
+- planetary heating decreases.
+
+## Planetary Infrared Radiation
+
+A planet also emits infrared thermal radiation.
+
+The absorbed planetary infrared power is:
 
 ```math
 Q_p
@@ -810,7 +812,14 @@ Q_p
 A G_p \alpha
 ```
 
-where planetary IR flux is modeled as:
+where:
+
+- **Qp** = absorbed planetary infrared power, W
+- **A** = effective spacecraft surface area, m²
+- **Gp** = planetary infrared flux, W/m²
+- **α** = absorptivity of the spacecraft surface at the relevant wavelength
+
+The planetary infrared flux is modeled as:
 
 ```math
 G_p
@@ -823,79 +832,83 @@ T_p^4
 
 where:
 
-- `εp` = emissivity of the planet
-- `Tp` = planetary temperature
-- `ρ` = angular radius / view-factor term
+- **εp** = emissivity of the planet
+- **σ** = Stefan-Boltzmann constant
+- **Tp** = planetary temperature, K
+- **ρ** = angular radius of the planet
 
 For the lecture's Earth assumptions:
 
 ```math
-\epsilon_p \approx 0.5
+\epsilon_p
+\approx
+0.5
 ```
 
 and:
 
 ```math
-T_p \approx 300\ K
+T_p
+\approx
+300\ \text{K}
 ```
 
-At Earth's infrared wavelength, the spacecraft surface absorptivity can be approximated using its emissivity:
+At Earth's infrared wavelengths, the spacecraft surface absorptivity can be approximated using its emissivity:
 
 ```math
-\alpha \approx \epsilon_s
+\alpha
+\approx
+\epsilon_s
 ```
 
----
+where **εs** is the emissivity of the spacecraft surface.
 
-# 11. Planetary View Factor and Effective Area
+## Effective Area and Spacecraft Orientation
 
 > **Source: Slide 13**
 
-The amount of planetary energy reaching a spacecraft depends strongly on altitude.
+The amount of planetary energy absorbed by a spacecraft surface also depends on its orientation relative to the planet.
 
-At low altitude:
+The lecture uses a simplified cube-shaped spacecraft with:
 
-- The planet fills a large portion of the spacecraft's field of view.
-- Planetary infrared and reflected solar heating can be significant.
+- one zenith panel;
+- four side panels; and
+- one nadir panel.
 
-At large distance:
+### Nadir-Facing Surface
 
-- The planet occupies a much smaller fraction of the field of view.
-- Planetary heating decreases.
+A nadir-facing surface points directly toward the planet.
 
-The angular radius `ρ` is used to characterize this geometry.
-
----
-
-## Effective Area
-
-The effective area depends on how a spacecraft surface is oriented relative to the planet.
-
-The lecture uses a simple spacecraft cube with:
-
-- One zenith panel
-- Four side panels
-- One nadir panel
-
-### Nadir Surface
-
-A nadir-facing surface directly faces the planet.
+Its effective area is:
 
 ```math
-A_e = A
+A_e
+=
+A
 ```
 
-It receives the full modeled planetary energy available to that surface.
+where:
 
-### Zenith Surface
+- **Ae** = effective area
+- **A** = physical surface area
 
-A zenith-facing surface points away from the planet.
+The nadir-facing surface therefore receives the full modeled planetary energy available to that surface.
+
+### Zenith-Facing Surface
+
+A zenith-facing surface points directly away from the planet.
+
+Its effective area is:
 
 ```math
-A_e = 0
+A_e
+=
+0
 ```
 
-### Side Surface
+The zenith-facing surface therefore receives no direct planetary heating in the simplified model.
+
+### Side-Facing Surface
 
 For a side panel:
 
@@ -905,61 +918,106 @@ A_e
 0.5A(1-\cos\rho)
 ```
 
-The factor `0.5` represents the geometry in which only half of the planet is visible from the side-facing surface.
+where:
 
-The factor:
+- **Ae** = effective area
+- **A** = physical side-panel area
+- **ρ** = angular radius of the planet
+
+The factor **0.5** represents the geometry in which only half of the planet is visible from the side-facing surface.
+
+The term:
 
 ```math
 1-\cos\rho
 ```
 
-accounts for the angular extent of the planet.
+accounts for the angular extent of the visible planet.
 
 Each spacecraft surface can therefore have a different effective area for:
 
-- Reflected solar input
-- Planetary infrared input
+- reflected solar input; and
+- planetary infrared input.
 
----
-
-# 12. Dissipated Spacecraft Power
+## Dissipated Spacecraft Power
 
 > **Source: Slide 13**
 
-`Qd` is the total electrical power dissipated onboard the spacecraft as heat.
+In addition to external heating, spacecraft electronics and other electrical devices generate heat internally.
 
-Most electrical power eventually becomes thermal energy inside the spacecraft.
+**Qd** is the total electrical power dissipated onboard the spacecraft as heat.
 
 This includes:
 
-- Electronics dissipation
-- Heater power
+- electronics dissipation;
+- heater power; and
+- electrical inefficiencies that ultimately become heat.
+
+Most electrical power consumed onboard the spacecraft eventually becomes thermal energy.
+
+### Telecom RF Power
 
 The lecture excludes telecom RF power that is actually radiated away from the spacecraft.
 
-For an RF amplifier:
+For an RF amplifier, the approximate thermal dissipation is:
 
 ```text
-DC input power - transmitted RF power
+Thermal Dissipation = DC Input Power − Transmitted RF Power
 ```
 
-is primarily dissipated as amplifier inefficiency and therefore becomes spacecraft heat.
+The transmitted RF energy leaves the spacecraft, while the remaining electrical power is primarily converted into heat through amplifier inefficiency.
 
----
+## Simplified Spacecraft Thermal Model
 
-## Simplified Spacecraft Model
+For preliminary thermal analysis, some appendages may be modeled separately or neglected.
 
-For preliminary thermal analysis, appendages can be neglected.
+Examples include:
 
-Examples:
+- solar arrays;
+- deployed instruments; and
+- antennas.
 
-- Solar arrays
-- Deployed instruments
-- Antennas
+A solar array may generate electrical power for the spacecraft, but the simplified spacecraft thermal model focuses on the electrical power that is ultimately dissipated as heat inside the spacecraft rather than the thermal state of the array itself.
 
-A solar array may deliver electrical power to the spacecraft, but the simplified spacecraft thermal model uses the power eventually dissipated in the spacecraft electronics rather than the array's own thermal state.
+Similarly, if an instrument is mounted at the end of a long boom and modeled as a separate thermal system, the electrical power delivered across the boom or harness interface may be subtracted from the main spacecraft **Qd** term.
 
-Similarly, if an instrument is located at the end of a long boom, power delivered across the boom/harness interface may be subtracted from the main spacecraft dissipated-power term when the instrument is thermally modeled separately.
+## Combined Thermal Relationship
+
+The concepts in this section connect directly back to the spacecraft thermal power balance.
+
+The major incoming heat terms are:
+
+```math
+Q_{\text{in}}
+=
+Q_s
++
+Q_{rs}
++
+Q_p
++
+Q_d
++
+Q_o
+```
+
+while the primary outgoing thermal-radiation term is:
+
+```math
+Q_{\text{rad}}
+=
+A\epsilon\sigma T^4
+```
+
+For the simplified spacecraft model used in the lecture, these relationships allow the thermal engineer to estimate how spacecraft temperature changes with:
+
+- solar exposure;
+- planetary distance;
+- spacecraft altitude;
+- spacecraft attitude;
+- surface optical properties;
+- radiator area; and
+- internal electrical-power dissipation.
 
 ---
 
