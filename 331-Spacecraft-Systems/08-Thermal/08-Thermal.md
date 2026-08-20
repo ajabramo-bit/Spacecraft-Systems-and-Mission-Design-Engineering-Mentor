@@ -27,18 +27,16 @@ The lecture develops the spacecraft thermal power balance, defines the optical p
 - [8. Surface Coatings and Treatments](#8-surface-coatings-and-treatments)
 - [9. Thermal Power Balance](#9-thermal-power-balance)
 - [10. Radiated Emissions and Solar Flux](#10-radiated-emissions-and-solar-flux)
-- [11. Planetary View Factor and Effective Area](#11-planetary-view-factor-and-effective-area)
-- [12. Dissipated Spacecraft Power](#12-dissipated-spacecraft-power)
-- [13. Multi-Layer Insulation](#13-multi-layer-insulation)
-- [14. Heat Pipes](#14-heat-pipes)
-- [15. Louvers](#15-louvers)
-- [16. Heaters and Thermostats](#16-heaters-and-thermostats)
-- [17. Thermal Modeling](#17-thermal-modeling)
-- [18. Mission Example](#18-mission-example)
-- [19. Thermal Trade Study](#19-thermal-trade-study)
-- [20. Thermal-Vacuum Testing](#20-thermal-vacuum-testing)
-- [21. Thermal Design Process](#21-thermal-design-process)
-- [22. Lecture Summary](#22-lecture-summary)
+- [11. Multi-Layer Insulation](#11-multi-layer-insulation)
+- [12. Heat Pipes](#12-heat-pipes)
+- [13. Louvers](#13-louvers)
+- [14. Heaters and Thermostats](#14-heaters-and-thermostats)
+- [15. Thermal Modeling](#15-thermal-modeling)
+- [16. Mission Example](#16-mission-example)
+- [17. Thermal Trade Study](#17-thermal-trade-study)
+- [18. Thermal-Vacuum Testing](#18-thermal-vacuum-testing)
+- [19. Thermal Design Process](#19-thermal-design-process)
+- [20. Lecture Summary](#20-lecture-summary)
 
 ---
 
@@ -914,8 +912,7 @@ For the simplified model, use the **power dissipated within the spacecraft** and
 Similarly, if an instrument is located at the end of a long boom, subtract the power provided to that instrument across the boom/harness interface from the spacecraft dissipated-power term if the instrument is being treated separately.
 
 
-
-# 13. Multi-Layer Insulation
+# 11. Multi-Layer Insulation
 
 > **Source: Slide 14**
 
@@ -941,7 +938,7 @@ The gold appearance commonly associated with spacecraft is often produced by thi
 
 ---
 
-# 14. Heat Pipes
+# 12. Heat Pipes
 
 > **Source: Slide 15**
 
@@ -984,7 +981,7 @@ Heat pipes allow thermal energy to be moved efficiently without requiring a conv
 
 ---
 
-# 15. Louvers
+# 13. Louvers
 
 > **Source: Slide 16**
 
@@ -1026,7 +1023,7 @@ When more heat rejection is needed, the louvers open to expose the radiator more
 
 ---
 
-# 16. Heaters and Thermostats
+# 14. Heaters and Thermostats
 
 > **Source: Slide 17**
 
@@ -1064,7 +1061,7 @@ This is especially important when the spacecraft computer:
 
 ---
 
-# 17. Thermal Modeling
+# 15. Thermal Modeling
 
 > **Source: Slide 18**
 
@@ -1101,7 +1098,7 @@ Thermal modeling supports:
 
 ---
 
-# 18. Mission Example
+# 16. Mission Example
 
 > **Source: Slides 19–20**
 
@@ -1185,7 +1182,7 @@ The spacecraft and instrument bench are modeled as constant-temperature boundary
 
 ---
 
-# 19. Thermal Trade Study
+# 17. Thermal Trade Study
 
 > **Source: Slide 21**
 
@@ -1210,7 +1207,7 @@ This trade demonstrates that thermal architecture can be driven by highly sensit
 
 ---
 
-# 20. Thermal-Vacuum Testing
+# 18. Thermal-Vacuum Testing
 
 > **Source: Slides 22–23**
 
@@ -1297,7 +1294,7 @@ The key idea is that TVAC does not simply expose hardware to one hot and one col
 
 ---
 
-# 21. Thermal Design Process
+# 19. Thermal Design Process
 
 > **Source: Slide 24**
 
@@ -1421,7 +1418,7 @@ The process is iterative rather than linear.
 
 ---
 
-# 22. Lecture Summary
+# 20. Lecture Summary
 
 > **Source: Slides 1–24**
 
