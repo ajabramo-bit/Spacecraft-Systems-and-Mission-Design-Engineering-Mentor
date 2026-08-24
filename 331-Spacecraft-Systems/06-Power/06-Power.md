@@ -123,16 +123,16 @@ The GRAIL power system included:
 
 > **Source: Slide 3-4**
 
-# Power generation
+### Power generation
 - solar power nuclear power
 
-# Energy storage
+### Energy storage
 - batteries
 - fuel cells
 - flywheels
 - supercapacitors
 
-# Power control
+### Power control
 - power regulation
 - power distribution
 - energy management
