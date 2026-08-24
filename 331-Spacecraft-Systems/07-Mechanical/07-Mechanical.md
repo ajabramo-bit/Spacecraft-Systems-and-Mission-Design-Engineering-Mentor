@@ -1718,61 +1718,31 @@ The following equations are used for basic spacecraft structural stress and defo
 
 ## Thermal Analysis
 
-Determines:
+**Purpose:** Determines robustness of spacecraft to operational and survival temperatures; determines stresses, strains, and deflections caused by temperature changes.
 
-- Operational-temperature robustness
-- Survival-temperature robustness
-- Thermal stresses
-- Thermal strains
-- Thermally induced deflections
+**Strategy:** Thermal analysis software analyzes temperature distributions and thermal stresses to predict thermal loads on spacecraft due to space environment.
 
-Thermal software predicts:
-
-- Temperature distributions
-- Thermal loads
-- Thermal stresses
-
-Example tools:
+**Examples:**
 
 - Thermal Desktop
-- SINDA
+- Sinda
 
----
+## Thermal Testing
 
-## Thermal Vacuum Testing
+### Thermal Vacuum Testing (TVAC)
 
-TVAC verifies spacecraft performance under:
+**Purpose:** Ensures the spacecraft can withstand the extreme temperatures and vacuum conditions of space.
 
-- Vacuum
-- Hot temperatures
-- Cold temperatures
+**Strategy:** Places spacecraft in a thermal vacuum chamber, temperatures cycle and hold through extremes of mission profile.
 
-### Thermal Balance
+**Types:**
 
-Steady-state conditions used to validate thermal models.
+- **Thermal balance:** Steady-state conditions to validate thermal models.
+- **Thermal cycle:** Cycling conditions to test resilience to repeated temperature changes — e.g., due to repeated eclipses (can cause expansion, contraction, fatigue).
+- **Thermal soak:** Prolonged exposure to a single hot and cold temperature to test resilience to extremes.
+- **Thermal shock:** Quick transitions between hot and cold temperatures to test resilience to rapid temperature change — e.g., due to eclipse exit.
 
-### Thermal Cycle
-
-Repeated hot/cold cycling.
-
-Used to evaluate effects such as:
-
-- Expansion
-- Contraction
-- Fatigue
-- Repeated eclipses
-
-### Thermal Soak
-
-Prolonged exposure to a hot or cold extreme.
-
-### Thermal Shock
-
-Rapid transition between temperature extremes.
-
-Example:
-
-- Eclipse exit
+**Figure description:** The slide shows an example spacecraft thermal analysis model and Europa Clipper in a TVAC chamber.
 
 ---
 
@@ -1780,118 +1750,64 @@ Example:
 
 > **Source: Slide 39**
 
-Fatigue can occur under repetitive loads that are below yield or ultimate strength.
+Fatigue cycling occurs for repetitive loads often lower than **yield or ultimate strength** — cracks form and propagate through system until sudden fracture.
 
-Cracks can:
+### Examples
 
-1. Form.
-2. Propagate.
-3. Eventually cause sudden fracture.
+- Spacecraft tanks that undergo multiple pressurization cycles.
+- Mechanisms that are repeated frequently (e.g., solar array gimbals, robotics motors).
 
-Examples:
+### Endurance Limit
 
-- Repeated tank pressurization
-- Solar-array gimbals
-- Robotics motors
-- Frequently cycled mechanisms
+**Endurance Limit:** Stress amplitude under which fatigue will not occur.
 
-## Endurance Limit
+### Fatigue Life
 
-Stress amplitude below which fatigue is not expected to occur.
+**Fatigue Life:** Number of cycles of a load a structure can sustain without fatigue.
 
-## Fatigue Life
+- Defined in S-N (Stress vs # of cycles) curves.
 
-Number of load cycles a structure can withstand without fatigue failure.
+FEA can support fatigue analysis, but typically needs to be validated with testing.
 
-Represented using:
+## Fatigue and Durability Testing
 
-```text
-S-N curves
-```
+**Purpose:** Assesses long-term material performance under repeated or cyclic loads.
 
-which plot stress against number of cycles.
+**Strategy:** Applies repeated loading cycles to components to test for fatigue.
 
-FEA can support fatigue analysis but generally requires test validation.
-
-## Fatigue Testing
-
-Repeated loading is applied to components to assess long-term durability.
+**Figure description:** The slide shows an S-N curve plotting stress against number of cycles, including representative curves for steel and aluminum and an endurance-limit region.
 
 ---
 
-# 23. Other Mechanical Testing
+# 23. Other Testing
 
 > **Source: Slide 40**
 
 ## Mass Properties Testing
 
-Verifies:
+**Purpose:** Ensure total mass, CG, MOI, POI are within specifications.
 
-- Total mass
-- CG
-- MOI
-- POI
+**Strategies:**
 
-### Mass
-
-Measured using:
-
-- Precision scale
-- Load cell
-
-### Center of Gravity
-
-The spacecraft is mounted on a fixture that allows it to pivot until balanced.
-
-The balance location is used to determine CG.
-
-### MOI and POI
-
-The spacecraft is placed on a spin table and rotated about principal axes.
-
-Measured angular response is used to determine inertia properties.
-
----
+- **Mass:** Uses precision scale or load cell.
+- **CG:** Spacecraft is mounted on a fixture that allows it to pivot until it balances (minimal torque); location where it balances is used to determine the CG.
+- **MOI and POI:** Spacecraft is placed on a spin table and rotated around each principal axis; angular response (frequency and acceleration) are measured and used to calculate MOI and POI for each axis.
 
 ## Life Testing
 
-Assesses durability for:
+**Purpose:** Assesses durability of spacecraft components for expected operational environment and mission duration.
 
-- Mission duration
-- Expected operational environment
+**Strategy:** Components are subjected to mission-like conditions (loads, vibrations, temperatures) over an extended period, typically ~1.5 to 2× life for margin.
 
-Components are subjected to mission-like:
-
-- Loads
-- Vibrations
-- Temperatures
-
-Typical test life:
-
-```text
-~1.5–2× mission life
-```
-
-Accelerated testing can use higher loads but must be evaluated carefully to ensure it remains representative.
-
----
+- Can do accelerated testing at higher loads, but requires careful assessment to ensure this is representative.
 
 ## Bakeout
 
-Purpose:
+**Purpose:** Reduces outgassing, prevents contamination of spacecraft to itself (contamination control) and other planetary bodies (planetary protection).
 
-- Reduce outgassing
-- Prevent self-contamination
-- Support planetary protection
+**Strategy:** Spacecraft is elevated to high temperature (~100 to 125 °C) in vacuum (typically part of TVAC testing); post bakeout inspection ensures cleanliness is met.
 
-Strategy:
-
-- Heat spacecraft in vacuum
-- Typical temperature:
-  - ~100–125 °C
-- Often performed as part of TVAC
-
-A post-bakeout inspection verifies cleanliness.
+**Figure description:** The slide shows a spacecraft mounted on equipment used for spacecraft mass-properties testing.
 
 ---
 
@@ -1899,429 +1815,207 @@ A post-bakeout inspection verifies cleanliness.
 
 > **Source: Slides 41–48**
 
-The lecture presents the mechanical subsystem lifecycle as:
+Slide 41 introduces the **Mechanical Subsystem Design Process**.
+
+## Design Process Overview
+
+> **Source: Slide 42**
+
+The overall mechanical subsystem design process is:
 
 ```text
-Define Mechanical Requirements
-↓
-Define Mechanical Architecture
-↓
-Select Hardware + Develop FSW
-↓
-Build, Integrate, and Test
-↓
-Deliver to Spacecraft ATLO
-↓
-Operate Spacecraft
+Define mech subsystem requirements
+        ↓
+Define mech subsystem architecture
+        ↓
+Select mech subsystem hardware
+        ↓
+Build, integrate, and test mech subsystem
+        ↓
+Deliver mech subsystem to Spacecraft ATLO
+        ↓
+Operate Spacecraft with mech subsystem
 ```
+
+FSW development occurs alongside mechanical hardware development:
+
+```text
+Develop FSW code to operate mech subsystem
+```
+
+The process is divided into:
+
+| Phase | Mechanical Development |
+|---|---|
+| **Phase A** | Define mech subsystem requirements |
+| **Phase B/C** | Define mech subsystem architecture; select mech subsystem hardware; develop FSW code to operate mech subsystem; design mech subsystem |
+| **Phase D** | Build, integrate, and test mech subsystem; deliver mech subsystem to Spacecraft ATLO |
+| **Phase E** | Operate Spacecraft with mech subsystem |
+
+**Figure description:** The slide presents the mechanical development process as a connected flowchart. Circular arrows around the requirements, architecture, design, and build/test portions emphasize that the process is iterative.
 
 ---
 
-## Phase A — Requirements
+## Requirements
 
 > **Source: Slide 43**
 
-Develop Level-4 mechanical requirements from Level-3 flight-system requirements.
+### Mechanical Subsystem Requirements Development
 
-Examples:
+Develop L4 mechanical subsystem requirements in response to L3 flight system requirements, such as:
 
-### Mass
+- **The mechanical subsystem shall have a mass less than 1,500 kg** → drives sizing, materials.
+- **The mechanical subsystem shall have a resonant frequency greater than 25 Hz** → drives sizing, materials, layout, launch restraints.
+- **The mechanical subsystem shall survive a static launch load of 6g axial and 2g lateral** → drives sizing, materials, layout.
+- **The mechanical subsystem shall ensure a 65 deg FOV for the Camera** → drives configuration.
 
-```text
-Mechanical subsystem mass < 1,500 kg
-```
-
-Drives:
-
-- Sizing
-- Materials
-
-### Resonant Frequency
-
-```text
-Resonant frequency > 25 Hz
-```
-
-Drives:
-
-- Sizing
-- Materials
-- Layout
-- Launch restraints
-
-### Static Launch Load
-
-```text
-6 g axial
-2 g lateral
-```
-
-Drives:
-
-- Sizing
-- Materials
-- Layout
-
-### Camera Field of View
-
-```text
-65° FOV
-```
-
-Drives configuration.
+**Figure description:** The process diagram highlights the requirements-development portion of Phase A while the later architecture, hardware, FSW, I&T, delivery, and operations stages remain visible in the background.
 
 ---
 
-## Phase B/C — Architecture
+## Architecture
 
 > **Source: Slide 44**
 
-Perform mechanical architecture trades and sizing analyses for:
+### Mechanical Subsystem Architecture Development
 
-- Primary structure
-- Secondary structure
-- Driving loads
-- Mechanism needs
-- Configuration layout
-- Material selection
-- Mass
-- Mass properties
+Perform key mechanical architecture trades and sizing analyses, such as:
+
+- Primary and secondary structure sizing for driving loads.
+- Mechanism needs.
+- Configuration layout.
+- Materials selection.
+- Mass and mass properties.
+
+**Figure description:** The process diagram highlights the mechanical architecture stage in Phase B/C.
 
 ---
 
-## Phase B/C — Design
+## Design
 
 > **Source: Slide 45**
 
-Mechanical design includes:
+### Mechanical Subsystem Design
 
-- Select materials
-- Design structure
-- Create CAD configuration
-- Create drawings
-- Create MEL
-- Perform structural analysis
-- Iterate design
+- Select materials, design structure.
+- Layout configuration (CAD), create drawings.
+- Create MEL.
+- Perform structural analysis, iterate design accordingly.
+- Design relevant FSW code:
+  - Deployments.
+  - Solar array and HGA gimbal articulations.
+  - Robotic motor articulations.
 
-Relevant FSW may control:
-
-- Deployments
-- Solar-array gimbals
-- HGA gimbals
-- Robotic motors
+**Figure description:** The process diagram highlights hardware selection and FSW development as the mechanical subsystem moves through Phase B/C design.
 
 ---
 
-## Phase D — Build and Test
+## Build and Test
 
 > **Source: Slide 46**
 
-- Integrate structure and mechanisms
-- Perform subsystem-level:
-  - Qualification testing
-  - Protoflight testing
-  - Acceptance testing
+### Mechanical Subsystem Build and I&T
 
-Test environments include:
+- Integrate structure and mechanisms.
+- Perform subsystem-level qualification, protoflight, and/or acceptance testing, including:
+  - Vibration.
+  - Shock.
+  - Acoustics.
+  - Thermal.
 
-- Vibration
-- Shock
-- Acoustics
-- Thermal
+**Figure description:** The process diagram highlights the "Build, integrate, and test mech subsystem" block in Phase D.
 
 ---
 
-## Phase D — Delivery to ATLO
+## Deliver
 
 > **Source: Slide 47**
 
-Deliver the mechanical subsystem for integration with the rest of the spacecraft.
+### Mechanical Subsystem Delivery
 
-System-level environmental testing includes:
+- Deliver mechanical subsystem into ATLO for integration with rest of flight hardware.
+- Execute system-level environmental testing, including:
+  - Vibration.
+  - Shock.
+  - Acoustics.
+  - Thermal.
+- Execute deployment tests for:
+  - Solar arrays.
+  - Booms.
+  - Etc.
 
-- Vibration
-- Shock
-- Acoustics
-- Thermal
-
-Execute deployment testing for:
-
-- Solar arrays
-- Booms
-- Other deployables
+**Figure description:** The process diagram highlights delivery of the mechanical subsystem to Spacecraft ATLO during Phase D.
 
 ---
 
-## Phase E — Operations
+## Operate
 
 > **Source: Slide 48**
 
-During flight:
+### Mechanical Subsystem Operation
 
-- Release deployables, usually during early operations
-- Trend actuator performance
-  - Solar-array gimbal
-  - HGA gimbal
-  - Robotics motors
-- Update FSW when needed
+- Release deployables, typically in early operations (solar array, booms, etc).
+- Perform trending on actuators (solar array gimbal, HGA gimbal, robotics motors, etc).
+- Update FSW if needed in order to accommodate mechanism operation (e.g., changes to speed, fault limits).
 
-Possible FSW changes include:
-
-- Actuation speed
-- Fault limits
-- Mechanism operating parameters
+**Figure description:** The final process diagram highlights spacecraft operation with the mechanical subsystem during Phase E.
 
 ---
 
-# 25. Beagle 2 Case Study
+# 25. Case Studies
 
-> **Source: Slides 49–50**
+> **Source: Slide 49**
+
+Slide 49 introduces the **Case Studies** section.
+
+---
+
+# 26. Case Study: Beagle 2
+
+> **Source: Slide 50**
 
 Beagle 2 was an ESA Mars probe launched in 2003 as part of Mars Express.
 
-It successfully separated from Mars Express but did not establish communication after landing.
+- Successfully separated from Mars Express, but failed to establish communication after landing.
 
 ## Key Failure
 
-One or more solar panels apparently did not fully deploy.
+One or more solar panels did not fully deploy, likely obstructing the antenna.
 
-The incomplete deployment likely obstructed the communications antenna.
-
-**Figure description:** The intended configuration shows all petal-like solar panels fully open. The inferred actual configuration from later imagery shows only a subset apparently deployed, preventing the final configuration required for communications.
-
----
-
-## Contributing Causes
+## Causes
 
 ### No Communication Redundancy
 
-The spacecraft relied on a single communication path.
-
-The deployment failure made that path unusable.
+Relied on a single communication path, which became unusable due to the deployment issue.
 
 ### Landing Challenges
 
-Unexpected atmospheric conditions during EDL may have damaged or affected solar-array deployment hardware.
+The EDL sequence had unexpected atmospheric conditions, potentially damaging solar array deployment hardware.
 
 ### Deployment Complexity
 
-Communications success depended on complete solar-array deployment.
-
-A mechanical deployment therefore became a prerequisite for telecom functionality.
+The success of communications depended on complete solar array deployment.
 
 ### Limited Testing
 
-Budget constraints limited testing under realistic conditions, particularly deployment testing after representative environments.
-
----
+Tight budget constraints limited extensive testing at realistic conditions, particularly of critical deployments after relevant environments.
 
 ## Lessons Learned
 
-### Redundant Communication Paths
+### Redundant Comm Paths
 
-Multiple paths reduce single-point failure risk.
+Multiple communication paths should be included to prevent a single point of failure.
 
 ### Robust Deployment Systems
 
 Minimize dependencies in deployment sequences.
 
-### Enhanced Testing
+### Enhanced Testing for Critical Systems
 
-Allocate sufficient:
-
-- Budget
-- Schedule
-- Test resources
-
-to high-risk operations such as:
-
-- EDL
-- Deployments
+Allocate budget and schedule resources to enable comprehensive testing at realistic conditions, especially for high-risk operations like EDL and deployments.
 
 ### Improved Environmental Modeling
 
-Use accurate and adaptive atmospheric models for Martian conditions.
+Ensure accurate and adaptive atmospheric models for Martian conditions.
 
-The case illustrates a central systems-engineering lesson:
-
-**A mechanical deployment failure can propagate into a complete mission-level communications failure when subsystem dependencies are not sufficiently fault tolerant.**
-
----
-
-# 26. Lecture Summary
-
-> **Source: Slides 1–50**
-
-The mechanical subsystem provides the spacecraft's physical structure, interfaces, mechanisms, packaging, and mechanical-environment protection.
-
-Its responsibilities include:
-
-- Primary structure
-- Secondary structure
-- Tertiary structure
-- Mechanisms
-- Deployables
-- Launch-vehicle interfaces
-- Payload interfaces
-- Harness accommodation
-- Configuration
-- Mass properties
-
-Mechanical design is strongly coupled to every spacecraft subsystem.
-
-Configuration must simultaneously satisfy:
-
-- Payload FOVs
-- Telecom FOVs
-- Thruster plume KOZs
-- ACS sensor alignment
-- Thermal radiator geometry
-- Harness routing
-- Launch fairing
-- Mass properties
-- Testability
-
-Mechanical requirements include more than simple strength.
-
-Important requirements include:
-
-- Strength
-- Structural response
-- Structural life
-- Natural frequency
-- Mass properties
-- Damping
-- Stiffness
-- Dynamic envelope
-- Positional stability
-- Mechanical interfaces
-
-Materials are selected based on:
-
-- Density
-- Strength
-- Stiffness
-- Temperature tolerance
-- CTE
-- Thermal conductivity
-- Radiation resistance
-- Manufacturability
-- Cost
-
-Common structural approaches include:
-
-- Skin-frame
-- Sandwich panels
-- Isogrids
-- Cylindrical structures
-
-Mechanisms include:
-
-- Actuators
-- Gimbals
-- Hinges
-- Restraints
-- Locks
-- Pyrotechnic releases
-- Springs
-- Motors
-
-The mechanical subsystem must survive:
-
-- Axial acceleration
-- Lateral acceleration
-- Sine vibration
-- Random vibration
-- Acoustics
-- Shock
-- Thermal cycling
-- Radiation
-- MMOD
-- Repetitive fatigue loads
-
-Key structural equations include:
-
-```math
-\sigma = \frac{F}{A}
-```
-
-```math
-\tau = \frac{V}{A}
-```
-
-```math
-\epsilon = \frac{\Delta L}{L_0}
-```
-
-```math
-\sigma = E\epsilon
-```
-
-```math
-\sigma = \frac{My}{I}
-```
-
-```math
-\tau = \frac{Tr}{J}
-```
-
-```math
-\sigma_{\text{thermal}} = E\alpha\Delta T
-```
-
-and:
-
-```math
-SF
-=
-\frac{\text{Material Strength}}
-{\text{Applied Stress}}
-```
-
-Analysis and test are tightly coupled.
-
-Major analysis areas include:
-
-- Static/stress
-- Coupled loads
-- Finite-element analysis
-- Dynamics
-- Modal response
-- Thermal response
-- Fatigue
-
-Major test areas include:
-
-- Static loads
-- Sine vibration
-- Random vibration
-- Shock
-- Acoustics
-- Modal testing
-- TVAC
-- Fatigue
-- Mass properties
-- Life testing
-- Bakeout
-
-The design process is iterative:
-
-```text
-Requirements
-↓
-Architecture
-↓
-Materials / Structure / Mechanisms / Configuration
-↓
-Analysis
-↓
-Hardware and FSW Design
-↓
-Build and Test
-↓
-ATLO and System-Level Test
-↓
-Flight Operations
-```
-
-The Beagle 2 case study demonstrates why mechanical design must be treated as a spacecraft-level systems problem. A solar-array deployment issue likely prevented antenna operation, turning a mechanism failure into loss of communications and therefore loss of mission.
+**Figure description:** The upper image shows the intended Beagle 2 deployment with the solar panels completely opened around the lander. The lower Mars-orbit image shows the assumed actual deployment, with the interpreted panel arrangement indicating that the complete deployment sequence likely did not occur.
