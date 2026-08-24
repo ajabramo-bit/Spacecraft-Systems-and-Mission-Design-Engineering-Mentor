@@ -39,10 +39,11 @@ The lecture uses an asteroid sample-return spacecraft as a running configuration
 - [20. Dynamics and Modal Analysis](#20-dynamics-and-modal-analysis)
 - [21. Thermal Analysis and Testing](#21-thermal-analysis-and-testing)
 - [22. Fatigue Analysis and Testing](#22-fatigue-analysis-and-testing)
-- [23. Other Mechanical Testing](#23-other-mechanical-testing)
+- [23. Other Testing](#23-other-testing)
 - [24. Mechanical Subsystem Design Process](#24-mechanical-subsystem-design-process)
-- [25. Beagle 2 Case Study](#25-beagle-2-case-study)
-- [26. Lecture Summary](#26-lecture-summary)
+- [25. Case Studies](#25-case-studies)
+- [26. Case Study: Beagle 2](#26-case-study-beagle-2)
+- [27. Lecture Summary](#27-lecture-summary)
 
 ---
 
@@ -2019,3 +2020,24 @@ Allocate budget and schedule resources to enable comprehensive testing at realis
 Ensure accurate and adaptive atmospheric models for Martian conditions.
 
 **Figure description:** The upper image shows the intended Beagle 2 deployment with the solar panels completely opened around the lander. The lower Mars-orbit image shows the assumed actual deployment, with the interpreted panel arrangement indicating that the complete deployment sequence likely did not occur.
+
+# 27. Lecture Summary
+
+> **Source: Slides 1–50**
+
+The mechanical subsystem provides the **structure, mechanisms, interfaces, and physical configuration** required to support the spacecraft and payload throughout the mission.
+
+Key takeaways:
+
+- **Structures:** Primary, secondary, and tertiary structures support spacecraft components and transfer loads.
+- **Materials:** Material selection depends on strength, stiffness, mass, thermal behavior, radiation resistance, manufacturability, and cost.
+- **Mechanisms:** Deployables such as solar arrays, antennas, booms, and instruments require reliable actuation, restraints, and deployment systems.
+- **Configuration:** Spacecraft layout is driven by payload accommodations, mass properties, FOVs, KOZs, subsystem interfaces, and testability.
+- **Launch Environment:** The spacecraft must survive acceleration, vibration, acoustics, shock, and other launch loads.
+- **Structural Analysis:** Stress, deformation, dynamics, modal response, thermal effects, and fatigue must be analyzed to verify structural performance.
+- **Testing:** Qualification, protoflight, acceptance, vibration, shock, acoustic, modal, thermal, fatigue, mass-properties, life, and bakeout testing are used throughout development.
+- **Design Process:** Mechanical development progresses from requirements → architecture → design → build/test → ATLO → operations, with iteration throughout.
+- **Beagle 2:** The case study demonstrates how deployment failures, limited redundancy, and insufficient realistic testing can lead to mission-level failure.
+
+Overall, mechanical design must ensure the spacecraft can **survive its environments, maintain required configuration and alignment, support every other subsystem, and operate reliably throughout the mission**.
+
