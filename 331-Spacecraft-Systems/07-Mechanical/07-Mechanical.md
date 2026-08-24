@@ -1586,8 +1586,8 @@ Testing feeds analytical-model validation.
 | | Qualification | Protoflight | Acceptance |
 |---|---|---|---|
 | Purpose | Demonstrate robust design margin | Verify flight design with sufficient margin when units are limited | Verify each flight unit |
-| Hardware | Prototype, not flown | Actual flight hardware | Every flight unit |
-| Levels | ~1.5–2× expected operational limits | Slightly above operational, below full qualification | At or slightly below operational limits |
+| Conducted On... | Prototype, not flown | Actual flight hardware | Every flight unit |
+| Conditions | ~1.5–2× expected operational limits | Slightly above operational, below full qualification | At or slightly below operational limits |
 | Outcome | Demonstrates design robustness | Demonstrates flight hardware survives mission without overstress | Demonstrates functionality/manufacturing quality |
 | Examples | High-level loads, vibe, shock, TVAC | Moderate-level loads, vibe, shock, TVAC | Standard-level loads, vibe, shock, TVAC |
 
