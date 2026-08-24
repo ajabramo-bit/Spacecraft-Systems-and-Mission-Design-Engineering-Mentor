@@ -776,99 +776,75 @@ The lecture presents a historical progression of spacecraft battery technologies
 
 > **Source: Slide 18**
 
-## Battery Capacity
+### Total Capacity of Battery, in Ampere-Hours (A-hr)
 
-Battery capacity in ampere-hours describes current delivery over time.
+Amount of current a battery can deliver for a specified time period.
+
+- 40 Amps for 2 hr = 80 A-hr
 
 ```math
-C_{\text{battery}}(Ah)
+Capacity\ (Ahr) = Current\ (A) \times Time\ (hr)
+```
+
+### Stored Energy of Battery, in Watt-Hours (W-hr)
+
+Total amount of energy a battery can provide (depends on voltage).
+
+- 80 A-hr at 12V = 960 Whr
+
+```math
+Energy_{Battery}\ (Whr)
 =
-I(A)t(hr)
+Capacity\ (Ahr) \times Voltage\ (V)
 ```
 
-Example:
+### Energy of Load, in Watt-Hours (W-hr)
+
+Total amount of energy taken out of battery from spacecraft power loads.
 
 ```math
-40\ A \times 2\ hr = 80\ Ah
-```
-
----
-
-## Stored Battery Energy
-
-Stored energy depends on capacity and voltage.
-
-```math
-E_{\text{battery}}(Wh)
+Energy_{Load}\ (Whr)
 =
-C_{\text{battery}}(Ah)V(V)
+Load\ (W) \times Duration\ (hr)
 ```
 
-Example:
+### Depth of Discharge (DOD)
+
+Percent of battery used in discharge.
+
+- 75% DOD means 25% capacity remaining.
 
 ```math
-80\ Ah \times 12\ V = 960\ Wh
-```
-
----
-
-## Load Energy
-
-```math
-E_{\text{load}}(Wh)
+\%DOD
 =
-P_{\text{load}}(W)t(hr)
-```
-
----
-
-## Depth of Discharge
-
-Depth of discharge is the percentage of battery capacity removed during discharge.
-
-```math
-DoD(\%)
+\frac{Energy_{Load}\ (Whr)}
+{Energy_{Battery}\ (Whr)}
+\times 100
 =
-\frac{E_{\text{load}}}{E_{\text{battery}}}
+\frac{Capacity_{Used}\ (Ahr)}
+{Capacity_{Battery}\ (Ahr)}
 \times 100
 ```
 
-Equivalently:
+### Battery Drain
+
+**Battery drain (W):** Power required to charge the battery, following discharge (e.g., going in and out of eclipse).
+
+- **Discharge efficiency (%):** How effectively a battery can be discharged compared to its total capacity (i.e., how much energy can be used to power loads) — typically ~90%.
+- **Recharge efficiency:** How effectively a battery can be recharged compared to the energy that is put into it (i.e., how much input energy is stored) — typically ~80%.
+- **Time to recharge:** How much time solar array is producing power.
 
 ```math
-DoD(\%)
+Battery\ Drain\ (W)
 =
-\frac{C_{\text{used}}}{C_{\text{battery}}}
-\times 100
+\frac{Energy_{Load}\ (Whr)}
+{Discharge\ Efficiency\ (\%) \times Recharge\ Efficiency\ (\%) \times Time\ to\ Recharge\ (hr)}
 ```
 
-Example:
+### Analogy
 
-```text
-75% DoD → 25% capacity remaining
-```
-
----
-
-## Battery Drain for Recharge
-
-The lecture defines the required recharge power as:
-
-```math
-P_{\text{recharge}}
-=
-\frac{E_{\text{load}}}
-{\eta_{\text{discharge}}
-\eta_{\text{recharge}}
-t_{\text{recharge}}}
-```
-
-Representative efficiencies:
-
-- Discharge efficiency: ~90%
-- Recharge efficiency: ~80%
-
-The available recharge time depends on how long the solar array is producing sufficient power.
+- **Battery capacity:** Like size of a water tank (A-hr = gallons). Tells you how long you can run things before empty (e.g., how long of an eclipse you can survive at a given load).
+- **Battery stored energy:** Amount of "work" water in tank could do (Whr = gallons × pressure). Tells you how much power draw you can provide (e.g., how much load you can support over time).
 
 ---
 
