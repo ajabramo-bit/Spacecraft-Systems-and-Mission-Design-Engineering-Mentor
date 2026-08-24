@@ -451,15 +451,26 @@ P = IV
 
 The MPP is the most efficient operating condition for the solar array.
 
-### Environmental Effects
+### Usage
 
-More sunlight shifts the I/V curve upward.
+- Assess performance of solar panels under different conditions.
+- Optimize power system design.
+- Size power converters and harness.
 
-Lower temperature shifts the curve toward higher voltage.
+### Factors
 
-The lecture summarizes this as:
+- **Sunlight** — more shifts curve up.
+- **Temp** — colder shifts curves right.
+- **Solar panels like cold and sunny!**
 
-> Solar panels like cold and sunny conditions.
+### I–V Curve Analogy
+
+The lecture uses a hose analogy to explain the solar-panel I–V curve:
+
+- Think of a hose, where **I = water flow rate** and **V = water pressure**.
+- **Isc:** Hose is fully open (no resistance), water flows freely with no pressure.
+- **Voc:** Hose is fully closed (infinite resistance), no water flow with pressure at its max.
+- There is an optimal point where the hose is partially open and the total water "energy" output is at its max (**MPP**).
 
 ---
 
