@@ -137,7 +137,7 @@ The GRAIL power system included:
 - power distribution
 - energy management
 
-Typical components include:
+## Typical components include:
 
 ### Solar Array
 
