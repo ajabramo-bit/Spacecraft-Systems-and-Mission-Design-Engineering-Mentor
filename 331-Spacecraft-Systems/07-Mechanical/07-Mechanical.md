@@ -1650,107 +1650,16 @@ The following equations are used for basic spacecraft structural stress and defo
 
 | Concept | Equation | Variables | Application |
 |---|---|---|---|
-| **Normal Stress** | σ = F / A | **σ** = normal stress<br>**F** = axial force<br>**A** = cross-sectional area | Stress perpendicular to a cross-sectional area due to axial loads. **Important for launch-load analysis.** |
-| **Shear Stress** | τ = V / A | **τ** = shear stress<br>**V** = shear force<br>**A** = cross-sectional area | Stress parallel to a cross-sectional area. **Important for joints and fasteners subjected to shear during launch.** |
-| **Strain** | ε = ΔL / L₀<br>γ = Δx / L | **ε** = normal strain<br>**γ** = shear strain<br>**ΔL** = change in length<br>**L₀** = original length<br>**Δx** = lateral displacement<br>**L** = length over which shear occurs | Deformation per unit length. **Important for assessing structural elongation or angular distortion under load.** |
-| **Hooke's Law** | σ = Eε<br>τ = Gγ | **E** = Young's modulus<br>**G** = shear modulus | Linear relationship between stress and strain in the elastic region. **Important for deformation calculations.** |
-| **Bending Stress** | σ = My / I | **σ** = bending stress<br>**M** = bending moment<br>**y** = distance from neutral axis<br>**I** = moment of inertia | Stress from bending moments in beams. **Important for analyzing spacecraft booms, panels, and supports.** |
-| **Torsional Shear Stress** | τ = Tr / J | **τ** = shear stress<br>**T** = applied torque<br>**r** = radius<br>**J** = polar moment of inertia | Stress in rotating parts, **like antennas or reaction wheels.** |
-| **Thermal Stress** | σ_thermal = EαΔT | **σ_thermal** = thermal stress<br>**E** = Young's modulus<br>**α** = coefficient of thermal expansion<br>**ΔT** = temperature change | Stress induced by temperature changes. **Important for spacecraft facing thermal cycles.** |
-| **von Mises Stress** | σ_v = √(σ_x² − σ_xσ_y + σ_y² + 3τ_xy²) | **σ_v** = von Mises stress<br>**σ_x, σ_y** = normal stresses<br>**τ_xy** = shear stress | Stress due to combined normal and shear stresses. **Important for failure prediction under combined loading.** |
-| **Safety Factor** | SF = Material Strength / Applied Stress | **SF** = safety factor<br>**Material Strength** = yield/ultimate strength<br>**Applied Stress** = calculated stress | Ensures design stress remains within safe limits. **Important for reliability under uncertain conditions.**<br><br>**Yield:** typically 1.1–1.25<br>**Ultimate:** typically 1.4–2 |
-| **Axial Deformation** | ΔL = FL₀ / (AE) | **ΔL** = change in length<br>**F** = axial force<br>**L₀** = original length<br>**A** = cross-sectional area<br>**E** = Young's modulus | Elongation or compression due to axial load. **Important for assessing structural changes during launch acceleration.** |
-
-### Equations in GitHub Math Format
-
-For reference, the equations from the table are shown below using GitHub-rendered math.
-
-**Normal Stress**
-
-```math
-\sigma = \frac{F}{A}
-```
-
-**Shear Stress**
-
-```math
-\tau = \frac{V}{A}
-```
-
-**Normal Strain**
-
-```math
-\epsilon = \frac{\Delta L}{L_0}
-```
-
-**Shear Strain**
-
-```math
-\gamma = \frac{\Delta x}{L}
-```
-
-**Hooke's Law — Normal Stress**
-
-```math
-\sigma = E\epsilon
-```
-
-**Hooke's Law — Shear Stress**
-
-```math
-\tau = G\gamma
-```
-
-**Bending Stress**
-
-```math
-\sigma = \frac{My}{I}
-```
-
-**Torsional Shear Stress**
-
-```math
-\tau = \frac{Tr}{J}
-```
-
-**Thermal Stress**
-
-```math
-\sigma_{\text{thermal}} = E\alpha\Delta T
-```
-
-**von Mises Stress**
-
-```math
-\sigma_v
-=
-\sqrt{
-\sigma_x^2
--
-\sigma_x\sigma_y
-+
-\sigma_y^2
-+
-3\tau_{xy}^2
-}
-```
-
-**Safety Factor**
-
-```math
-SF
-=
-\frac{\text{Material Strength}}
-{\text{Applied Stress}}
-```
-
-**Axial Deformation**
-
-```math
-\Delta L
-=
-\frac{F L_0}{AE}
-```
+| **Normal Stress** | $\sigma = \frac{F}{A}$ | **σ** = normal stress<br>**F** = axial force<br>**A** = cross-sectional area | Stress perpendicular to a cross-sectional area due to axial loads. **Important for launch-load analysis.** |
+| **Shear Stress** | $\tau = \frac{V}{A}$ | **τ** = shear stress<br>**V** = shear force<br>**A** = cross-sectional area | Stress parallel to a cross-sectional area. **Important for joints and fasteners subjected to shear during launch.** |
+| **Strain** | $\epsilon = \frac{\Delta L}{L_0}$<br>$\gamma = \frac{\Delta x}{L}$ | **ε** = normal strain<br>**γ** = shear strain<br>**ΔL** = change in length<br>**L₀** = original length<br>**Δx** = lateral displacement<br>**L** = length over which shear occurs | Deformation per unit length. **Important for assessing structural elongation or angular distortion under load.** |
+| **Hooke's Law** | $\sigma = E\epsilon$<br>$\tau = G\gamma$ | **E** = Young's modulus<br>**G** = shear modulus | Linear relationship between stress and strain in the elastic region. **Important for deformation calculations.** |
+| **Bending Stress** | $\sigma = \frac{My}{I}$ | **σ** = bending stress<br>**M** = bending moment<br>**y** = distance from neutral axis<br>**I** = moment of inertia | Stress from bending moments in beams. **Important for analyzing spacecraft booms, panels, and supports.** |
+| **Torsional Shear Stress** | $\tau = \frac{Tr}{J}$ | **τ** = shear stress<br>**T** = applied torque<br>**r** = radius<br>**J** = polar moment of inertia | Stress in rotating parts, **like antennas or reaction wheels.** |
+| **Thermal Stress** | $\sigma_{\text{thermal}} = E\alpha\Delta T$ | **σthermal** = thermal stress<br>**E** = Young's modulus<br>**α** = coefficient of thermal expansion<br>**ΔT** = temperature change | Stress induced by temperature changes. **Important for spacecraft facing thermal cycles.** |
+| **von Mises Stress** | $\sigma_v = \sqrt{\sigma_x^2-\sigma_x\sigma_y+\sigma_y^2+3\tau_{xy}^2}$ | **σv** = von Mises stress<br>**σx, σy** = normal stresses<br>**τxy** = shear stress | Stress due to combined normal and shear stresses. **Important for failure prediction under combined loading.** |
+| **Safety Factor** | $SF = \frac{\text{Material Strength}}{\text{Applied Stress}}$ | **SF** = safety factor<br>**Material Strength** = yield/ultimate strength<br>**Applied Stress** = calculated stress | Ensures design stress remains within safe limits. **Important for reliability under uncertain conditions.**<br><br>**Yield:** typically 1.1–1.25<br>**Ultimate:** typically 1.4–2 |
+| **Axial Deformation** | $\Delta L = \frac{FL_0}{AE}$ | **ΔL** = change in length<br>**F** = axial force<br>**L₀** = original length<br>**A** = cross-sectional area<br>**E** = Young's modulus | Elongation or compression due to axial load. **Important for assessing structural changes during launch acceleration.** |
 
 ---
 
