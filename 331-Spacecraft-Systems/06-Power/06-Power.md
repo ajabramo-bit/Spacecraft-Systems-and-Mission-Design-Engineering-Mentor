@@ -42,7 +42,7 @@ This lecture introduces the spacecraft Electrical Power Subsystem (EPS), includi
 
 # 1. Electrical Power System Overview
 
-> **Source: Slides 2–4**
+> **Source: Slides 2**
 
 ## Function
 
@@ -121,7 +121,21 @@ The GRAIL power system included:
 
 ## Typical EPS Architecture
 
-> **Source: Slide 4**
+> **Source: Slide 3-4**
+
+# Power generation
+- solar power nuclear power
+
+# Energy storage
+- batteries
+- fuel cells
+- flywheels
+- supercapacitors
+
+# Power control
+- power regulation
+- power distribution
+- energy management
 
 Typical components include:
 
