@@ -1667,82 +1667,48 @@ The following equations are used for basic spacecraft structural stress and defo
 
 > **Source: Slide 37**
 
-## Dynamics Analysis
+## Dynamics and Modal Analysis
 
-Determines spacecraft behavior under:
+**Purpose:** Determines natural frequencies, mode shapes, and damping; determines vibration loads.
 
-- Transient loads
-- Time-dependent loads
-- Vibration
-- Shock
+### Strategies
 
-Example tools:
+- **Dynamic analysis** assesses spacecraft under transient and time-dependent loads such as vibrations and shock.
+  - **Examples:** LS-DYNA, MSC ADAMS
 
-- LS-DYNA
-- MSC ADAMS
-
-## Modal Analysis
-
-Determines:
-
-- Natural frequencies
-- Mode shapes
-- Damping
-
-The purpose is to ensure resonance does not compromise structural integrity during:
-
-- Launch
-- Spacecraft operation
-
-Example tools:
-
-- HyperMesh
-- MSC NASTRAN
+- **Modal analysis** assesses spacecraft natural frequencies to ensure resonance does not compromise structural integrity under launch and operational loads.
+  - **Examples:** HyperMesh, MSC NASTRAN
 
 ---
 
-## Vibration Testing
+## Dynamics and Modal Testing
 
-Tests tolerance to launch/separation vibration.
+### Vibration Testing
 
-A shaker table applies varying:
+**Purpose:** Tests spacecraft's tolerance to vibrational environment of launch and separation events.
 
-- Frequency
-- Amplitude
+**Strategy:** Shaker table subjects spacecraft to varying frequencies and amplitudes.
 
-### Sine Vibration
+- **Sinusoidal vibe testing** concentrates energy on single frequency at a time to excite resonance, stressing the structure.
+- **Random vibe testing** covers many frequencies, closer to launch environment.
 
-Concentrates energy at one frequency at a time and can strongly excite resonances.
+### Shock Testing
 
-### Random Vibration
+**Purpose:** Tests spacecraft's tolerance to shock events like stage separation or pyro firings.
 
-Applies many frequencies and more closely approximates launch.
+**Strategy:** Impact device or explosive actuator generates sudden, high-energy shocks.
 
----
+### Acoustic Testing
 
-## Shock Testing
+**Purpose:** Tests spacecraft's tolerance to the noise environment of launch.
 
-Tests tolerance to events such as:
+**Strategy:** Acoustic chamber exposes the spacecraft to high-decibel sound waves.
 
-- Stage separation
-- Pyrotechnic firing
+### Modal Testing
 
-An impact device or explosive actuator creates sudden high-energy shocks.
+**Purpose:** Identifies the natural frequencies and vibration modes of the spacecraft structure.
 
----
-
-## Acoustic Testing
-
-An acoustic chamber exposes the spacecraft to high sound-pressure levels representative of launch.
-
----
-
-## Modal Testing
-
-Small oscillatory forces are applied at different points to identify:
-
-- Resonant frequencies
-- Structural modes
+**Strategy:** Shaker table applies small oscillatory forces at different points to determine resonant frequencies.
 
 ---
 
