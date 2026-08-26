@@ -59,6 +59,8 @@ OSIRIS-REx, Cassini, GPM, EO-1, Magellan, and MESSENGER.
   Interpretation](#11-integrated-system-requirements-and-schematic-interpretation)
 - [12. Propulsion System Trades](#12-propulsion-system-trades)
 - [13. Mars Observer Case Study](#13-mars-observer-case-study)
+- [14. Lecure Summary](#14-lecture-summary)
+
 
 ------------------------------------------------------------------------
 
@@ -2304,7 +2306,7 @@ the importance of architecture and redundancy.
 
 ------------------------------------------------------------------------
 
-# Lecture Summary
+# 14. Lecture Summary
 
 > **Source: Slides 1–75**
 
