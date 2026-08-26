@@ -1009,40 +1009,37 @@ Voltage changes with:
 ## Typical Bus Voltages
 
 - Representative spacecraft bus: 28–32 V
-- Some systems use: up to ~100 V
-particularly electric-propulsion systems.
-
-Individual instruments may require lower voltages such as: 5 V, 12 V
+- Some systems use up to ~100 V (particularly electric-propulsion systems)
+- Individual instruments may require lower voltages such as: 5 V, 12 V
 
 Power converters may be:
 
 - Standalone boxes
 - Embedded in devices
 
----
 
-### Solar Arrays — Array Power Regulators (or Solar Array Regulators)
+## Solar Arrays — Array Power Regulators (or Solar Array Regulators)
 
 - Responsible for controlling power output of solar array via monitoring of voltage and current
 - Protects against power overloads
 - Typically sized to handle max expected power draw of solar array
 
-### Batteries — Battery Charge/Discharge Regulator
+## Batteries — Battery Charge/Discharge Regulator
 
 - Responsible for controlling power output of battery via monitoring of voltage and current
 - Keeps battery charge and discharge current at a safe level
 - Protects against power overloads
 - Typically sized for voltage rating and output power rating
 
-### Error Amplifier
+## Error Amplifier
 
 - Compares a reference voltage to a feedback voltage from a system and amplifies the difference, known as the error signal
 
-### Power Conditioning Unit
+## Power Conditioning Unit
 
 - **All units typically within a spacecraft Power Conditioning Unit (PCU)**
 
-### Power Regulation Architecture
+## Power Regulation Architecture
 
 **Figure description:** The diagram shows the spacecraft power-regulation architecture. Solar Array Sections feed into the **Solar Array Regulator (SAR)**. The regulated power bus connects to the **Battery Charge Regulator (BCR)** and **Battery Discharge Regulator (BDR)**, which interface with the spacecraft battery. The bus then supplies the **Power Distribution Unit (PDU)**, which distributes power to spacecraft loads.
 
