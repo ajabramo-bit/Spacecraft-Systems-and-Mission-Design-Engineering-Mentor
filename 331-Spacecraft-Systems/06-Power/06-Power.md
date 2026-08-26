@@ -1008,26 +1008,11 @@ Voltage changes with:
 
 ## Typical Bus Voltages
 
-Representative spacecraft bus:
-
-```text
-28–32 V
-```
-
-Some systems use:
-
-```text
-up to ~100 V
-```
-
+- Representative spacecraft bus: 28–32 V
+- Some systems use: up to ~100 V
 particularly electric-propulsion systems.
 
-Individual instruments may require lower voltages such as:
-
-```text
-5 V
-12 V
-```
+Individual instruments may require lower voltages such as: 5 V, 12 V
 
 Power converters may be:
 
@@ -1036,38 +1021,37 @@ Power converters may be:
 
 ---
 
-## Array Power Regulator
+### Solar Arrays — Array Power Regulators (or Solar Array Regulators)
 
-Monitors:
+- Responsible for controlling power output of solar array via monitoring of voltage and current
+- Protects against power overloads
+- Typically sized to handle max expected power draw of solar array
 
-- Voltage
-- Current
+### Batteries — Battery Charge/Discharge Regulator
 
-Functions:
+- Responsible for controlling power output of battery via monitoring of voltage and current
+- Keeps battery charge and discharge current at a safe level
+- Protects against power overloads
+- Typically sized for voltage rating and output power rating
 
-- Controls solar-array output
-- Protects against overloads
-- Sized for maximum expected array power
+### Error Amplifier
 
-## Battery Charge/Discharge Regulator
+- Compares a reference voltage to a feedback voltage from a system and amplifies the difference, known as the error signal
 
-Monitors battery voltage/current and:
+### Power Conditioning Unit
 
-- Controls output
-- Keeps charge/discharge current safe
-- Protects against overload
-- Is sized by voltage and output-power rating
+- **All units typically within a spacecraft Power Conditioning Unit (PCU)**
 
-## Error Amplifier
+### Power Regulation Architecture
 
-Compares:
+**Figure description:** The diagram shows the spacecraft power-regulation architecture. Solar Array Sections feed into the **Solar Array Regulator (SAR)**. The regulated power bus connects to the **Battery Charge Regulator (BCR)** and **Battery Discharge Regulator (BDR)**, which interface with the spacecraft battery. The bus then supplies the **Power Distribution Unit (PDU)**, which distributes power to spacecraft loads.
 
-- Reference voltage
-- Feedback voltage
+The **Main Error Amplifier (MEA)** provides the control relationships shown in the diagram:
 
-The difference is amplified as the error signal.
-
-These regulation functions are commonly incorporated into the **PCU**.
+- **SAR Control** → Solar Array Regulator
+- **BCR Control** → Battery Charge Regulator
+- **BDR Control** → Battery Discharge Regulator
+- **VBUS** → Main Error Amplifier feedback
 
 ---
 
