@@ -395,8 +395,6 @@ To keep ASTE 331 and ASTE 421 consistent, searchable, and useful for both studen
 - original source PDFs are identified by their **exact filenames**;
 - lecture content is organized by **concept rather than forcing one Markdown section per slide**;
 - original slide numbers are preserved using **source markers**;
-- equations are written using **GitHub-compatible math formatting**;
-- Markdown titles and headings use **plain text only**;
 - tables are recreated in Markdown when practical;
 - important figures, diagrams, architectures, and trades are described in text; and
 - source traceability is preserved so students can return to the original lecture material.
