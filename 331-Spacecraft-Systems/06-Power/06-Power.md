@@ -1139,7 +1139,9 @@ Power switches can be implemented using:
 
 ## Relays
 
-An electromagnet mechanically opens or closes the circuit.
+Use an electromagnet to mechanically open or close a circuit - electrical
+current flows through a coil, creating a magnetic field that moves an armature to
+make or break the connection in the circuit (physical device moves)
 
 ### Advantages
 
@@ -1156,9 +1158,9 @@ An electromagnet mechanically opens or closes the circuit.
 
 ## FETs
 
-A semiconductor controls current flow using an electric field.
-
-Voltage on the gate controls current between source and drain.
+Use a semiconductor device to control current flow using an electric field –
+voltage applied to a gate terminal controls flow of current between the source and
+drain terminals (no moving parts)
 
 ### Advantages
 
@@ -1419,15 +1421,11 @@ EMC is the ability of a device to function without:
 
 ### Emissions
 
-Limits the EMI produced by the device.
-
-The device is the **source**.
+Limits the EMI produced by the device. The device is the **source**.
 
 ### Susceptibility
 
-Ensures the device can tolerate EMI.
-
-The device is the **victim**.
+Ensures the device can tolerate EMI. The device is the **victim**.
 
 ---
 
