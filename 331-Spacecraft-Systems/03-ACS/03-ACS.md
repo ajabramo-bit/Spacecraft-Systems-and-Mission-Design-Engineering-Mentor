@@ -9,18 +9,82 @@
 
 ## Lecture Overview
 
-This lecture covers spacecraft attitude determination and control,
-including ACS functions, disturbances, pointing and mission-geometry
-concerns, attitude sensors, control actuators/effectors, redundancy,
-system architectures, spacecraft rotational dynamics, and ACS
-simulation.
+This lecture introduces the **Attitude Control System (ACS)**, the spacecraft subsystem responsible for providing **attitude control, knowledge, and stability**, including the sensors, actuators, and onboard logic/control required to maintain or change spacecraft orientation.
 
-The lecture uses **OSIRIS-REx** as a mission example and concludes with
-the **Phoenix radar** and **Deep Impact star tracker** case studies.
+The lecture begins with the fundamental purpose and terminology of attitude determination and control, including the distinction between **attitude, determination, control, pointing error, and jitter/stability**. It then examines the closed-loop ACS architecture in which commanded attitude is compared with measured attitude to generate an attitude error that drives the spacecraft controller and actuators.
 
-The content below intentionally preserves the professor's wording,
-terminology, examples, numerical values, questions, and slide hierarchy
-as closely as possible.
+The major areas covered in the lecture include:
+
+- **ACS functions and architecture**
+  - Attitude control, knowledge, and stability
+  - Sensors, actuators/effectors, electronics, and onboard control logic
+  - Physical and logical block diagrams
+  - Redundancy and heritage
+
+- **Spacecraft disturbances**
+  - Launch vehicle tip-off
+  - Aerodynamic torque
+  - Gravity-gradient torque
+  - Magnetic torque
+  - Solar-radiation torque
+  - Mass expulsion
+  - Internal torque
+
+- **Pointing and mission geometry**
+  - Payload science observations and instrument FOVs
+  - Communications and solar conjunction
+  - Solar-array pointing and solar-incidence angle
+  - Thermal pointing constraints
+  - Trajectory maneuvers
+  - Spacecraft agility and slew rates
+  - Sun-Earth-Probe (SEP) angle
+  - Sun-Probe-Earth (SPE) angle
+  - Phase angle
+
+- **Attitude determination sensors**
+  - Sun sensors
+  - Earth sensors
+  - Magnetometers
+  - Star trackers / Stellar Reference Units (SRUs)
+  - Gyroscopes / Internal Reference Units (IRUs)
+  - GPS receivers
+
+- **GN&C actuators and effectors**
+  - Reaction wheels
+  - Momentum wheels
+  - Control Moment Gyros (CMGs)
+  - Magnetic torquers / torque rods
+  - Reaction Control System (RCS) thrusters
+  - Electric propulsion for attitude control
+
+- **ACS design and sizing**
+  - Selection of sensors and control effectors
+  - Reaction-wheel sizing
+  - Momentum management
+  - Functional redundancy
+  - Thrusters vs. reaction wheels
+  - Component sizing and mass estimates
+  - End-to-end kinematic simulation and error budgets
+
+- **Spacecraft rotational dynamics**
+  - Kinematics of rotation
+  - Rotational kinetic energy
+  - Moment of inertia
+  - Angular acceleration
+  - Parallel and perpendicular axis theorems
+  - Inertia tensors
+  - Angular momentum and torque
+  - Euler's moment equations
+  - Euler angles and rotation matrices
+
+The lecture also uses several mission examples and case studies to connect ACS theory to real spacecraft:
+
+- **OSIRIS-REx** — spacecraft architecture, GN&C hardware, mission geometry, pointing, Touch-and-Go (TAG), and asteroid sample collection
+- **International Space Station (ISS)** — Control Moment Gyros and attitude-control redundancy
+- **Phoenix** — Entry, Descent, and Landing simulation fidelity and radar modeling
+- **Deep Impact** — attitude estimation, star tracker anomalies, coordinate-frame errors, star-catalog errors, and lessons learned
+
+Overall, the lecture connects **mission pointing requirements and spacecraft disturbances to the sensors, actuators, control logic, dynamics, redundancy, and simulations required to determine and control spacecraft attitude**.
 
 ------------------------------------------------------------------------
 
