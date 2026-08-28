@@ -83,7 +83,7 @@ The lecture roadmap identifies the following topics:
 
 ---
 
-## Avionics Function
+### Avionics Function
 
 > **Source: Slide 4**
 
@@ -1950,6 +1950,28 @@ During a commanded or autonomous reset:
 - FSW reset counter increments
 - Fault-monitor counter increments
 - Fault-response counter increments
+
+## Example Spacecraft Commands
+
+### Successful Command Examples
+
+| Subsystem | Command | Description | Expected Response |
+|---|---|---|---|
+| **C&DH** | `CDH_NOOP` | This command does No Operation (ie, nothing), which is often used to check whether there is a valid command path to the spacecraft. | **EVR:** Command successfully executed<br>**EHA:** CDH-001 Successful command counter (+1) |
+| **C&DH** | `CDH_EHA_RATE,[x]` | Sets the telemetry (EHA) rate for how often packets are received. Valid arguments are 5 to 1,000 sec. | **EVR:** EHA rate updated to x sec<br>**EHA:** CDH-002 EHA Rate = x |
+| **C&DH** | `HWD_SYS_RESET` | Resets flight software | See description in separate chart (Boot/Reset) |
+| **C&DH** | `CDH_UPLOSS_TIMER,[x]` | Resets the uploss timer to x seconds from the present time. Note that if no commands are received within this period of time, the spacecraft will go into safe mode. | **EVR:** Uploss timer set to x sec<br>**EHA:** CDH-003 Uploss timer = x (should be counting down to 0) |
+| **C&DH** | `CDH_MODE,[mode]` | Sets the spacecraft mode by running an onboard configuration file that sets and/or reinforces the devices states for the relevant mode | **EVR:** Spacecraft mode to set [mode]<br>**EHA:** CDH-004 Spacecraft Mode = [mode] |
+| **Power** | `PWR_DEVICE_STATE,[device],[state]` | Changes state of a device. Note that this should likely be consistent with the power modes table with respect to both devices, states, and resulting power (W) values. | **EVR:** [device] state changed to [state]<br>**EHA:** PWR-000x: [Device] State = [state]<br>PWR-000y: [Device] Current = [current in W] |
+
+---
+
+### Example Spacecraft Command Failures
+
+| Subsystem | Command | Description | Expected Response | Comments |
+|---|---|---|---|---|
+| **C&DH** | `[any unrecognized command stem]` | Any unrecognized command stem will fail onboard command validation | **EVR:** Command validation failed<br>**EHA:** Invalid command counter (+1) | |
+| **C&DH** | `[any argument that exceeds allowed range or otherwise fails]` | For example, if `"CDH_EHA_RATE,1"` is sent, this should fail to execute. | **EVR:** Command execution failed<br>**EHA:** Failed command counter (+1) | |
 
 ---
 
