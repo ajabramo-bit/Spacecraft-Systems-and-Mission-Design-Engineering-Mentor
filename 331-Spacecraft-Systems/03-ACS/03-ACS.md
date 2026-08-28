@@ -106,7 +106,6 @@ Overall, the lecture connects **mission pointing requirements and spacecraft dis
     Anomaly](#11-deep-impact-star-tracker-anomaly)
 -   [Lecture Summary](#lecture-summary)
 
-------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
