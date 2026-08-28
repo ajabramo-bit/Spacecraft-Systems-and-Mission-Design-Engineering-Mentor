@@ -2155,33 +2155,7 @@ Each step should identify:
 
 # 17. C&DH and FSW Downlink Verification Example
 
-> **Source: Slides 45–46 and 50–52**
-
-## Example Spacecraft Commands
-
-> **Source: Slide 45**
-
-| Subsystem | Command | Description | Expected Response |
-|---|---|---|---|
-| C&DH | `CDH_NOOP` | Performs no operation; used to check valid command path | EVR: command successfully executed; EHA successful-command counter +1 |
-| C&DH | `CDH_EHA_RATE,[x]` | Sets EHA packet rate; valid 5–1,000 s | EVR rate updated; EHA rate = x |
-| C&DH | `HWD_SYS_RESET` | Resets FSW | See boot/reset behavior |
-| C&DH | `CDH_UPLOSS_TIMER,[x]` | Resets uploss timer to x seconds; safe mode occurs if no command arrives before expiration | EVR timer set; EHA timer counts down |
-| C&DH | `CDH_MODE,[mode]` | Runs onboard configuration file for selected spacecraft mode | EVR mode set; EHA spacecraft mode |
-| Power | `PWR_DEVICE_STATE,[device],[state]` | Changes device state | EVR state change; EHA device state and current |
-
----
-
-## Example Command Failures
-
-> **Source: Slide 46**
-
-| Condition | Description | Expected Response |
-|---|---|---|
-| Unrecognized command stem | Fails onboard command validation | EVR: command validation failed; EHA invalid-command counter +1 |
-| Invalid/out-of-range argument | Example: `CDH_EHA_RATE,1` should fail | EVR: command execution failed; EHA failed-command counter +1 |
-
----
+> **Source: Slides 50–52**
 
 ## Downlink Verification Test
 
