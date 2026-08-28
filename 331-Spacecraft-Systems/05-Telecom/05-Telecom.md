@@ -409,44 +409,10 @@ As frequency increases:
 - Spectrum band width increases
 - Susceptibility to rain fading increases
 
-### Lower in Spectrum — L, S, C, X
-
-**Advantages**
-
-- Frequently used with small omni-antennas
-- Less susceptible to atmospheric effects (eg, rain, fog, snow)
-
-**Disadvantages**
-
-- More power required
-- Lower throughput
-- Larger HGA size
-
-**Notes**
-
-- NASA/DoD use S- & X-bands
-- Used for low or high rate data
-- GPS, comm. satellites, & mobile phones use L-band
-- TV broadcasting uses C-band
-
-### Higher in Spectrum — Ku, K, Ka
-
-**Advantages**
-
-- Lower power required
-- Higher throughput
-- Smaller HGA size
-
-**Disadvantages**
-
-- More susceptible to atmospheric effects (eg, rain)
-
-**Notes**
-
-- Communications/NASA use Ka-band
-- Used for high rate-data
-- Satellite comm. & direct broadcast use Ku-band
-- K-band avoided due to atmosphere
+| Spectrum | Advantages | Disadvantages | Notes |
+|---|---|---|---|
+| **Lower in Spectrum**<br>**L, S, C, X**<br>*(robust)* | • Frequently used with small omni-antennas<br>• Less susceptible to atmospheric effects (eg, rain, fog, snow) | • More power required<br>• Lower throughput<br>• Larger HGA size | • NASA/DoD use S- & X-bands<br>&nbsp;&nbsp;• Used for low or high rate data<br>• GPS, comm. satellites, & mobile phones use L-band<br>• TV broadcasting uses C-band |
+| **Higher in Spectrum**<br>**Ku, K, Ka**<br>*(high-performance)* | • Lower power required<br>• Higher throughput<br>• Smaller HGA size | • More susceptible to atmospheric effects (eg, rain) | • Communications/NASA use Ka-band<br>&nbsp;&nbsp;• Used for high rate-data<br>• Satellite comm. & direct broadcast use Ku-band<br>• K-band avoided due to atmosphere |
 
 **Figure description:** The RF-band diagram orders L, S, C, X, Ku, K, and Ka by wavelength and frequency. It emphasizes the trade between robust lower-frequency communication and higher-performance higher-frequency communication.
 
