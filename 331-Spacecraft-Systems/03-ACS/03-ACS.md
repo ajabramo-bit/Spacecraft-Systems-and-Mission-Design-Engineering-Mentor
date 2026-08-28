@@ -66,7 +66,7 @@ response are critical to ACS design.
   Study](#9-phoenix-radar-and-edl-simulation-case-study)
 - [10. Deep Impact Star Tracker
   Anomaly](#10-deep-impact-star-tracker-anomaly)
-- [Lecture Summary](lecture-summary)
+- [Lecture Summary](#lecture-summary)
 
 ------------------------------------------------------------------------
 
