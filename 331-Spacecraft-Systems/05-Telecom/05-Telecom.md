@@ -1,4 +1,4 @@
-# Telecommunications and the End-to-End Information System
+# Telecommunications (Telecom) and the End-to-End Information System (EEIS)
 
 **Course:** ASTE-331a — Spacecraft Systems Engineering  
 **Lecture:** 05 — Telecommunications (Telecom) and the End-to-End Information System (EEIS)  
@@ -7,909 +7,1266 @@
 
 ---
 
+## Lecture Overview
+
+This lecture covers the spacecraft telecommunications subsystem and the End-to-End Information System (EEIS), including telecom functions and hardware, uplink/downlink paths, RF bands, modulation, radiation and antenna gain, EIRP, link equations, decibels, link budgets, antenna patterns, atmospheric attenuation, trajectory and field-of-view impacts, RF compatibility, the Galileo HGA failure case study, telecom hardware estimation, design steps, and optical communication.
+
+The content below is intentionally kept as close to the original slide wording as possible, with slide-source markers throughout for traceability.
+
+---
+
 ## Table of Contents
 
 - [1. Telecom Overview](#1-telecom-overview)
-- [2. Telecom Hardware](#2-telecom-hardware)
-- [3. Mission Telecom Examples](#3-mission-telecom-examples)
-- [4. End-to-End Information System](#4-end-to-end-information-system)
-- [5. Electromagnetic and RF Spectrum](#5-electromagnetic-and-rf-spectrum)
-- [6. Communications Definitions](#6-communications-definitions)
-- [7. Radiation, Gain, and EIRP](#7-radiation-gain-and-eirp)
-- [8. Telecom Link Equations](#8-telecom-link-equations)
-- [9. Decibels](#9-decibels)
-- [10. Link Budget](#10-link-budget)
-- [11. Antenna Gain and Patterns](#11-antenna-gain-and-patterns)
-- [12. Atmospheric Attenuation](#12-atmospheric-attenuation)
-- [13. Trajectory and Field-of-View Effects](#13-trajectory-and-field-of-view-effects)
-- [14. Mars Rover Communications](#14-mars-rover-communications)
-- [15. RF Compatibility](#15-rf-compatibility)
-- [16. Galileo High-Gain-Antenna Failure](#16-galileo-high-gain-antenna-failure)
-- [17. Modern Telecom Hardware](#17-modern-telecom-hardware)
-- [18. Telecom Hardware Estimation](#18-telecom-hardware-estimation)
-- [19. Telecom Design Process](#19-telecom-design-process)
-- [20. Optical Communications](#20-optical-communications)
-- [21. Additional Class Questions](#21-additional-class-questions)
-- [22. Lecture Summary](#22-lecture-summary)
+- [2. Telecom Hardware and Mission Examples](#2-telecom-hardware-and-mission-examples)
+- [3. End-to-End Information System (EEIS)](#3-end-to-end-information-system-eeis)
+- [4. Electromagnetic and RF Spectrum](#4-electromagnetic-and-rf-spectrum)
+- [5. Communications Definitions and Radiation](#5-communications-definitions-and-radiation)
+- [6. EIRP, Link Equations, and Decibels](#6-eirp-link-equations-and-decibels)
+- [7. Link Budget and Antenna Performance](#7-link-budget-and-antenna-performance)
+- [8. Atmospheric, Trajectory, FOV, and RF Compatibility Effects](#8-atmospheric-trajectory-fov-and-rf-compatibility-effects)
+- [9. Galileo HGA Failure Case Study](#9-galileo-hga-failure-case-study)
+- [10. Telecom Hardware Estimate and Design Steps](#10-telecom-hardware-estimate-and-design-steps)
+- [11. Optical Communication and Class Questions](#11-optical-communication-and-class-questions)
+- [Lecture Summary](#lecture-summary)
+
 
 ---
 
 # 1. Telecom Overview
 
-> **Source: Slides 2–4**
 
-Telecommunications provides communication to and from the spacecraft, typically with Earth but sometimes with other spacecraft. Primary functions include command reception and detection, telemetry modulation and transmission, bandwidth selection, antenna pointing, carrier tracking, ranging, and occasional radio-science use. The primary driver is typically spacecraft-Earth distance.
+## Telecom Overview (1 of 3)
 
-## Common Components
+> **Source: Slide 2**
 
-- Radio/transponder
-- Amplifier
-- High-gain antenna (HGA)
-- Medium-gain antenna (MGA)
-- Low-gain antenna (LGA)
+- Function
+  - Provides communication to/from the spacecraft.
+Typically with the Earth, but can include other
+spacecraft.
+- 
+Command reception and detection
+- 
+Telemetry modulation & transmission
+- 
+Bandwidth selection & antenna pointing
+- 
+Carrier tracking modes and ranging
+  - Occasionally used for radio science
+  - Primary driver is typically spacecraft-Earth distance
+10/24/2025
+2
+- GRAIL Example
+  - S-band transponder
+  - Low-gain antenna (LGA)
+  - Misc. hardware
+  - Total = ~5 kg
+- Common Components
+  - Radio/transponder
+  - Amplifier
+  - Antennas
+- 
+High-gain (HGA)
+- 
+Medium-gain (MGA)
+- 
+Low-gain (LGA)
+- Key Trades & Analyses
+  - Fixed vs. articulated antennas
+  - Data rate & volume analysis
+  - Link budget & antenna sizing
+  - Radio-band and power level
+  - Heritage from prior systems
+- Key Parameters
+  - Mass, power, and cost
+  - Transmission power, data, & margin
 
-## Key Trades
+## •
 
-- Fixed vs. articulated antennas
-- Data rate and data volume
-- Link budget and antenna sizing
-- Radio band and power
-- Heritage
-- Mass, power, cost, transmission power, data performance, and margin
+> **Source: Slide 3**
 
-The GRAIL example uses an S-band transponder, LGA, and miscellaneous hardware totaling approximately 5 kg.
+Communications is critical for nearly every spacecraft
+  - Most likely subsystem to be redundant
+  - Direct uplink/downlink comm. with specific ground stations
+  - Relay communication, such as using the TDRS network or via MRO (from Mars)
+  - Significant increases in communication over the past 30 years (≥ 1 Gbps possible)
+10/24/2025
+3
+Tracking & Data Relay
+Satellite (TDRS)
+Space Vehicles that use TDRS
+- 
+ISS, Hubble, NASA LEOs, etc.
+- 
+Most can also downlink directly…
+Direct
+Communications
+TDRS Relay
+Communications
+Telecom Overview (2 of 3)
 
-Communications is critical for nearly every spacecraft and is one of the subsystems most likely to be redundant. Architectures include direct ground communication and relay communication through systems such as TDRS or Mars orbiters.
+## 10/24/2025
 
-### Detailed Functions
+> **Source: Slide 4**
 
-**Command reception**
-- Acquire and track uplink
-- Detect uplink data
-- Forward commands to avionics
-
-**Telemetry**
-- Receive data from avionics
-- Synchronize, packetize, encode, encrypt, and modulate the downlink
-
-**Antenna management**
-- Point antennas
-- Select antenna/band
-- Safe mode typically defaults to LGA
+4
+Mars Reconnaissance
+Orbiter (MRO)
+Telecom Overview (3 of 3)
+- Functions
+  - Command reception and detection
+- 
+Acquire, track, detect uplink data
+- 
+Forward command data to avionics
+  - Telemetry modulation & transmission
+- 
+Receive telemetry data from avionics
+- 
+Modulate downlink signal (synchronize, packetize, encoding, encryption, etc.)
+  - Perform antenna pointing
+  - Select desired antenna (or band)
+- 
+In safe-mode, spacecraft will typically default to low gain antennas
+  - Carrier tracking modes
+  - Ranging
 
 ---
 
-# 2. Telecom Hardware
+# 2. Telecom Hardware and Mission Examples
+
+
+## 10/24/2025
 
 > **Source: Slide 5**
 
-## Avionics Subsystem
+5
+Telecom Hardware Overview
+High Gain Antenna (HGA)
+Typically, a single parabolic dish that provides high
+data rate, but requires narrow pointing control.
+Medium Gain Antenna (MGA)
+When used, this is typically a horn antenna that
+provides higher data rates than an LGA, but less
+rigorous pointing requirements than an HGA.
+Low Gain Antenna (LGA)
+Typically, multiple dipole antennas that ensure
+~360-deg coverage at a low data rate that is
+adequate for critical uplink/downlink.
+Radio/Transponder
+An electronics box responsible for:
+Uplink: Receiving the formatted bits from C&DH, converting
+them to an RF signal, and transmitting to the antennas.
+Downlink: Receiving the RF signal from the antennas,
+converting them to bits, and relaying to the C&DH system.
+[eg, SDST]
+Amplifier
+An RF power amplifier converts a low-power RF
+signal to a higher power RF signal that drives the
+spacecraft antennas.
+[eg, TWTA]
+Diplexer(s)
+Passive devices that combine and/or separate
+uplink/downlink signals.
+DPXR
+Avionics Subsystem
+The avionics subsystem serves as the interface to the telecom
+system. This often consists of an “ULDL” card that decodes and
+relays the uplink data to FSW and/or directly to hardware devices.
+[eg, C&DH]
+Waveguide Transfer Switch(es)
+Switches that route an RF signal to a selected
+device/antenna.
+OSIRIS-REx Telecom Block Diagram
+OSIRIS-REx 2.1 m HGA
+WTS
+RF Signal
+Digital Signal
+What component in the diagram is not described?
+Speculate on its use and when/why it’s used.
 
-C&DH serves as the digital interface to telecom. A ULDL card can decode uplink data and relay it to FSW or directly to hardware.
+## Lesson Learned (#1796)
 
-## Radio / Transponder
+> **Source: Slide 6**
 
-Example: SDST.
+MRO Waveguide Transfer Switch (WTS) Anomaly
+Mission
+- 
+Mars Reconnaissance Orbiter (MRO) is a spacecraft designed to study the geology and climate
+of Mars, provide reconnaissance of future landing sites, and relay data from surface missions
+back to Earth. It was launched in August of 2005 and arrived in March of 2006.
+- 
+The spacecraft continues to operate far beyond its intended design life. Due to its critical role
+as a high-speed data-relay for ground missions, NASA intends to continue the mission as long
+as possible, at least through the late 2020s.
+Driving Event & Root Cause
+- 
+For the downlink, MRO uses a WTS to route a 100-W RF signal from one of the two power
+amplifiers to one of two radiating antennas.
+- 
+Five months after arrival, the WTS failed to actuate. The onboard software maintained the
+commanded downlink configuration by commanding a switch to the redundant X band
+amplifier. Telemetry indicates that the switch is stuck between its two nominal positions,
+causing the switch rotor to partially block the RF energy passing through the switch. This has
+resulted in a downlink RF power loss (~1 dB) and a temperature increase (~15 deg C) caused
+by absorption and dissipation of the reflected energy.
+- 
+The most likely root cause is the following series of events:
+1.
+Accumulation of conductive debris (flaked plating?) on the polyimide tape windows used for WTS venting
+2.
+RF breakdown of these surfaces resulting in high temperature decomposition of the tape
+3.
+Large amount of debris from tape entering the WTS and causing the switch to bind
+4.
+Reduced performance of RF signal by 1 dB (accommodated by 3 dB of margin)
+- 
+This process was exacerbated by the frequency of MRO’s use of the switch (720 times)
+Lessons Learned
+- 
+Avoid using polyimide tape windows for contamination control on WTS vents
+- 
+Many additional recommendations on analysis & design
+Source: JPL/NASA Lessons Learned
+- 
+https://llis.nasa.gov/lesson/1796
+10/24/2025
+6
+3
+4
+1
+2
+1 db RF loss
+Tape & WTS pictures show testing
+that was completed as part of the
+anomaly investigation
 
-The transponder converts between digital spacecraft information and RF.
+## Phoenix Telecom Subsystem (X-Band)
 
-```text
-C&DH ↔ Radio/Transponder ↔ Amplifier ↔ Diplexer ↔ RF Switch ↔ Antenna
-```
+> **Source: Slide 7**
 
-## Amplifier
+10/24/2025
+7
+Source: “Phoenix Telecommunications”, DESCANSO Series, 2010
+Mission Description
+- NASA science mission to investigate the geologic
+history and biological potential of Martian arctic
+- Launch in 2007, arrived May 2008, ended Nov. 2008
+Telecom System
+- 2-way X-band for communication & ranging in Cruise
+- 2 SDST radios and 2 15-W SSPA amplifiers
+- 1 medium gain (MGA)
+- Separate low gain antennas (Rx & Tx)
+- 2100 bps (Earth) to 40 bps (Mars)
+- 2-way UHF radio for EDL & Surface
+- 1 helix antenna (HGA) and 1 monopole (LGA)
+- 32 kbps (EDL) to 256 kbps (Surface)
+What component in the diagram is not described?
+Speculate on its use and when/why it’s used.
 
-An RF power amplifier increases low-power RF to a level capable of driving the antenna. Example: TWTA.
+## Phoenix Telecom Subsystem (UHF)
 
-## Diplexer
+> **Source: Slide 8**
 
-A passive device that combines or separates uplink/downlink signals based on frequency.
+10/24/2025
+8
+Source: “Phoenix
+Telecommunications”,
+DESCANSO Series, 2010
+Mission Description
+- NASA science mission to investigate the geologic
+history and biological potential of Martian arctic
+- Launch in 2007, arrived May 2008, ended Nov. 2008
+Telecom System
+- 2-way X-band for communication & ranging in Cruise
+- 2 SDST radios and 2 15-W SSPA amplifiers
+- 1 medium gain (MGA)
+- Separate low gain antennas (Rx & Tx)
+- 2100 bps (Earth) to 40 bps (Mars)
+- 2-way UHF radio for EDL & Surface
+- 1 helix antenna (HGA) and 1 monopole (LGA)
+- 32 kbps (EDL) to 256 kbps (Surface)
+What component in the diagram is not described?
+Speculate on its use and when/why it’s used.
 
-## Waveguide Transfer Switch
+## Juno Telecom Subsystem
 
-Routes RF to a selected device or antenna.
+> **Source: Slide 9**
 
-## Antennas
-
-**HGA**
-- Usually parabolic
-- High data rate
-- Narrow pointing requirement
-
-**MGA**
-- Often a horn
-- Intermediate data rate and pointing requirement
-
-**LGA**
-- Broad, approximately 360-degree coverage
-- Low data rate
-- Critical/fault communications
-
-The OSIRIS-REx diagram shows redundant SDSTs, TWTAs, diplexers and switches connected to HGA, MGA and LGAs.
+10/24/2025
+9
+Mission Description
+- 
+NASA science mission to understand the
+formation and evolution of Jupiter
+- 
+Launched in 2011, arrived 2016, extended to 2025
+Telecom System
+- 
+2-way X-band for communication & ranging
+- 2 SDST radios and 2 TWTA amplifiers
+- 1,745 bps (launch), 100 bps (cruise), 18 kbps
+(HGA at Jupiter), 10 bps (safe)
+- 
+2-way Ka-band for gravity science (single-string)
+- 1 Italian radio and 1 SSPA amplifier
+- 
+Five Antennas
+- 2.5 m HGA, MGA, and 3 LGAs
+Source: “Juno Telecommunications”, DESCANSO Series, 2012
 
 ---
 
-# 3. Mission Telecom Examples
+# 3. End-to-End Information System (EEIS)
 
-> **Source: Slides 6–9**
 
-## MRO Waveguide Transfer Switch Anomaly
+## End-to-End Information System (EEIS) Overview
 
-MRO uses a WTS to route a 100-W RF downlink from one of two amplifiers to one of two antennas. Five months after Mars arrival, a WTS failed to actuate and became stuck between positions.
+> **Source: Slide 10**
 
-Effects:
-- Approximately 1 dB RF loss
-- Approximately 15 °C temperature increase
-- FSW maintained configuration by switching to the redundant X-band amplifier
-
-Probable sequence:
-1. Conductive debris accumulated on polyimide-tape vent windows.
-2. RF breakdown decomposed the tape.
-3. Debris entered the WTS.
-4. The switch bound.
-5. RF performance decreased by approximately 1 dB.
-
-The approximately 3-dB system margin accommodated the loss. Frequent use—about 720 actuations—exacerbated the process.
-
-**Lesson:** avoid polyimide-tape windows for contamination control on WTS vents.
-
-## Phoenix
-
-Mission to investigate the Martian arctic.
-
-**X-band cruise**
-- Two SDST radios
-- Two 15-W SSPAs
-- One MGA
-- Separate Rx and Tx LGAs
-- About 2100 bps near Earth to 40 bps near Mars
-
-**UHF EDL/surface**
-- Helix and monopole antennas
-- About 32 kbps during EDL to 256 kbps on surface
-
-## Juno
-
-- Two-way X-band communications/ranging
-- Two SDSTs and two TWTAs
-- 1,745 bps launch
-- 100 bps cruise
-- 18 kbps HGA at Jupiter
-- 10 bps safe mode
-- Separate single-string Ka-band gravity-science link
-- 2.5-m HGA, MGA, and three LGAs
-
----
-
-# 4. End-to-End Information System
-
-> **Source: Slides 10–11**
-
-EEIS includes all functions, formats, conversions, gains, and losses from initial data selection to final reception and use.
-
-```text
-Source Data
-↓
-Formatting / Packetization
-↓
-Encoding
-↓
-RF Modulation
-↓
-Spacecraft Telecom
-↓
-Space Propagation
-↓
-Atmosphere
-↓
+- 
+EEIS stretches beyond the telecom subsystem to encompass all functions, data formats, and path losses from
+the initial selection and formatting of the data for transmission to the final reception and use of the data
+  - These are the to/from paths between telecom and ground (uplink & downlink)
+- 
+Flight-Ground Interface Control Document (FG-ICD)
+  - This document describes the interfaces & data formats at each step in the process
+  - To maximize efficiency, data is transmitted in binary and thus needs to be converted at several steps along the full path
+- 
+Link Budget
+  - This is the corresponding analysis that captures all of the losses (L) and gains (G) between the source & receiver
+  - This budget determines the data rate (in bits per second, bps) at a given bit error rate (BER)
+  - It’s used across many industries to design communication systems
+10/24/2025
+10
+Telecom Subsystem
+Space Loss
+Atmospheric Attenuation
 Ground Station
-↓
-Demodulation / Decoding
-↓
-Recovered Data
-```
 
-## Flight-Ground Interface Control Document
+## End-to-End Information System (in bits)
 
-The FG-ICD defines interfaces and data formats throughout the flight-ground path. Data is transmitted efficiently in binary and converted at multiple stages.
+> **Source: Slide 11**
 
-The Titan-image example visually traces an image through binary data, packet structure, modulation, relay via Cassini, ground reception, and image reconstruction.
-
-## Link Budget
-
-The link budget captures all gains and losses between source and receiver and determines achievable data rate for a specified BER.
+10/24/2025
+12
+Picture on Titan
+Picture on Earth
+(relay via
+Cassini s/c)
+Flight Ground Interface Control Document (FG-ICD)
 
 ---
 
-# 5. Electromagnetic and RF Spectrum
+# 4. Electromagnetic and RF Spectrum
 
-> **Source: Slides 12–13**
 
-The EM spectrum describes radiation in terms of frequency, wavelength, and photon energy. Space applications include radiation, power generation, thermal control, science, radar, and communications.
+## Electromagnetic (EM) Spectrum
 
-```math
-f = \frac{c}{\lambda}
-```
+> **Source: Slide 12**
 
-where `f` is frequency, `c` is speed of light, and `λ` is wavelength.
+10/24/2025
+13
+Radio Frequency (RF) Spectrum
+The EM spectrum
+describes light in the form
+of frequencies and their
+respective wavelengths
+and photon energies.
+The EM spectrum is used
+heavily in space, where its
+used or mitigated in the
+following applications:
+- Radiation shielding
+- Power generation (eg,
+solar arrays)
+- Thermal absorption &
+radiation
+- Science (eg, imaging,
+spectroscopy, radar)
+- Communications
 
-Common RF bands progress approximately:
+## Radio Frequency (RF) Spectrum
 
-```text
-L → S → C → X → Ku → K → Ka
-```
+> **Source: Slide 13**
 
-Higher frequency generally provides:
+10/24/2025
+14
+30 cm
+7.5 mm
+Wavelength (λ):
+Frequency (GHz):
+RF Bands:
+15 cm
+1.2 cm
+Advantages
+Disadvantages
+Notes
+Lower in
+Spectrum
+L, S, C, X
+- Frequently used with
+small omni-antennas
+- Less susceptible to
+atmospheric effects (eg,
+rain, fog, snow)
+- More power required
+- Lower throughput
+- Larger HGA size
+- NASA/DoD use S- & X-bands
+- Used for low or high rate data
+- GPS, comm. satellites, & mobile phones
+use L-band
+- TV broadcasting uses C-band
+Higher in
+Spectrum
+Ku, K, Ka
+- Lower power required
 - Higher throughput
-- Smaller HGA
-- More available spectrum
-- Greater susceptibility to atmospheric/rain effects
-
-Lower-frequency L/S/C/X bands are generally more robust. NASA/DoD commonly use S and X. Ka supports high-rate NASA communications. K is avoided because of atmospheric attenuation.
-
----
-
-# 6. Communications Definitions
-
-> **Source: Slides 14 and 19**
-
-- **Uplink:** ground to spacecraft
-- **Downlink:** spacecraft to ground
-- **Crosslink:** spacecraft-to-spacecraft or relay communication
-- **Carrier:** RF source carrying information
-- **Modulation:** varies amplitude, phase, or frequency of a carrier according to information
-- **Demodulation:** restores the original information
-- **BER:** probability/frequency of bit errors
-
-Representative requirement:
-
-```math
-BER = 10^{-5}
-```
-
-approximately one erroneous bit in 100,000.
-
-A **symbol** is a repeated wave pattern representing bits:
-- BPSK: 1 bit/symbol
-- 8-PSK: 3 bits/symbol
-
-Typical transmitter power is roughly 10–100 W. The lecture suggests 10–20% of total spacecraft power as a rough telecom assumption.
+- Smaller HGA size
+- More susceptible to
+atmospheric effects
+(eg, rain)
+- Communications/NASA use Ka-band
+- Used for high rate-data
+- Satellite comm. & direct broadcast use Ku-
+band
+- K-band avoided due to atmosphere
+Key Relationship: f = c / λ
+Where: f is frequency in Hz (cycles/sec)
+c is the speed of light (m/s)
+λ is wavelength (m)
+K-above
+Ka
+X, C, S, L
+K-under
+Ku
+K
+(robust)
+(high-
+performance)
 
 ---
 
-# 7. Radiation, Gain, and EIRP
+# 5. Communications Definitions and Radiation
 
-> **Source: Slides 15–16**
 
-For isotropic radiation:
+## A Few Definitions…
 
-```math
-A = 4\pi r^2
-```
+> **Source: Slide 14**
 
-and flux density is:
+- Uplink, Downlink, Crosslink
+  - Communication up/down from the ground across via relay to other spacecraft
+- Carrier
+  - Radio frequency (RF) source used to carry information
+  - Frequency: f = c / λ (typically in units of Hz; that is, cycles/second)
+- Modulation
+  - The process by which an input signal varies the characteristics of a carrier wave, including the
+amplitude, phase or frequency
+  - Spacecraft downlinks typically use phase modulation, where the amplitude/frequency remain the
+same and the phase (ie, signal level) is changed
+- Demodulation
+  - The process for restoring the original input signal
+- Bit Error Rate (BER)
+  - Frequency/probability of a bit error rate
+  - Typical requirement is 10^-5 (ie, 1 in error in 100,000 bits)
+10/24/2025
+15
+Phase modulation varies the
+signal level (very slightly)
+Modulating Wave
+(injects your data)
+Carrier
+(carries your data)
 
-```math
-S = \frac{P_t}{4\pi r^2}
-```
+## Isotropic & Anisotropic Radiation
 
-so power density decreases with inverse square of range.
+> **Source: Slide 15**
 
-Directional radiation is anisotropic and characterized by an antenna gain pattern.
-
-Conceptually:
-
-```math
-G = \frac{A_{effective}}{A_{isotropic}}
-```
-
-## EIRP
-
-Effective Isotropic Radiated Power includes transmit power, antenna gain, and transmission-side losses:
-
-```math
-EIRP = P_t G_t L_a L_c
-```
-
-Communications gains/losses span many orders of magnitude, motivating logarithmic dB notation.
+10/24/2025
+16
+Equal power radiated in all directions
+from the center of sphere with a
+point source (ie, equipotential electric
+field at all constant radii).
+Radiation where its intensity
+depends on the direction. Typically
+described via an antenna gain
+pattern.
+Isotropic Radiation
+Anisotropic Radiation
+Surface area of a sphere = 4 π r2
+Therefore, assuming no losses due to inefficiency, a 1
+W source will gradually dissipate with 1/r2.
+Or, flux density (in Watts) = Pt / (4 π r2)
+If a transmitter has ‘gain’, then it transmits a signal in a given
+direction at an increased level of power than if it were
+isotropic. That is:
+Gain = Aeffective / Aisotropic
+…for a given section of the surface area (A).
 
 ---
 
-# 8. Telecom Link Equations
+# 6. EIRP, Link Equations, and Decibels
+
+
+## Effective Isotropic Radiated power (EIRP)
+
+> **Source: Slide 16**
+
+- Effective Isotropic Radiated Power (EIRP) is the resulting
+transmitted power after all gains & losses during
+transmission have been factored in, including:
+  - Antenna gains (Gtransmitted)
+  - Antenna pointing and/or circuit losses (Lantenna, Lcircuit)
+- Thus EIRP = Pt Gt La Lc
+  - Where EIRP & Pt are in Watts and G & L are unitless factors
+  - In other words, the resulting power is the original power times a
+series of factors (gains & losses)
+- Unfortunately, for communications, gains & losses typically
+vary by several orders of magnitude, such as:
+  - Gains: x 10-1,000,0000
+  - Losses x 1/10th to 1/1,000,000th
+- The result is that it’s far easier to work in decibels (dB)
+10/24/2025
+17
+
+## Additional Equations
 
 > **Source: Slide 17**
 
-Received power:
+Telecom Link Equation
+- Eb/N0 is the final result that determines
+performance. Eb is energy per bit, N0 is noise
+power spectral density in Watts per hertz
+- Eb/N0 = PtLtGt ( ) LmGrLr ( ) / N0
+- 
+Where:
+Pt = transmit power
+Lt = transmit circuit loss
+Gt = transmit antenna gain
+lambda = wavelength
+Lm = medium loss
+Rg = range
+Gr = receive gain
+Lr = receive circuit loss
+Rt = bit rate
+5/18/18
+SEA-18
+4 Rg
+2
+2
+1
+Rt
+Where…
+R = Range
+Ar = Receiving area
+Pr = Power received
+Pt = Power transmitted
+La = Transmission loss factor
+G = Transmission
+Radiated Power
+- This equation converts transmitted power
+(Pt) to radiated power (Pr)
 
-```math
-P_r = \frac{A_r}{4\pi R^2} P_t L_a
-```
-
-The central link-performance metric is:
-
-```math
-\frac{E_b}{N_0}
-```
-
-where `E_b` is energy per bit and `N_0` is noise power spectral density.
-
-The lecture presents:
-
-```math
-\frac{E_b}{N_0}
-=
-P_t L_t G_t
-\left(\frac{\lambda^2}{4\pi R_g^2}\right)
-L_m G_r L_r
-\left(\frac{1}{R_t}\right)
-\frac{1}{N_0}
-```
-
-Parameters include transmit power, circuit losses, antenna gains, wavelength, medium loss, range, receive gain, bit rate, and noise.
-
----
-
-# 9. Decibels
+## The decibel (dB)
 
 > **Source: Slide 18**
 
-```math
-G_{dB} = 10\log_{10}(G)
-```
+- Background
+  - Consider dB as just a method that is used to express ratios (ie, gains & losses).
+- 
+dB converts factors (gain or loss) using a Log10 function; that is, 10 x Log10 (G) = G (in dB)
+- 
+The inverse of this is: Gain = 10 (Gain (in dB) / 10)
+  - Examples:
+- 
+Example 1: 10 W increases by a factor of 2, 10 x 2 = 20 W
+  - 
+Factor of 2 = 10 x Log10 (2) = 3 dB
+- 
+Example 2: 10 W decreases by a factor of 2, 10 / 2 = 5 W
+  - 
+Factor of ½ = 10 x Log10 (½) = 10 x Log10 (1) – 10 x Log10 (2) = 0 dB – 3 dB = -3dB
+  - This is important because of the properties of log functions
+- 
+Example 3: 10 W x 1/100 x 1,000 x 1/500 x 80,000 x 1/20,000 = 0.8 W
+  - 
+Where as:
+10 W x (-20 dB + 30 dB – 27 dB + 49 dB – 43 dB) = 0.8 W → In other words, we can just add/subtract gains & losses by using dB
+10 W x (-11 dB) = 0.8 W
+10 W x 0.08 = 0.8 W, where 0.08 = 10^(-11/10)
+- Two additional conventions
+  - Watts can be converted to dBi:
+10 x Log10 (Power in W) = Power in dBi
+  - You can convert to milliWatts as well (in dBm):
+10 x Log10 (Power in W x 1000) =
+10 x Log10 (Power in W) + 10 x Log10 (1000) =
+Power in dBi + 30 = Power in dBm
+10/24/2025
+19
 
-Inverse:
+## Questions from Prior Class
 
-```math
-G = 10^{G_{dB}/10}
-```
+> **Source: Slide 19**
 
-A factor of two gain is approximately +3 dB; a factor of one-half is approximately -3 dB.
-
-The key benefit is that multiplicative gains and losses become additive/subtractive dB terms.
-
-For the lecture's example, a net -11 dB corresponds to:
-
-```math
-10^{-11/10} \approx 0.08
-```
-
-so 10 W becomes approximately 0.8 W.
-
-For milliwatt reference:
-
-```math
-P_{dBm} = 10\log_{10}(1000P_W)
-```
+10/24/2025
+20
+- How much power devoted to telecom?
+  - Transmitters are typically in the 10 to 100 W class
+  - Overall power is often 100 to 1,000 W, so 10-20% is probably a good assumption
+- In telecommunication, what is a symbol?
+  - A symbol is a repeated wave pattern that represents a specific # of bits (eg, 1 bit in BPSK)
+BPSK (1 bit/symbol)
+8-PSK (3 bits/symbol)
+Phase Key Shifting
+Error Correction Codes
 
 ---
 
-# 10. Link Budget
+# 7. Link Budget and Antenna Performance
+
+
+## Link Budget Overview
 
 > **Source: Slide 20**
 
-The link budget sizes the telecom system and is tightly coupled to the EEIS.
+- The link budget is the analysis that ‘sizes’ the telecom system, but it
+is deeply intertwined with the entire EEIS architecture
+  - The following parameters are heavily traded very early in the design
+process to ensure a robust communication architecture
+- Telecom Subsystem
+  - Frequency Band (eg, L, S, C, X, Ku, K, Ka)
+  - Radio/Amplifier Power Input (eg, 1-200 W)
+  - Antenna Type (eg, dipole, parabolic) and sizing (eg, 1-3 m dish)
+  - Hardware efficiencies & losses (eg, radio, amplifier, circuit, antenna)
+  - Operations losses (eg, pointing loss)
+- Space Loss & Atmospheric Attenuation
+  - Signal characteristics (eg, band, polarization, ellipticity, etc.) vs. losses
+- Ground Station & Architecture
+  - Antenna network (eg, DSN) and size (eg, 34-m, 70-m)
+  - Pointing Loss (eg, 0.1 deg)
+- Typical Products
+  - Data Rate (bps), margin (dB), and bit error rate (BER)
+10/24/2025
+21
 
-## Telecom Inputs
+## Antenna Gain
 
-- Frequency band
-- Radio/amplifier power
-- Antenna type and size
-- Hardware efficiency/losses
-- Pointing loss
+> **Source: Slide 21**
 
-## Path Inputs
+10/24/2025
+23
 
-- Range
-- Band
-- Polarization
-- Ellipticity
-- Space loss
-- Atmospheric attenuation
+## A Typical Antenna Pattern
 
-## Ground Inputs
+> **Source: Slide 22**
 
-- Network such as DSN
-- 34-m or 70-m antenna
-- Pointing loss
-
-## Outputs
-
-- Data rate
-- Margin
-- BER
-
-The slide's spreadsheet organizes calculations into transmitter, path, receiver, total received power, and resulting downlink rate.
-
----
-
-# 11. Antenna Gain and Patterns
-
-> **Source: Slides 21–22 and 49**
-
-Approximate gain categories:
-
-```math
-G < 3\ dB
-```
-
-for low gain,
-
-```math
-5\ dB \le G \le 20\ dB
-```
-
-for medium gain, and
-
-```math
-G \ge 20\ dB
-```
-
-for high gain.
-
-Beamwidth is the angle between the -3-dB half-power points around boresight.
-
-A typical antenna pattern contains:
-- Main beam
-- Boresight
-- First sidelobe
-- Near-in sidelobes
-- Far sidelobes
-- Backlobes
-- Cross-polarization regions
-
-For a parabolic antenna:
-
-```math
-BW = \frac{70\lambda}{d}
-```
-
-where `BW` is beamwidth in degrees, `λ` is wavelength in meters, and `d` is antenna diameter.
-
-Larger diameter or shorter wavelength gives narrower beamwidth and generally higher gain, but tighter pointing requirements.
+10/24/2025
+24
 
 ---
 
-# 12. Atmospheric Attenuation
+# 8. Atmospheric, Trajectory, FOV, and RF Compatibility Effects
 
-> **Source: Slides 23–24**
 
-Atmospheric attenuation peaks occur because of molecular resonance.
+## Atmospheric Attenuation
 
-Water peaks:
-- ~22 GHz
-- ~185 GHz
+> **Source: Slide 23**
 
-Oxygen peaks:
-- ~60 GHz
-- ~120 GHz
+10/24/2025
+25
 
-Attenuation is caused by absorption and scattering.
+## Attenuation vs. Frequency
 
-The lecture summarizes:
-- <0.1 GHz: negligible
-- >5 GHz: significant
-- >20 GHz: severe
-- Decreases with altitude
-- Increases at lower terminal elevation angle
-- Low-attenuation regions between peaks are called windows
+> **Source: Slide 24**
 
----
+10/24/2025
+26
 
-# 13. Trajectory and Field-of-View Effects
+## Trajectory Impacts on Telecom
 
-> **Source: Slides 25–26**
+> **Source: Slide 25**
 
-Trajectory affects telecom because spacecraft-Earth range changes dramatically over a mission. Cassini plots illustrate variations in range and Earth-spacecraft-Sun angle during gravity assists and cruise.
+10/24/2025
+27
 
-These changes affect:
-- Free-space loss
-- Data rate
-- Required gain
-- Required transmit power
-- Ground station
-- Antenna pointing
+## Fields of View (FOV) Impacts…
 
-Spacecraft hardware can also distort antenna patterns. The MRO UHF example shows that neighboring nadir-deck hardware, with dimensions comparable to the roughly 0.75-m wavelength, affects antenna performance.
+> **Source: Slide 26**
 
----
+10/24/2025
+28
+- 
+Interference with fields of view effect antenna patterns.
+- 
+Other items on nadir deck effect pattern. Objects are same order as the wavelength ~
+.75m.
+MRO Flight UHF Antenna
+Antenna with radome mounted on MRO nadir deck.
 
-# 14. Mars Rover Communications
+## Mars Rovers
 
 > **Source: Slide 27**
 
-Representative Curiosity rates:
+- Typical Curiosity Data Rates
+  - 2 Mbps via RUHF
+  - 500 bps via RHGA
+  - 10 bps via RLGA
+10/24/2025
+29
+RUHF
+RLGA
+RHGA
 
-| Link | Rate |
-|---|---:|
-| RUHF | 2 Mbps |
-| RHGA | 500 bps |
-| RLGA | 10 bps |
-
-This shows the large performance difference between relay, direct high-gain, and low-gain fault communications.
-
----
-
-# 15. RF Compatibility
+## RF Compatibility
 
 > **Source: Slide 28**
 
-Spacecraft subsystems must avoid unacceptable conducted/radiated emissions and susceptibility.
-
-RF communications and instruments intentionally radiate at selected frequencies, so coupling at operating frequencies and harmonics must be estimated and controlled.
-
-Design implications:
-- Add filters where required
-- Evaluate subsystem interactions
-- Perform complete spacecraft self-compatibility testing
-- Test flight configuration including thermal blankets and payload
+- All subsystems and instruments are required to avoid conducted and radiated emissions and susceptibilities.
+- RF systems, communications and instruments, are intended to radiate and be susceptible at specific
+frequencies.
+- Couplings between each element at each frequency and harmonics must be estimated and controlled.
+- Filters must be added in the design.
+- S/C system test must include complete self-compatibility test, including flight configuration, thermal blankets,
+and payload.
+10/24/2025
+30
 
 ---
 
-# 16. Galileo High-Gain-Antenna Failure
+# 9. Galileo HGA Failure Case Study
 
-> **Source: Slides 29–43**
 
-Galileo launched in 1989, entered Jupiter orbit in 1995, and was intentionally entered into Jupiter in 2003.
+## Case Study
 
-Its science included Jupiter's radiation environment, Europa's subsurface ocean evidence, Io volcanism, and Ganymede's magnetic field.
+> **Source: Slide 29**
 
-In 1991, the 4.8-m HGA failed to fully deploy.
+Galileo HGA Failure
+10/24/2025
+31
+- 
+Galileo
+  - 
+Launched in 1989 from the Space Shuttle Atlantis
+  - 
+Jupiter Orbit Insertion (JOI) in 1995
+  - 
+Controlled entry into Jupiter in 2003
+- 
+Scientific Discoveries
+  - 
+Intense radiation environment
+  - 
+Liquid ocean under Europa ice
+  - 
+Io’s active volcanos
+  - 
+Ganymead’s magnetic field
+- 
+Near Mission Failure….
+  - 
+In 1991, the operations team tried and failed to fully
+deploy the 4.8-m High Gain Antenna
+Europa
+Io
 
-## Telecom Architecture
+## 10/24/2025
 
-Major sections:
-- S-/X-band Antenna subsystem
-- Radio Frequency Subsystem
-- Modulation/Demodulation Subsystem
-- X-to-S downconverter
+> **Source: Slide 30**
 
-Carrier frequencies:
+32
+Galileo HGA Failure
+Trajectory Overview
 
-| Link | Frequency |
-|---|---:|
-| S uplink | 2.1 GHz |
-| S downlink | 2.3 GHz |
-| X uplink | 7.2 GHz |
-| X downlink | 8.4 GHz |
+## 10/24/2025
 
-## Component Terminology
+> **Source: Slide 31**
 
-- **Diplexer:** routes signals by frequency
-- **Switch:** selects RF paths
-- **Filter:** passes/rejects frequency regions
-- **TWTA:** traveling-wave-tube RF amplifier
-- **Downconverter:** converts RF to lower frequency
-- **Hybrid coupler:** splits power evenly, about 3 dB
-- **Exciter:** generates modulated waveform
-- **RF oscillator:** carrier source
-- **USO:** ultra-stable oscillator used for highly stable reference/science
-- **Modulator:** converts digital information into RF modulation
-- **Convolutional code:** error-correcting code; Viterbi algorithm used for decoding
+33
+Galileo HGA Failure
+Flight System Overview
+High Gain Antenna
+Low Gain Antenna
+Telecommunications
 
-## Signal Paths
+## 10/24/2025
 
-LGA S-band uplink and HGA S-band uplink feed receiver/command chains.
+> **Source: Slide 32**
 
-The intended high-rate HGA X-band downlink supported approximately:
+34
+Galileo HGA Failure
+Telecommunications Overview
+Radio Frequency Subsystem (RFS)
+Modulation/Demodulation Subsystem (MDS)
+S-/X-band Antenna (SXA) Subsystem
+X- to S-band Downconverter
+Carrier Frequencies
+S-band Uplink: 2.1 GHz
+S-band Downlink: 2.3 GHz
+X-band uplink: 7.2 GHz
+X-band downlink: 8.4 GHz
 
-```text
-134 kbps
-```
+## 10/24/2025
 
-The low-rate LGA S-band downlink supported:
+> **Source: Slide 33**
 
-```text
-< 40 bps
-```
+35
+Galileo HGA Failure
+Component Terminology
+- 
+Diplexer: Routes two signals into one path based on frequency (typically reciprocal)
+- 
+Switch: Allows the spacecraft to switch between two RF paths (eg, LGA vs. HGA)
+- 
+Filters: Allow/reject certain frequencies. There are four types: high-pass, low-pass, band-pass, and band-reject
+- 
+TWTA: Traveling Wave Tube Amplifier is a specialized vacuum tube that is uses additional power (in W) to amplify RF signals
+- 
+Down-converter: Converts RF signals to a lower frequency range.
+- 
+Hybrid Coupler: Splits power evenly (3 dB) between two ports
+- 
+Exciter: Generates the modulated waveform that can be radiated to the antenna.
+- 
+RF Oscillator: Generates the carrier signal that is used for spacecraft communications. An ultra-stable oscillator (USO) is a highly stable
+version generally used for science.
+- 
+Modulator: Converts signals from digital to RF
+- 
+Convolutional Code: Type of error-correcting encoding that is used to increase the robustness of spacecraft communications. Notes:
+(1)Andrew Viterbi proposed the Viterbi algorithm to decode convolutionally encoded data. (2) Convolutional codes are being replaced by
+Turbo codes.
+(These definitions are intended to be more readable, but slightly less accurate.)
 
-Redundancy used RCP/LCP polarization.
+## 10/24/2025
 
-## Redundancy
+> **Source: Slide 34**
 
-Redundant:
-- Two LGAs
-- Two low-rate telemetry paths
-- Critical electrical uplink/downlink components
+36
+Galileo HGA Failure
+Telecommunications Overview
+Radio Frequency Subsystem (RFS)
+Modulation/Demodulation Subsystem (MDS)
+S-/X-band Antenna (SXA) Subsystem
+X- to S-band Downconverter
+LGA vs. HGA
+LGA S-band
+Uplink Path
 
-Single-string:
+## 10/24/2025
+
+> **Source: Slide 35**
+
+37
+Galileo HGA Failure
+Telecommunications Overview
+Radio Frequency Subsystem (RFS)
+Modulation/Demodulation Subsystem (MDS)
+S-/X-band Antenna (SXA) Subsystem
+X- to S-band Downconverter
+LGA vs. HGA
+LGA S-band
+Uplink Path
+HGA S-band
+Uplink Path
+Low-rate LGA S-band
+Downlink Path
+
+## 10/24/2025
+
+> **Source: Slide 36**
+
+38
+Galileo HGA Failure
+Telecommunications Overview
+Radio Frequency Subsystem (RFS)
+Modulation/Demodulation Subsystem (MDS)
+S-/X-band Antenna (SXA) Subsystem
+X- to S-band Downconverter
+LGA vs. HGA
+LGA S-band
+Uplink Path
+HGA S-band
+Uplink Path
+High-rate HGA X-band
+Downlink Path
+(redundancy uses RCP/LCP
+polarization)
+
+## 10/24/2025
+
+> **Source: Slide 37**
+
+39
+Galileo HGA Failure
+Telecommunications Overview
+Radio Frequency Subsystem (RFS)
+Modulation/Demodulation Subsystem (MDS)
+S-/X-band Antenna (SXA) Subsystem
+X- to S-band Downconverter
+LGA vs. HGA
+LGA S-band
+Uplink Path
+HGA S-band
+Uplink Path
+High-rate HGA X-band
+Downlink Path (134
+kbps)
+(redundancy uses RCP/LCP
+polarization)
+Low-rate LGA S-band
+Downlink Path (< 40 bps)
+
+## 10/24/2025
+
+> **Source: Slide 38**
+
+40
+Galileo HGA Failure
+Redundancy
+Radio Frequency Subsystem (RFS)
+Modulation/Demodulation Subsystem (MDS)
+S-/X-band Antenna (SXA) Subsystem
+X- to S-band Downconverter
+LGA vs. HGA
+Redundant Units
+- 2 LGAs (1 not shown)
+- 2 complete paths for
+low-rate telemetry
+- All critical electrical
+uplink/downlink
+components are
+redundant
+Single-String
 - USO
 - HGA
 
-## Initial Failure
-
-After the Venus flyby and beyond 1 AU, deployment was commanded.
-
-- Motors operated about 8 minutes
-- Power was higher than expected
-- Three ribs remained stuck
-- HGA remained partially deployed
-
-## Probable Root Cause
-
-The lecture identifies lubricant loss due to transportation vibration during repeated JPL/KSC truck trips.
-
-- Failed ribs were closest to the flatbed trailers
-- Lubricants were not checked/replaced before launch
-
-Timeline:
-- Dec. 1985: JPL → KSC
-- Jan. 1986: Challenger loss
-- Late 1986: returned to JPL
-- Mid-1989: shipped to KSC
-- Oct. 1989: launched
-- Early 1991: HGA deployment failure
-
-## Recovery Attempts
-
-- Thermal cycling by changing Sun orientation
-- Repeated motor cycling, about 13,000 attempts
-- Spin up to 10 rpm
-- Hammering motors
-- Attempts during probe release, deflection maneuver, and JOI
-
-None deployed the HGA.
-
-At Jupiter the fallback rate would have been roughly 10 bps, effectively threatening the mission.
-
-## EEIS Recovery
-
-From 1993–1996, flight/ground software and DSN were improved:
-
-1. Better S-band SNR using antenna arrays and ultra-low-noise receivers
-2. More efficient modulation
-3. Better channel coding / lower required `E_b/N_0`
-4. Aggressive compression
-
-Results:
-- 10 bps → 160 bps from link improvements
-- Effective science return to roughly 1,000 bps with compression
-- Approximately 70% of science goals achieved
-
-This case demonstrates that mission recovery can come from improving the complete end-to-end information system rather than only the failed spacecraft hardware.
-
----
-
-# 17. Modern Telecom Hardware
+## Aside…
 
 > **Source: Slide 39**
 
-Modern SDST hardware combines:
-- Receiver
-- Command detector
-- Telemetry modulator
-- Exciters
-
-C&DH typically performs encoding and compression.
-
-SSPAs or TWTAs provide RF amplification, commonly in the 25–100 W range.
-
-A modern system can therefore be simplified to:
-
-```text
-C&DH
-↓
+Since Galileo…
+- 
 SDST
-↓
-SSPA / TWTA
-↓
-Diplexer / RF Switches
-↓
-Antenna
-```
+  - Unifies the following functions
+- 
+Receiver
+- 
+Command detector
+- 
+Telemetry modulator
+- 
+Exciters
+  - Note that encoding and compression is typically performed by the C&DH
+subsystem
+- 
+SSPA or TWTA
+  - Solid State vs. Traveling Tube
+  - Uses power to amplify the signal
+  - Often range from 25 W to 100 W
+- Result
+  - The above components greatly simplify modern telecom systems
+  - Typically, just combine these with
+- 
+Antennas
+- 
+Diplexers & Switches (waveguide/coaxial)
+10/24/2025
+41
+Small Deep Space Transponder (SDST)
+Solid State Power Amplifier (SSPA)
+
+## Galileo HGA Failure
+
+> **Source: Slide 40**
+
+Initially Anomaly…
+- 
+In 1991, after the Venus flyby and beyond 1 AU, the team executed a sequence to deploy the high gain antenna
+- 
+While the telemetry showed that the motors operated at higher-than-expected power levels for 8 minutes, they were unable to deploy
+the antenna.
+- 
+3 ribs were ‘stuck’
+(Can occur when there is insufficient lubricant)
+10/24/2025
+42
+Expected State (fully deployed)
+Actual State
+(partially deployed)
+
+## • Probable root cause…
+
+> **Source: Slide 41**
+
+  - Loss of lubricant occurred due to the vibration that the antenna experienced on the truck as it made multiple trips
+to/from KSC
+- 
+Failed ribs were closest to the flatbed trailers that carried Galileo
+- 
+The lubricants were not checked or replaced prior to launch
+10/24/2025
+43
+Galileo HGA Failure
+Why?
+Timeline
+- 
+Dec, 1985- Originally shipped from JPL to KSC
+- 
+Jan, 1986-
+Loss of Space Shuttle Challenger
+- 
+Late 1986- Returned to JPL
+- 
+Mid, 1989- Shipped to KSC
+- 
+Oct, 1989-
+Launched on Space Shuttle Atlantis
+- 
+Early 1991- HGA deployment failed
+(Picture from Phoenix S/C)
+
+## • Attempts to Unstick the HGA
+
+> **Source: Slide 42**
+
+  - Changing orientation towards/away from sun to change temperature
+  - Repeatedly turning on/off the motors would double the torque (13,000 attempts)
+  - Inducing a maximum spin rate of 10 rpm & hammering the motors
+  - Final attempts coincided with release of the probe, probe deflection maneuver, and JOI
+  - None were successful…
+  - At Jupiter, downlink rate would be 10 bps, which would effectively end the mission
+10/24/2025
+44
+Galileo HGA Failure
+Attempts to Unstick HGA
+
+## Galileo HGA Failure
+
+> **Source: Slide 43**
+
+Transmission Improvements & Results
+- From 1993 to 1996, extensive new flight and ground software was developed and DSN stations were enhanced to increase
+the transmission rate
+- Improvements
+1.
+Increased S-band signal to noise ratio (antenna arrays & ultra-low noise receivers)
+2.
+Improved efficiency of radio modulation
+3.
+Improved channel codes (ie, reduce Eb/No) so to minimize BER
+4.
+Aggressively apply data compression techniques
+- Result
+  - 1-3 improved the downlink rate from 10 bps to 160 bps
+  - 4 improve the rate to 1,000 bps
+  - These improvements allowed Galileo to meet 70% of its science goals
+10/24/2025
+45
+Beyond Galileo, these changes both significantly improved NASA deep space communications and changed how the
+science community viewed data compression.
 
 ---
 
-# 18. Telecom Hardware Estimation
+# 10. Telecom Hardware Estimate and Design Steps
+
+
+## Telecom Hardware Estimate
 
 > **Source: Slide 44**
 
-## Primary Components
+- Primary Components (part of link budget)
+  - Radio / Transponder, find lowest mass, power, & cost system that meets requirements
+  - Power Amplifier
+- 
+Use a TWTA or SSPA (often depends on specific design and/or heritage)
+- 
+Otherwise, just based on lowest mass/cost/power system that provides desired RF power
+  - Antennas
+- 
+High Gain antenna for primary data uplink/downlink
+- 
+Medium gain antenna when high gain not required due to lower rate or nearer range
+- 
+Low Gain antenna for fault scenarios (~360-deg coverage)
+- Additional Hardware
+  - Diplexers
+- 
+Routes different frequencies
+- 
+Uplink/downlink, S- vs. X-band
+- 
+0.7 kg each (ballpark)
+  - Waveguide Transfer Switches
+- 
+Configures between different antennas
+- 
+Depends on design, but 1 per 1-2 antennas
+- 
+1 kg each (ballpark)
+  - Coaxial Cable, Filters, etc.
+- 
+~5% of telecom mass
+10/24/2025
+46
+OSIRIS-Rex Telecom Subsystem
 
-**Radio/transponder**
-- Lowest mass/power/cost unit meeting requirements
-
-**Power amplifier**
-- TWTA or SSPA
-- Selection depends on heritage and required RF power
-
-**HGA**
-- Primary high-rate uplink/downlink
-
-**MGA**
-- Moderate-rate/nearer-range operation
-
-**LGA**
-- Fault scenarios and wide coverage
-
-## Additional Hardware
-
-**Diplexers**
-- Route frequencies and uplink/downlink
-- Ballpark: 0.7 kg each
-
-**Waveguide transfer switches**
-- Configure antenna paths
-- Roughly one per 1–2 antennas
-- Ballpark: 1 kg each
-
-**Coax, filters, etc.**
-- Ballpark: ~5% of telecom mass
-
----
-
-# 19. Telecom Design Process
+## Telecom Design Steps
 
 > **Source: Slide 45**
 
-## Review Design Information
-
-- Mission description / ConOps
-- System/subsystem requirements
-- Mission geometry
-- Earth-spacecraft range
-- Payload and engineering data
-- Fault scenarios
-
-## Preliminary Design
-
-- Identify driving uplink/downlink cases
-- Create link budget for each
-- Optimize band, antenna type/size, RF power, ground assumptions
-- Create block diagram
-- Create component mass list
-
-## Review and Iterate
-
-Work with the broader team and revisit options and trades.
-
----
-
-# 20. Optical Communications
-
-> **Source: Slides 47–48**
-
-The lecture identifies optical communication as a major innovation.
-
-Deep Space Optical Communications (DSOC) is described as a laser communication system intended to improve performance approximately:
-
-```text
-10–100×
-```
-
-over RF without corresponding increases in mass, volume, or power.
-
-Representative lecture values:
-- Mass: 29 kg
-- Power: <100 W
-- Data rate: 0.2–200 Mbps
-
-The DSOC diagram shows a flight laser transceiver communicating with ground laser transmitter/receiver facilities and DSN infrastructure.
+- Review & Understand Design Information
+  - Mission Description and/or Concept of Operations
+  - System and Subsystem Requirements
+- 
+ConOps, mission geometry, Earth-S/C range
+- 
+Payload & engineering data requirements
+- 
+Fault scenarios
+- Create a Preliminary Design
+  - Identify the driving uplink/downlink scenarios
+  - Create link budgets for each
+- 
+Optimize with respect to band, antenna types & sizes, RF power, ground station assumptions, etc.
+  - Create block diagram
+  - Create component mass list
+- Review & Iterate (w/broader team)
+  - Revisit other options & trades
+10/24/2025
+47
 
 ---
 
-# 21. Additional Class Questions
+# 11. Optical Communication and Class Questions
 
-> **Source: Slides 49–52**
 
-## 3-dB Beamwidth
+## QUESTIONS
 
-The 3-dB beamwidth is the half-power angular width.
+> **Source: Slide 46**
 
-```math
-dB = 10\log_{10}(factor)
-```
+10/24/2025
+48
 
-For a parabolic antenna:
+## Questions from Last Week
 
-```math
-BW = \frac{70\lambda}{d}
-```
+> **Source: Slide 47**
 
-## Are Telecom Blocks Always Hardware?
+- 
+Telecom is a critical subsystem, but are there any spacecraft that might not need it or where it’s less important?
+  - Thoughts from the class?
+- 
+Are there any new innovations/improvements being made to the way s/c communicate either with other s/c or ground stations?
+  - Most significant is optical communication… (next chart)
+  - Additionally, there is a continuing drive towards higher bandwidths and higher power systems, which have resulted in an increasing amount of data
+10/24/2025
+49
 
-For telecom and most subsystems, usually yes. But block diagrams can represent hardware, software, functions, organizations, or other architectural views.
+## Optical Communication
 
-## Why RCP and LCP?
+> **Source: Slide 48**
 
-Polarization can minimize interference and expand available communications bandwidth. The lecture also notes possible use during simultaneous uplink/downlink.
+- 
+Deep Space Optical Communications (DSOC) is a laser space communication system in development meant to improve
+communications performance 10 to 100 times over the current radio frequency technology without incurring increases in mass,
+volume or power.
+- 
+Mass 29 kg, power < 100 W, 0.2-200 Mbps
+10/24/2025
+50
 
-## Can an Antenna Transmit and Receive Simultaneously?
+## Questions from Class (3 of 3)
 
-Yes. The lecture notes a possible slight loss, with diplexers routing the appropriate band and direction.
+> **Source: Slide 49**
 
-## Why Modulate?
+10/24/2025
+51
+- 
+3 dB Beamwidth is the angle at which the signal is a half-power
+  - For example:
+dB = 10 Log10 (unitless factor)
+3 dB = 10 Log10 (0.5)
+- 
+For a parabolic antenna
+Main Lobe
+Side Lobes
+Back Lobe
+beamwidth
+Antenna Gain Patterns
+(magnitudes are in dB; ie, logarithmic scales)
+BW = 70l
+d
+where BW = antenna beamwidth (deg)
+l = wavelength (m)
+d = antenna diameter (m)
+Useful Source
+https://www.phys.hawaii.edu/~anita/new/papers/militaryHandbook/antennas.pdf
 
-Digital data must be translated into an RF carrier for wireless transmission. Modulation performs this conversion; demodulation recovers the information.
+## Questions from Class (4 of 9)
 
-## Telecom-C&DH Interface
+> **Source: Slide 50**
 
-Uplink:
+- 
+“When looking at a telecommunications block diagram, are the block always pieces of hardware?”
+  - For telecom & most subsystems, yes. For, GN&C and Software, no.
+  - Note that block diagrams can be used in different ways (hardware, software, functional, organizational, etc.) Important to choose the right “architectural
+view or perspective” depending on the problem.
+- 
+“If switching between RCP and LCP may cause problems with receiving the signal on the ground, why do it?”
+  - In general, using polarization minimizes interference from other sources and expands the available bandwidth for communications.
+  - I believe it’s also used, on occasion, when uplinking/downlinking at the same time
+10/24/2025
+52
 
-```text
-RF → Telecom → Digital Data → C&DH / FSW
-```
+## Questions from Class (5 of 9)
 
-Downlink:
+> **Source: Slide 51**
 
-```text
-C&DH / FSW → Encoded Data → Telecom → RF → Earth
-```
+- 
+“Can an antennas receive and send out information at the same time?”
+  - Yes. I believe there is a slight loss when simultaneously transmitting/receiving data
+  - Note that the diplexer is responsible for routing the appropriate signals (band & direction)
+10/24/2025
+53
+- 
+“How is data modulation done and why is it important when
+downlinking?”
+  - 
+Transmitting data via radio waves requires us to translate real data (ie, bits)
+into the RF signal. This is what modulation is (versus an electrical line where
+digital signals can be transmitted directly).
+
+## Questions from Class (8 of 9)
+
+> **Source: Slide 52**
+
+- 
+“For clarification, does the [Telecom] subsystem receive RF signals from the uplink path, transform them into digital signals and then send
+these digital signals to the C&DH subsystem?”
+  - Yes – this is exactly how it works.
+- 
+“And then when the [Telecom] subsystem is sending signals on the downlink path back to earth, do these signals originally come from the
+C&DH subsystem?”
+  - Yes – they are either collected and/or generated by FSW, encoded, and then sent to telecom
+10/24/2025
+54
 
 ---
 
-# 22. Lecture Summary
+# Lecture Summary
 
-> **Source: Slides 1–52**
+> **Source: Full Lecture**
 
-Telecom provides the spacecraft communication path to Earth and other spacecraft.
+The telecom subsystem provides communication to/from the spacecraft and supports command reception, telemetry transmission, antenna selection and pointing, carrier tracking, and ranging. The lecture connects spacecraft telecom hardware to the broader End-to-End Information System (EEIS), including the complete data path between spacecraft and ground.
 
-A representative modern chain is:
+Key takeaways:
 
-```text
-C&DH
-↕
-Radio / Transponder
-↕
-Power Amplifier
-↕
-Diplexer / RF Switching
-↕
-Antenna
-```
-
-The broader EEIS extends from source-data generation through formatting, encoding, modulation, propagation, atmospheric loss, ground reception, decoding, and final data use.
-
-The link budget is the principal sizing analysis. It combines:
-- Transmitter power
-- Circuit losses
-- Antenna gain
-- Wavelength
-- Range
-- Medium loss
-- Receiver gain
-- Noise
-- Bit rate
-- BER
-- Margin
-
-The central quality metric is:
-
-```math
-\frac{E_b}{N_0}
-```
-
-Decibels simplify the analysis of multiplicative gains and losses:
-
-```math
-G_{dB} = 10\log_{10}(G)
-```
-
-High-gain antennas concentrate energy and improve link performance, but narrow the beam and tighten pointing requirements.
-
-Atmospheric attenuation becomes increasingly important at high frequencies, especially around water and oxygen absorption lines.
-
-Trajectory, spacecraft geometry, antenna field of view, RF compatibility, redundancy, ground-station capability, and fault modes all affect telecom architecture.
-
-The Galileo HGA failure demonstrates the importance of designing the entire EEIS. Although the single-string HGA failed, improvements in DSN reception, modulation, coding, compression, flight software, and ground software increased the effective science return from an otherwise mission-ending low-rate link and enabled approximately 70% of Galileo's science goals.
-
-Telecom design is therefore an iterative systems-engineering process:
-
-```text
-Mission Requirements
-↓
-Geometry and Data Needs
-↓
-Driving Communication Scenarios
-↓
-Link Budgets
-↓
-Band / Power / Antenna / Ground Trades
-↓
-Telecom Architecture
-↓
-Hardware and Mass Estimate
-↓
-System Review and Iteration
-```
-
-Optical communications such as DSOC represent a future direction with the potential for roughly 10–100× communications-performance improvement over conventional RF technology.
+- **Telecom hardware:** Radios/transponders, amplifiers, diplexers, waveguide transfer switches, and high-, medium-, and low-gain antennas form the core telecom architecture.
+- **EEIS:** Communications design extends beyond spacecraft hardware to data formatting, path losses, ground stations, and the Flight-Ground Interface Control Document.
+- **RF spectrum:** Frequency band affects antenna size, throughput, required power, and susceptibility to atmospheric effects.
+- **Link performance:** EIRP, antenna gain, path loss, atmospheric attenuation, receiver performance, data rate, BER, and margin are combined through the link budget.
+- **Spacecraft integration:** Trajectory, antenna field of view, spacecraft geometry, RF compatibility, redundancy, and fault scenarios directly affect telecom design.
+- **Galileo HGA failure:** The case study shows how an antenna-deployment failure forced major flight-software, ground-system, coding, modulation, and compression improvements to preserve mission science return.
+- **Design process:** Telecom design begins with mission geometry, data requirements, and fault scenarios, then develops driving uplink/downlink link budgets, hardware architecture, and a component mass estimate before iteration with the broader spacecraft team.
+- **Optical communication:** DSOC demonstrates the potential for major communications-performance improvements beyond traditional RF systems.
