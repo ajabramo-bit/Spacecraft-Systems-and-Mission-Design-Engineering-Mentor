@@ -3,7 +3,10 @@
 **Course:** ASTE-331a --- Spacecraft Systems Engineering\
 **Lecture:** 03 --- Attitude Control System (ACS)\
 **Instructors:** Jim Chase, Danielle Marsh\
-**Source:** `331_03_ACS_20250926.pdf`
+**Teaching Assistants:** Daejah Dandrich, Luis Diaz, Liam Kerrigan,
+Emerson Lo\
+**Date:** September 26, 2025\
+**Source:** `331_03_ACS_20250926(1).pdf`
 
 ------------------------------------------------------------------------
 
@@ -50,11 +53,7 @@ inertia tensors, Euler's moment equations, Euler angles, and rotation
 matrices**.
 
 Mission examples and case studies include **OSIRIS-REx**, the
-**International Space Station**, **Phoenix**, and **Deep Impact**. The
-Phoenix case study emphasizes simulation fidelity and radar testing,
-while Deep Impact demonstrates the importance of coordinate-frame
-verification, star-tracker phasing, catalog configuration, safe-mode
-independence, and explaining every observable during anomaly resolution.
+**International Space Station**, **Phoenix**, and **Deep Impact**.
 
 ------------------------------------------------------------------------
 
@@ -131,13 +130,21 @@ including the actuators, sensors, and onboard logic/control
 -   Also Known As...
 
     -   AACS: Attitude and Articulation Control System
+
     -   ACS: Attitude Control System
+
     -   ADCS: Attitude Determination Control System
+
     -   ADACS: Attitude Determination and Control System
+
     -   AOCS: Attitude and Orbit Control System
+
     -   G&C: Guidance and Control System
+
     -   GN&C: Guidance, Navigation, and Control
+
     -   PCS: Pointing Control System
+
     -   ...
 
 ------------------------------------------------------------------------
@@ -156,9 +163,7 @@ including the actuators, sensors, and onboard logic/control
 
     -   3 reaction wheels
 
-    -   1 inertial measurement
-
-    -   stability to support spacecraft pointing
+    -   1 inertial measurement stability to support spacecraft pointing
 
     -   Primary drivers for pointing are:
 
@@ -170,9 +175,7 @@ including the actuators, sensors, and onboard logic/control
 
 -   Thermal (wrt sun, Earth, etc.)
 
-    -   Also called ACS, ADCS, AOCS, etc.
-
-    -   unit (IMU)
+    -   Also called ACS, ADCS, AOCS, etc. unit (IMU)
 
     -   1 sun sensor (x4)
 
@@ -196,9 +199,7 @@ including the actuators, sensors, and onboard logic/control
 
 -   Reaction wheels vs. thrusters, etc.
 
-    -   Control/knowledge/stability analyses and error
-
-    -   budgets
+    -   Control/knowledge/stability analyses and error budgets
 
     -   Heritage from prior systems
 
@@ -213,6 +214,7 @@ including the actuators, sensors, and onboard logic/control
 -   Key Parameters
 
     -   Mass, power, and cost
+
     -   Pointing control, knowledge, stability/jitter
 
 ------------------------------------------------------------------------
@@ -236,31 +238,16 @@ Ground or Autonomous
 
 attitude
 
-Controller
-
-System Actuators
-
-Device Commands
-
 Commands
 
 Measured
 
 attitude
 
-Sensors
-
 Attitude Error = Commanded attitude -- Measured attitude
 
-Disturbances
-
-The attitude-error relationship is:
-
-``` text
-Attitude Error = Commanded Attitude - Measured Attitude
-```
-
-**Figure / diagram labels shown on slide:** Disturbances
+**Figure description:** The slide includes labeled visual elements:
+Disturbances; Controller; System Actuators; Device Commands; Sensors.
 
 ------------------------------------------------------------------------
 
@@ -323,13 +310,11 @@ Jitter/Stability (typically uncorrected)
 
 Mission Objectives
 
--   Launched on Sept. 8, 2016, the spacecraft traveled to a
+-   Launched on Sept. 8, 2016, the spacecraft traveled to a near-Earth
+    asteroid called Bennu
 
-    -   near-Earth asteroid called Bennu
-
--   It has collected a sample of rocks and material from the
-
-    -   surface that it returned to Earth on Sept. 24, 2023
+-   It has collected a sample of rocks and material from the surface
+    that it returned to Earth on Sept. 24, 2023
 
 -   The mission will help scientists investigate how planets
 
@@ -348,7 +333,7 @@ asteroids that could impact Earth.
 
 > **Source: Slide 11**
 
--   GN&C Components 4 Sun Sensor Assemblies (SSA)
+GN&C Components 4 Sun Sensor Assemblies (SSA)
 
 -   4 heads & 2 heads (x2 = 12) 4 Reaction Wheels 2 Star Trackers 2
     MIMUs (Miniature IMUs) 2 LIDARs (40 cm @ 3 km) TAGCAMs
@@ -357,9 +342,8 @@ asteroids that could impact Earth.
 
 -   StowCam
 
--   Camera Electronics 16 ACS thrusters 2 TAG thrusters
-
-    -   Instruments OCAMS: Camera Suite (UofA)
+-   Camera Electronics 16 ACS thrusters 2 TAG thrusters Instruments
+    OCAMS: Camera Suite (UofA)
 
 -   PolyCam: Narrow angle, high resolution (8-inch telescope)
 
@@ -375,26 +359,17 @@ OVIRS: Visible & IR Spectrometer, 0.4-4.3 microns (GSFC)
 
 REXIS: X-ray Spectrometer (student experiment)
 
-REXIS
-
-StowCam
-
 OCAMS
 
 OTES
 
 OVIRS
 
-NavCams
-
 Thrusters
 
-Thrusters
-
-Star Trackers
-
-**Figure / diagram labels shown on slide:** Thrusters; SSA?; LIDARs;
-OLA; Camera Electronics
+**Figure description:** The slide includes labeled visual elements:
+Thrusters; REXIS; StowCam; SSA?; NavCams; LIDARs; OLA; Camera
+Electronics; Star Trackers.
 
 ------------------------------------------------------------------------
 
@@ -408,14 +383,15 @@ OLA; Camera Electronics
 
 > **Source: Slide 13**
 
--   Discussion Topics
+### Discussion Topics
 
-    -   Sensors, Actuators, Electronics, and software?
-    -   Redundancy?
-    -   Heritage?
+-   Sensors, Actuators, Electronics, and software?
+-   Redundancy?
+-   Heritage?
 
-**Figure / diagram labels shown on slide:** Mil-Spec 1553 Interfaces
-C&DH; Power Electronics; Analog/Etc. Connectors; LVDS Connector
+**Figure description:** The slide includes a simplified ACS interface
+diagram showing **Mil-Spec 1553 Interfaces** to C&DH, **Power
+Electronics**, **Analog/Etc. Connectors**, and an **LVDS Connector**.
 
 ------------------------------------------------------------------------
 
@@ -423,10 +399,10 @@ C&DH; Power Electronics; Analog/Etc. Connectors; LVDS Connector
 
 > **Source: Slide 14**
 
--   Questions from Last Year
+### Questions from Last Year
 
-    -   Why was there no realtime video? (What was the downlink rate?)
-    -   How does the prediction compare to the sample?
+-   Why was there no realtime video? (What was the downlink rate?)
+-   How does the prediction compare to the sample?
 
 ------------------------------------------------------------------------
 
@@ -434,12 +410,12 @@ C&DH; Power Electronics; Analog/Etc. Connectors; LVDS Connector
 
 > **Source: Slide 15**
 
--   1-2 Days Later
+### 1--2 Days Later
 
-    -   Collector lid likely not fully closing due to larger rocks, thus
-        leaking...
-    -   Forgoing sample measurement in favor or earlier stowing
-        (significant sample observed)
+-   Collector lid likely not fully closing due to larger rocks, thus
+    leaking...
+-   Forgoing sample measurement in favor or earlier stowing (significant
+    sample observed)
 
 ------------------------------------------------------------------------
 
@@ -454,7 +430,9 @@ C&DH; Power Electronics; Analog/Etc. Connectors; LVDS Connector
 -   Entry, descent, and landing
 
     -   Heatshield to slow high-speed entry
+
     -   Parachute to reduce speed further
+
     -   Landing area is the Utah test range
 
 ------------------------------------------------------------------------
@@ -468,8 +446,10 @@ C&DH; Power Electronics; Analog/Etc. Connectors; LVDS Connector
     surprise?
 
     -   Likely well within the modeled capability (\~3)
+
     -   Typically, videos are based on the 'nominal' scenario, but
         analysis is far more encompassing
+
     -   That said, there are still surprises... (both MER rovers were
         barely within their performance envelopes)
 
@@ -479,9 +459,13 @@ C&DH; Power Electronics; Analog/Etc. Connectors; LVDS Connector
 
     -   Scientific consensus & technology development: Varies greatly
         (many years possible)
+
     -   Proposal Process: 1-3 years
+
     -   Development: 4-5 years
+
     -   Operations and Sample Return: 5-10 years
+
     -   Total: ≥ 10-20 years
 
 -   Is there a way to change the downlink or uplink in the middle of a
@@ -507,7 +491,9 @@ C&DH; Power Electronics; Analog/Etc. Connectors; LVDS Connector
     reasonable approach velocity to expect?
 
     -   At touch-down, expected 0.4 m/s
+
     -   Comparison: Phoenix lander touched down around 1.5 m/s
+
     -   MER Rovers (w/airbags): \< 26 m/s
 
 -   How is propellant estimated versus the uncertainty of the asteroid
@@ -515,8 +501,10 @@ C&DH; Power Electronics; Analog/Etc. Connectors; LVDS Connector
 
     -   Bounding estimates are developed for the asteroid size, shape,
         gravity map
+
     -   Sufficient propellant margin is carried to encompass these
         estimates
+
     -   Prior to approach, significant observations (at 2-3 km) are
         undertaken (along with fly by's) to improve fidelity of the
         gravity field.
@@ -525,7 +513,9 @@ C&DH; Power Electronics; Analog/Etc. Connectors; LVDS Connector
     asteroid?
 
     -   Yes, 62 hrs/orbit and more or less circular
+
     -   Using features on Bennu for attitude knowledge
+
     -   Simple fault protection:
 
 -   If something goes wrong, burn towards the sun
@@ -549,29 +539,34 @@ the spacecraft body at some radius from the center of mass.
 -   Torque (τ) = rCP x F
 
     -   Radius from center of mass = rCP
-    -   Force = F
 
-Cover ejection or deployment Solar Radiation
+    -   Force = F
 
 -   Examples
 
     -   Launch vehicle tip-off
+
     -   Aerodynamic
+
     -   Gravity Gradient
+
     -   Magnetic
+
     -   Solar Radiation
+
     -   Mass Expulsion
+
     -   Internal
 
-Atmospheric
-
-Drag
+### Equation(s)
 
 ``` math
 \boldsymbol{\tau}=\mathbf{r}_{CP}\times\mathbf{F}
 ```
 
-**Figure / diagram labels shown on slide:** Magnetic; Gravity Gradient
+**Figure description:** The slide includes labeled visual elements:
+Cover ejection or deployment Solar Radiation; Magnetic; Gravity
+Gradient; Atmospheric; Drag.
 
 ------------------------------------------------------------------------
 
@@ -579,11 +574,11 @@ Drag
 
 > **Source: Slide 20**
 
-*From "Attitude Determination and Control", Joel Sercel, 2003*
-
 For example, at 400 km altitude, there might be a 3.11x10-5 N torque,
 
 Which would result in an attitude error of 82-deg after one orbit
+
+### Equation(s)
 
 ``` math
 \boldsymbol{\tau}_a=\mathbf{r}_{CP}\times\mathbf{F}_a
@@ -599,15 +594,13 @@ F_a=\frac{1}{2}\rho S C_Dv^2
 
 > **Source: Slide 21**
 
-*From "Attitude Determination and Control", Joel Sercel, 2003*
-
 ------------------------------------------------------------------------
 
 ## Magnetic Torque
 
 > **Source: Slide 22**
 
-*From "Attitude Determination and Control", Joel Sercel, 2003*
+### Equation(s)
 
 ``` math
 \boldsymbol{\tau}_m=\mathbf{M}\times\mathbf{B}
@@ -619,7 +612,7 @@ F_a=\frac{1}{2}\rho S C_Dv^2
 
 > **Source: Slide 23**
 
-*From "Attitude Determination and Control", Joel Sercel, 2003*
+### Equation(s)
 
 ``` math
 \boldsymbol{\tau}_s=\mathbf{r}\times\mathbf{F}_s
@@ -634,7 +627,9 @@ F_a=\frac{1}{2}\rho S C_Dv^2
 -   Mass expulsion includes a wide range of activities:
 
     -   Jettison: Probes, overs, expended SRMs, etc.
+
     -   Deliberate: Thrusters, gas venting, etc.
+
     -   Accidental: Leaks, misalignments
 
 -   If significant, it can dominate the overall forces and result in
@@ -642,15 +637,18 @@ F_a=\frac{1}{2}\rho S C_Dv^2
 
 -   Mass expulsion torque:
 
-Cassini's release of the Huygen's probe
-
--   Torque (τME) = rCP x FME
+    -   Torque (τME) = rCP x FME
 
 -   Where FME varies considerably
+
+### Equation(s)
 
 ``` math
 \boldsymbol{\tau}_{ME}=\mathbf{r}_{CP}\times\mathbf{F}_{ME}
 ```
+
+**Figure description:** The slide includes labeled visual elements:
+Cassini's release of the Huygen's probe.
 
 ------------------------------------------------------------------------
 
@@ -661,6 +659,7 @@ Cassini's release of the Huygen's probe
 -   Internal torque is typically caused by
 
     -   Deployments: Solar arrays, antennas, booms, instruments
+
     -   Recurring Motions: Instrument scanning, sample retrieval, fluid
         flow, thermal
 
@@ -669,7 +668,8 @@ louvers, etc.
 -   It has no effect on total system angular momentum, but it still
     effects attitude
 
-Boom deployment (Mars Odyssey)
+**Figure description:** The slide includes labeled visual elements: Boom
+deployment (Mars Odyssey).
 
 ------------------------------------------------------------------------
 
@@ -686,6 +686,8 @@ Boom deployment (Mars Odyssey)
 -   With the sun often within a specified phase angle range
 
     -   Avoid Sun on sensitive instruments (eg, camera boresight)
+
+zb
 
 -   Communications
 
@@ -708,10 +710,9 @@ Boom deployment (Mars Odyssey)
 
     -   How quickly can the spacecraft change directions?
 
-Typical Spacecraft Body-fixed
-
-**Figure / diagram labels shown on slide:** zb; yaw; yb; pitch; roll;
-xb; (b) Coordinate Systems
+**Figure description:** The slide includes labeled visual elements: yaw;
+yb; pitch; roll; xb; Typical Spacecraft Body-fixed; (b) Coordinate
+Systems.
 
 ------------------------------------------------------------------------
 
@@ -727,6 +728,8 @@ xb; (b) Coordinate Systems
 
     -   Avoid Sun on sensitive instruments (eg, camera boresight)
 
+zb
+
 -   Communications
 
     -   Avoid solar conjunction
@@ -740,13 +743,9 @@ xb; (b) Coordinate Systems
     -   Spacecraft design typically favors or excludes a particular
         geometry
 
-Phase
-
 -   Trajectory Maneuvers
 
-Angle
-
--   Pointing & stability for manuevers
+    -   Pointing & stability for manuevers
 
 -   Spacecraft Agility
 
@@ -754,7 +753,8 @@ Angle
 
 Often a driver for control, knowledge, & error
 
-**Figure / diagram labels shown on slide:** zb; yb; xb; Target
+**Figure description:** The slide includes labeled visual elements: yb;
+xb; Phase; Angle; Target.
 
 ------------------------------------------------------------------------
 
@@ -766,20 +766,18 @@ Instrument collector is oversized, such that it can internally
 point/filter data Onboard ACS is typical, but other approaches can
 occasionally produce improved performance while maintaining cost.
 
--   Terminology
+Terminology
 
--   Nadir: pointing towards
-
-    -   (eg, Earth)
+-   Nadir: pointing towards (eg, Earth)
 
 -   Zenith: pointing away
+
+(eg, Earth)
 
 Actuators adjust the instrument (or scanning platform) pointing
 
 Spacecraft points at the target as a rigid body (typically controlled by
 onboard ACS)
-
-**Figure / diagram labels shown on slide:** (eg, Earth)
 
 ------------------------------------------------------------------------
 
@@ -820,8 +818,9 @@ Low gain antennas typically provide communication at any nominal
 attitude High gain antennas often require 3-axis control (combined
 w/science & communications)
 
-**Figure / diagram labels shown on slide:** Sun-Earth-Probe; (SEP)
-Angle; zb; XHGA; yb; xb; High Gain Antenna; (HGA) pointing
+**Figure description:** The slide includes labeled visual elements:
+Sun-Earth-Probe; (SEP) Angle; zb; XHGA; yb; xb; High Gain Antenna; (HGA)
+pointing.
 
 ------------------------------------------------------------------------
 
@@ -844,16 +843,13 @@ Angle; zb; XHGA; yb; xb; High Gain Antenna; (HGA) pointing
 -   Solar Arrays for Power
 
     -   Minimize solar incidence angle
-    -   Maintain power while transmitting
 
-Solar Incidence
+    -   Maintain power while transmitting
 
 -   Thermal
 
     -   Spacecraft design typically favors or excludes a particular
         geometry
-
-angle
 
 -   Trajectory Maneuvers
 
@@ -867,8 +863,8 @@ Arrays will often be single- or dual-axis articulated to minimize solar
 incidence angle Note that arrays will occasionally be oversized to relax
 pointing requirements
 
-**Figure / diagram labels shown on slide:** Sun-Probe-Earth; (SPE)
-Angle; zb; yb; xb
+**Figure description:** The slide includes labeled visual elements:
+Sun-Probe-Earth; Solar Incidence; (SPE) Angle; zb; angle; yb; xb.
 
 ------------------------------------------------------------------------
 
@@ -922,7 +918,9 @@ the required pointing control
 
 -   Payload
 
-    -   Perform science observations
+OSIRIS-REx Example
+
+-   Perform science observations
 
 -   With the sun often within a specified phase angle range
 
@@ -949,9 +947,8 @@ the required pointing control
 
     -   How quickly can the spacecraft change directions?
 
-4 200-N thrusters Exhaust vector
-
-**Figure / diagram labels shown on slide:** OSIRIS-REx Example
+**Figure description:** The slide includes labeled visual elements: 4
+200-N thrusters Exhaust vector.
 
 ------------------------------------------------------------------------
 
@@ -969,9 +966,8 @@ the required pointing control
 
 -   Communications
 
-    -   Avoid solar conjunction
-
-    -   Typically driven by opportunities & threats
+    -   Avoid solar conjunction Typically driven by opportunities &
+        threats
 
 -   Additional science observations?
 
@@ -1007,9 +1003,12 @@ the required pointing control
     attitude alterations? (few minutes? hours?)
 
     -   Typical spacecraft requirement is 1 deg/sec
+
     -   Might vary between 0.25 deg/sec to 3 deg/sec
+
     -   Note that faster slew rates require "settling time" to achieve
         stability requirements
+
     -   ISS slew rate is \< 0.1 deg/sec
 
 -   How much does the typical satellite actually have to maneuver? Are
@@ -1017,9 +1016,11 @@ the required pointing control
 
     -   Majority of spacecraft are for either imagery or communications
         (across the EM spectrum)
+
     -   Therefore, most have telescopes, antennas, and/or detectors that
         require some degree of pointing (typically between 0.001-deg and
         0.1-deg)
+
     -   ACS activity is a function of the disturbance environment
         vs. spacecraft activity
 
@@ -1042,22 +1043,17 @@ the required pointing control
 
 Sun
 
-Sun-Probe-Earth
+In concept formulation, these key angles will often drive the early
+design
 
-(SPE) Angle
-
--   In concept formulation, these key angles will often drive the early
-    design
 -   The Mission Design & Nav. Engineer will typically product plots of
     these in addition to their trajectory designs and ∆V budgets
 
-Sun-Earth-Probe
-
-(SEP) Angle
-
 Earth
 
-**Figure / diagram labels shown on slide:** Probe; Phase; Angle; Target
+**Figure description:** The slide includes labeled visual elements:
+Probe; Sun-Probe-Earth; (SPE) Angle; Phase; Angle; Sun-Earth-Probe;
+(SEP) Angle; Target.
 
 ------------------------------------------------------------------------
 
@@ -1065,10 +1061,13 @@ Earth
 
 > **Source: Slide 37**
 
--   Based on the chart below...
+Based on the chart below...
+
 -   Rendezvous is occurring at a favorable phase angle wrt science
     observations
+
 -   Communications blackout when SEP \< 2-deg (solar conjunction)
+
 -   0 to 45-deg SPE range suggests articulated arrays and/or antenna to
     maintain both power and communication
 
@@ -1085,6 +1084,7 @@ Earth
     -   While spacecraft are generally designed to be robust even in the
         even of attitude errors, spacecraft will still have thermal
         constraints.
+
     -   For example, SIRTF must keep it's solar array on the sun both to
         provide power AND to keep the telescope barrel (and especially
         the cryogenic detector) shaded.
@@ -1092,38 +1092,32 @@ Earth
 -   How do you evaluate SEP, SPE, and phase angle?
 
 -   These angles are based on outputs from trajectory or visualization
-
-    -   software (eg, STK)
+    software (eg, STK)
 
 -   Strategic Evaluation:
 
 -   Phase Angle
 
 -   Mission Design & Nav. consider trajectory/orbital mechanics to
-    ensure best
-
-    -   lighting for science ops (30-60-deg incidence)
+    ensure best lighting for science ops (30-60-deg incidence)
 
 -   Sun-Probe-Earth (SPE)
 
 -   Power/Telecom engineers consider solar array vs. antenna pointing
-    during
-
-    -   mission (close to 0-deg depending on array/antenna margin;
-        greater flexibility with solar arrays)
+    during mission (close to 0-deg depending on array/antenna margin;
+    greater flexibility with solar arrays)
 
 -   Sun-Earth-Probe (SEP)
 
 -   Mission Design & Nav. And Telecom engineers consider solar
-    conjunction
-
-    -   wrt communications (eg, 2-deg)
+    conjunction wrt communications (eg, 2-deg)
 
 -   Tactical Evaluation
 
 -   What is the best attitude at any given point during the mission
 
-with respect to sun (power & thermal) and Earth (telecom)
+**Figure description:** The slide includes labeled visual elements: with
+respect to sun (power & thermal) and Earth (telecom).
 
 ------------------------------------------------------------------------
 
@@ -1134,10 +1128,15 @@ with respect to sun (power & thermal) and Earth (telecom)
 > **Source: Slide 39**
 
 -   Sun Sensors
+
 -   Earth Sensors
+
 -   Magnetometers
+
 -   Star Trackers / Stellar Reference Units (SRUs)
+
 -   Gyroscopes / Internal Reference Units (IRUs)
+
 -   GPS Receivers
 
 ------------------------------------------------------------------------
@@ -1155,13 +1154,11 @@ power, & complexity
 
 \< \$10 M
 
--   High
+High
 
 -   Star Trackers
 
--   Fine sun sensors
-
-    -   Medium
+-   Fine sun sensors Medium
 
 -   Digital Sun Sensors
 
@@ -1173,18 +1170,21 @@ power, & complexity
 
 \< \$1 M
 
--   Low
+Low
+
 -   Magnetometers
+
 -   Coarse sun sensors
+
 -   IR Earth sensors
 
 \< \$100 k
 
-Adapted from "Attitude Determination and Control", Joel Sercel, 2003
-
 0.1-deg 0.01-deg 0.001-deg
 
-Accuracy
+**Figure description:** The slide includes labeled visual elements:
+Adapted from "Attitude Determination and Control", Joel Sercel, 2003;
+Accuracy.
 
 ------------------------------------------------------------------------
 
@@ -1198,6 +1198,7 @@ Accuracy
     -   For example, spacecraft with sun-pointing constraints (eg,
         telescopes) will have additional sun sensors to trigger safe
         attitude
+
     -   Often used in orthogonally mounted pairs (4 sensors provide
         hemispherical coverage)
 
@@ -1218,10 +1219,11 @@ Micro Sun
 Sensor (in development)
 
 -   Analog current output, digitized by s/c
+
 -   Performance: \< 0.016-deg (1 arcmin)
 
-**Figure / diagram labels shown on slide:** Analog output (converted in
-software using cosine law)
+**Figure description:** The slide includes labeled visual elements:
+Analog output (converted in software using cosine law).
 
 ------------------------------------------------------------------------
 
@@ -1233,10 +1235,8 @@ software using cosine law)
     star catalog to provide highly accurate attitude knowledge
 
     -   Fixed Type (common): Scans the star field electronically (or via
-        spacecraft
-
-    -   motion) using a 5-20-deg FOV. It then processes, calibrates, and
-        resolves the signal to provide quaternions.
+        spacecraft motion) using a 5-20-deg FOV. It then processes,
+        calibrates, and resolves the signal to provide quaternions.
 
     -   Catalog typically contains 100s to 1000s of stars
 
@@ -1247,9 +1247,8 @@ software using cosine law)
 
     -   Performance: 0.001-1 deg, Mass 1-10 kg
 
-Catalog Visualization
-
-**Figure / diagram labels shown on slide:** Star Tracker; Image
+**Figure description:** The slide includes labeled visual elements: Star
+Tracker; Image; Catalog Visualization.
 
 ------------------------------------------------------------------------
 
@@ -1257,10 +1256,12 @@ Catalog Visualization
 
 > **Source: Slide 43**
 
--   Note that stars are not distributed uniformly (tend to appear in
-    groups) Understand the application requiring the star tracker
+Note that stars are not distributed uniformly (tend to appear in groups)
+Understand the application requiring the star tracker
+
 -   Primarily staring or moving? Max angular rate? Fraction of sky
     covered?
+
 -   How will the system react to star tracker errors?
 
 ------------------------------------------------------------------------
@@ -1268,8 +1269,6 @@ Catalog Visualization
 ## Magnetometers
 
 > **Source: Slide 44**
-
-*From "Attitude Determination and Control", Joel Sercel, 2003*
 
 ------------------------------------------------------------------------
 
@@ -1289,11 +1288,13 @@ Catalog Visualization
 
     -   The gyro uses internal dynamics, environmental, and error models
         to produce a best estimate for the current attitude
+
     -   Over time (eg, 0.1-deg/hr), the error will increase
 
-Traditional Gyroscope Ring-Laser Gyroscope
-
 LN-200 IMU 0.7 kg, 10 W 9 x 9 cm
+
+**Figure description:** The slide includes labeled visual elements:
+Traditional Gyroscope Ring-Laser Gyroscope.
 
 ------------------------------------------------------------------------
 
@@ -1304,6 +1305,7 @@ LN-200 IMU 0.7 kg, 10 W 9 x 9 cm
 -   Using GPS for attitude knowledge has become increasingly common
 
     -   Spacecraft velocities to up 16,000 m/s
+
     -   Performance varies with distance (200 km to 45,000 km)
 
 -   LEO Performance \< 0.1 deg
@@ -1332,6 +1334,7 @@ Global Positioning System GD Sentinel M-Code GPS Receiver Mass 2.5 kg
 
     -   Higher precision, narrow angle star trackers, but heavy &
         complex
+
     -   Less expensive versions, but not as precise
 
 -   Gyroscope
@@ -1364,6 +1367,7 @@ Typical Accuracy
 -   Do Not Affect System Momentum
 
     -   Magnetic Torquers / Torque Rods 1.0-10.0 deg
+
     -   Reaction Control Thrusters 0.1-5.0 deg
 
 ------------------------------------------------------------------------
@@ -1383,9 +1387,12 @@ Typical Accuracy
 
     -   Low torque, high accuracy (very fast response possible, tens of
         Hertz)
+
     -   Not limited by propellant, but limited by angular momentum
         capacity
+
     -   Nominally operate at low speeds
+
     -   Saturation level is defined by peak motor speed
 
 -   Once wheels reach peak speed, required momentum dumping (eg,
@@ -1404,16 +1411,21 @@ Typical Accuracy
     wheels?
 
     -   Reaction wheels provide torque (0.01 to 1 Nm)
+
     -   Size of reaction wheel depends on the size of the torque that is
         needed
 
 -   For the quiz example, relevant torques were:
 
     -   Magnetic torque (Tm), 2.1 x 10\^-5 Nm
+
     -   Slew torque (T) = 2.9 x 10\^-4 Nm
+
     -   Momentum dumps due to gravity gradient (h) = 0.039 Nms
+
     -   Torque from RWs needs to be \> than torque from disturbance to
         maintain attitude
+
     -   For accumulated changes (such as momentum dumps), then
 
 -   Slew rate (s) x torque (Nms) = momentum (Nms)
@@ -1441,8 +1453,10 @@ Typical Accuracy
 -   Characteristics
 
     -   Performance: 0.1-2.0 deg
+
     -   Effectively these are heavier reaction wheels that operate at a
         constant speed
+
     -   Often used to cancel the momentum of rotating payload
 
 ------------------------------------------------------------------------
@@ -1459,8 +1473,11 @@ Typical Accuracy
 -   Characteristics
 
     -   Performance: 0.001-0.1 deg
+
     -   Momentum wheel operating at nearly steady (high) speed;
+
     -   Higher control authority than momentum wheels (up to 100x times)
+
     -   Relatively noisy (they induce vibrations due to the spin rate)
 
 ------------------------------------------------------------------------
@@ -1475,6 +1492,7 @@ Typical Accuracy
 
     -   No, not worth flying additional spare units beyond the 1 (of 4)
         installed that is redundant.
+
     -   History
 
 -   CMG-1 failed in 2002 and replaced in 2005 (first post-Columbia
@@ -1492,8 +1510,8 @@ Integration & Test
 
 Z-1 Truss (as of 2000)
 
-**Figure / diagram labels shown on slide:** 1 CMG Replaced in 2005; via
-a 7-hr Space Walk
+**Figure description:** The slide includes labeled visual elements: 1
+CMG Replaced in 2005; via a 7-hr Space Walk.
 
 ------------------------------------------------------------------------
 
@@ -1501,7 +1519,8 @@ a 7-hr Space Walk
 
 > **Source: Slide 54**
 
-Z1 Truss (location of CMGs)
+**Figure description:** The slide includes labeled visual elements: Z1
+Truss (location of CMGs).
 
 ------------------------------------------------------------------------
 
@@ -1561,6 +1580,7 @@ Z1 Truss (location of CMGs)
 
     -   Yes. On Dawn, the 3 electric propulsion thrusters can provide 90
         mN of thrust.
+
     -   In Geostationary orbits, electric propulsion systems regularly
         provide attitude control given their extremely high efficiency
         (\> 3,000 Isp) versus the very low disturbances
@@ -1568,7 +1588,9 @@ Z1 Truss (location of CMGs)
 -   For a small spacecraft
 
     -   drag = none
+
     -   Gravity gradient = 5 x 10\^-9 Nm
+
     -   Solar radiation pressure = 6 x 10\^-6 Nm
 
 ------------------------------------------------------------------------
@@ -1583,9 +1605,13 @@ Z1 Truss (location of CMGs)
 -   Characteristics
 
     -   Performance: 1.0-10.0 deg
+
     -   Clean way to dump momentum (with no consumables)
+
     -   Generally consist of simple iron rods (or loops)
+
     -   Very reliable and cheap
+
     -   Primarily applicable to planetary/Earth orbiters with large
         magnetic fields.
 
@@ -1605,10 +1631,14 @@ Z1 Truss (location of CMGs)
 -   Characteristics
 
     -   Performance: 0.1-5.0 deg
+
     -   Various sizes available, with different levels of performance
         (ie, control)
+
     -   Propellant-limited and may introduce contamination
+
     -   Capable of very high torque
+
     -   Accuracy limited by thruster configuration (impulse bit)
 
 ------------------------------------------------------------------------
@@ -1621,17 +1651,23 @@ Z1 Truss (location of CMGs)
 
     -   Thrust-level (eg, 1-N vs. 490-N), which determines the ability
         to provide thrust and thus ∆V
+
     -   Efficiency (ie, Isp), which is based on both type of thruster &
         propellant
+
     -   Minimum impulse bit (MIB) is the smallest control torque that
         can be applied to the spacecraft
 
 -   Primary Uses
 
     -   Trajectory Correct Maneuvers (TCMs) for changing ∆V
+
     -   Orbital Maintenance
+
     -   Momentum dumps
+
     -   Attitude (or reaction) control
+
     -   Thrust vector control (TVC) that provide guidance on larger
         maneuvers
 
@@ -1639,6 +1675,7 @@ Z1 Truss (location of CMGs)
 
     -   Consider necessary functions: large ∆V maneuvers, attitude
         control, etc.
+
     -   Thrusters should be evaluated for min/max burn times
 
 -   Minimum burn time should be consistent with the minimum impulse bit
@@ -1695,6 +1732,7 @@ Graphic from Pioneer 10 spacecraft, history.nasa.gov
 -   Review & Understand Design Information
 
     -   Mission Description and/or Concept of Operations
+
     -   System and Subsystem Requirements
 
 -   ConOps & mission geometry
@@ -1706,8 +1744,10 @@ Graphic from Pioneer 10 spacecraft, history.nasa.gov
 -   Create a Preliminary Design
 
     -   Identify the most likely architecture (eg, 3-axis)
+
     -   Identify likely components (eg, sun sensors, star trackers,
         etc.)
+
     -   Size control effectors (eg, reaction wheels, CMGs, thrusters,
         etc.)
 
@@ -1725,8 +1765,8 @@ Graphic from Pioneer 10 spacecraft, history.nasa.gov
 
     -   Revisit other options & trades
 
-**Figure / diagram labels shown on slide:** See HW7 for additional
-detail.
+**Figure description:** The slide includes labeled visual elements: See
+HW7 for additional detail..
 
 ------------------------------------------------------------------------
 
@@ -1741,14 +1781,18 @@ detail.
 -   Common Sensors Across \~All Missions
 
     -   Sun sensors
+
     -   Gyros / IMUs
 
 -   Destination Dependencies
 
     -   Low-Earth Orbit (LEO): Horizon sensors, GPS receivers, magnetic
         torquers
+
     -   Sun \< 2-3 AU: Electric propulsion for attitude control
+
     -   Deep Space: Star trackers
+
     -   Close Proximity Ops: Radars, LIDARs, etc.
 
 -   Functional Dependencies
@@ -1760,6 +1804,7 @@ detail.
     performance
 
     -   Larger, more agile s/c typically need CMGs
+
     -   Layers of redundancy increase with mission duration & budget
 
 While the sizing of individual components is based on specific
@@ -1782,6 +1827,7 @@ relative budget.
 
     -   Assuming realtime telemetry at 1 Hz, what is the ground likely
         to see?
+
     -   Is there a possibility of recovering the mission?
 
 ------------------------------------------------------------------------
@@ -1794,84 +1840,70 @@ GN&C Sensors
 
 I/F & Controller
 
+Actuators
+
 RW cmds
 
 C&DH
+
+Reaction
+
+Reaction
 
 IMU
 
 angle, lin velocity,
 
 (2) 
-(3) 
+
+Wheel Electronics
+
+Wheels
+
+(2) 
 
 status @ 200 Hz
+
+(4) 
 
 RAD 750 CPU
 
 (gyros & accels)I
 
+(4) 
+
 ST cmds, quaternions, status @ 5 Hz
-
-GN&C I/F (GIF)
-
-Card
 
 Star Tracker
 
 (2) 
 
-D/A IMU RS-422
-
 4-Detector Sun Sensors
 
 photocell
-
-Digital Tach I/F
 
 current
 
 (2) 
 
-1553
-
-Signal
-
 2-Detector Sun Sensors
-
-Cond
 
 photocell
 
 current
 
-Analog Acquisition Card
-
 (4) 
-
-(AAC)
-
-A/D
-
-Multi-Function Bus
-
-Pyro Initiation Unit
-
-(PIU) Valve Driver Module
-
-Multi-Function Bus
 
 28 V dc (unregulated)
 
-Power Distribution &
-
-Drive Unit (PDDU)
-
-**Figure / diagram labels shown on slide:** Actuators; Reaction; Wheel
-Electronics; Wheels; (4); tach & direction; gimbal cmds, positions,
-rate,; S/A and HGA Gimbal Drive; status @ 5 Hz; Electronics; Thrusters;
-valve cmds; 8 0.9-N (ACS) 6 22-N (TCM) 6 170-N (MOI); Legend; GN&C
-Component; Non-GN&C Component; Analog I/F; Digital I/F
+**Figure description:** The slide includes labeled visual elements: GN&C
+I/F (GIF); tach & direction; Card; gimbal cmds, positions, rate,; D/A
+IMU RS-422; S/A and HGA Gimbal Drive; status @ 5 Hz; Digital Tach I/F;
+Electronics; 1553; Signal; Thrusters; valve cmds; Cond; 8 0.9-N (ACS) 6
+22-N (TCM) 6 170-N (MOI); Analog Acquisition Card; (AAC); A/D;
+Multi-Function Bus; Legend; Pyro Initiation Unit; GN&C Component; (PIU)
+Valve Driver Module; Non-GN&C Component; Analog I/F; Power Distribution
+&; Digital I/F; Drive Unit (PDDU).
 
 ------------------------------------------------------------------------
 
@@ -1881,76 +1913,46 @@ Component; Non-GN&C Component; Analog I/F; Digital I/F
 
 Sensors I/F &Controller
 
+Legend:
+
+Mars '01 Heritage
+
 CRUISE Stage
 
 C&DH
 
 Sun Sensor Assembly
 
-(2) 
-
-photocell output
+Mars '01 Modified
 
 (2) 
-
-RAD 6000 CPU
-
-(VME BUS)
 
 RS-422 IMU
 
 (2) IMU
 
-RPFA
-
-(2) (gyros & accels)
-
-Payload &
-
-delta ang delta vel
-
-Att Cntrl
-
-status @200Hz
+(3) (gyros & accels)
 
 CRUISE Stage
 
-I/F Card
-
-1553
-
 Star Tracker
 
-Cmds Quaternions
-
 (2) 
-
-I/O Card
-
-(1553, A/D,Dis)
-
-1553
 
 Landing
 
 Radar
 
-Cmds, Beam Data
-
-multi-function bus
-
-Power Dist & Drive Unit
-
 28 V
 
-multi-function bus
-
-Pyro Initiaion Unit Valve Driver Module
-
-**Figure / diagram labels shown on slide:** Legend:; Mars '01 Heritage;
-Mars '01 Modified; Other Heritage; New Development; Actuators; RMCA;
-temp; Thrusters; 4 - 5# (DV, P/Y); RCE; 4 - 1# (R/P/Y) 12 - 68# (DV,
-R/P/Y); ≈ 40 mm; RPA; RPAM; analog; digital; RBAU; valve cmds
+**Figure description:** The slide includes labeled visual elements: (2);
+photocell output; Other Heritage; RAD 6000 CPU; New Development; (VME
+BUS); RPFA; Actuators; Payload &; delta ang delta vel; Att Cntrl; RMCA;
+temp; status @200Hz; I/F Card; Thrusters; 1553; 4 - 5# (DV, P/Y); RCE;
+Cmds Quaternions; 4 - 1# (R/P/Y) 12 - 68# (DV, R/P/Y); I/O Card; ≈ 40
+mm; (1553, A/D,Dis); Cmds, Beam Data; RPA; RPAM; Legend:; multi-function
+bus; analog; Power Dist & Drive Unit; digital; RBAU; Pyro Initiaion Unit
+Valve Driver Module; valve cmds.
 
 ------------------------------------------------------------------------
 
@@ -1958,17 +1960,25 @@ R/P/Y); ≈ 40 mm; RPA; RPAM; analog; digital; RBAU; valve cmds
 
 > **Source: Slide 66**
 
+Inherited
+
 Sun Sensor Heads A Sun Sensor Elect A
+
+Build-to-print
 
 Cruise Power and Avionics Module (CPAM) A
 
+New development
+
 Sun Sensor Heads B Sun Sensor Elect B
+
+8
 
 Cruise Power and Avionics Module (CPAM) B
 
-Star Scanner Elect A
+Cruise RCS
 
-EDL 1553 Bridge
+Star Scanner Elect A
 
 Star Scanner Optics
 
@@ -1976,11 +1986,7 @@ Descent Power and Avionics Module (DPAM) A
 
 Star Scanner Elect B
 
-Descent Power and Avionics Module (DPAM) B
-
 EDL 1553 Bus
-
-Descent Motor Controller Assy (DMCA)
 
 Radar Antens
 
@@ -1988,11 +1994,7 @@ Radar T/Rs
 
 Radar Elect
 
-Flyaway FPGA
-
 RS-422
-
-RS-422 (DIMU repeat)
 
 I/F I/F
 
@@ -2002,47 +2004,33 @@ Rover Compute Element (RCE) A
 
 HazCams A
 
-BC BC BC BC
-
 LVDS
-
-Rover Power and Avionics Module (RPAM) A
-
-Bridge
 
 FSW
 
 NavCams A
 
-Rover Power and Avionics Module (RPAM) B
-
-Bridge
-
 LVDS
 
 Rover Compute Element (RCE) B
-
-BC BC
 
 RIMU
 
 RS-485
 
-BC BC
-
 FSW
-
-Rover Motor Controller Assy (RMCA) Mobility, HGA, etc
 
 NavCams B
 
-EDL 1553 Bus
-
 LVDS
 
-**Figure / diagram labels shown on slide:** Inherited; Build-to-print;
-New development; 8; Cruise RCS; Rover 1553 Bus; Cruise Stage; Descent
-Stage; Entry RCS; Mars Landing Engines; Bridge; Rover
+**Figure description:** The slide includes labeled visual elements:
+Rover 1553 Bus; EDL 1553 Bridge; Cruise Stage; Descent Stage; Descent
+Power and Avionics Module (DPAM) B; 8; Entry RCS; Descent Motor
+Controller Assy (DMCA); Flyaway FPGA; RS-422 (DIMU repeat); Mars Landing
+Engines; BC BC BC BC; Rover Power and Avionics Module (RPAM) A; Bridge;
+Rover Power and Avionics Module (RPAM) B; BC BC; Rover; Rover Motor
+Controller Assy (RMCA) Mobility, HGA, etc; EDL 1553 Bus.
 
 ------------------------------------------------------------------------
 
@@ -2052,48 +2040,37 @@ Stage; Entry RCS; Mars Landing Engines; Bridge; Rover
 
 GNC algorithms and functions
 
+GNC models
+
+vehicle hardware & planetary environment
+
 wheel motors (6 drive, 4 steer)
+
+Wheel/Steer Actuator
 
 rover position and attitude wrt Mars terrain
 
 Hazard Avoidance
 
-Hazard Detection
-
-RIMU
-
 Rover 3DOF Control
-
-Visual Odometry
-
-hazcam stereo pair (2)
 
 Attitude Determination
 
-IVP celestial bodies wrt each other
-
 Position Determination
 
-navcam stereo pair
+Instrument Pointing
 
 Instrument Pointing
 
-Celestial body Pos Propagator
-
-Instrument Pointing
-
-RSM gimbal
+HGA Pointing
 
 HGA Pointing
 
-HGA gimbal
-
-HGA Pointing
-
-**Figure / diagram labels shown on slide:** GNC models; vehicle hardware
-& planetary environment; Wheel/Steer Actuator; Odometer; Mars Rotation,
-Sun/Earth Positions; RIMU; Haz Camera; Rover Hardware; Nav Camera;
-Az/El; Terrain
+**Figure description:** The slide includes labeled visual elements:
+Odometer; Hazard Detection; RIMU; Mars Rotation, Sun/Earth Positions;
+Visual Odometry; hazcam stereo pair (2); Haz Camera; IVP celestial
+bodies wrt each other; navcam stereo pair; Rover Hardware; Celestial
+body Pos Propagator; Nav Camera; RSM gimbal; Az/El; Terrain; HGA gimbal.
 
 ------------------------------------------------------------------------
 
@@ -2106,12 +2083,14 @@ Az/El; Terrain
 -   What are the most commonly used actuators and why?
 
     -   Magnetic torquers for LEO satellites (cheap, simple)
+
     -   Thrusters (low precision) and reaction wheels (high precision)
 
 -   Are there any missions that failed due to errors of GN&C actuators?
 
     -   Major driver of spacecraft failures & reliability, including
         both infant mortality & lifetime failures
+
     -   Phasing of sensors
 
 -   Genesis- backwards G-switch (note that phasing tests are a critical
@@ -2132,6 +2111,7 @@ Az/El; Terrain
 -   At what altitude does some of the drag force start to disappear?
 
     -   Varies with drag coefficient & solar minimum/maximum
+
     -   At \> 600 km, gravity gradient dominates over drag. At \> 2,000
         km disappears entirely
 
@@ -2151,6 +2131,7 @@ Az/El; Terrain
     components be far too expensive?
 
     -   Yes, and there are similar iPhone applications
+
     -   Drivers are likely ensuring adequate camera sensitivity and then
         going through the math, but similar image processing is
         well-published in literature
@@ -2165,6 +2146,7 @@ Az/El; Terrain
 
     -   On MSL, the landing radar was developed for the mission
         (overcame issues with Phoenix radar reliability)
+
     -   There is continued work to reduce the size of sensors &
         actuators (significant ongoing work on aircraft that drives
         space)
@@ -2173,8 +2155,10 @@ Az/El; Terrain
     ADACS or the propulsion teams?
 
     -   Depends on the overall design
+
     -   For a small RCS system with no other propulsion, then it's all
         under ACS and no propulsion subsystem required
+
     -   Otherwise, it would typically be covered under propulsion
 
 -   I'd like to know more about the GPS method for attitude
@@ -2182,6 +2166,7 @@ Az/El; Terrain
 
     -   A GPS system functions by receiving 3+ GPS signals and then
         triangulating position
+
     -   Cost of deploying a constellation at Mars is prohibitive. If
         this can be solved, the next issue would be power -- GPS signals
         on Earth required \~500 W. On Mars, this translates to
@@ -2201,6 +2186,7 @@ Az/El; Terrain
 -   How many total stars have been cataloged?
 
     -   Over a billion stars have been cataloged
+
     -   Typically, star tracker catalogs contain thousands (eg, 10,000)
 
 -   How was the comet sample in the Deep Impact mission relayed back to
@@ -2216,11 +2202,13 @@ Az/El; Terrain
     and similar spacecraft?
 
     -   It's case-by-case.
+
     -   All missions have a specific, funded lifetime. As the mission
         approaches its end-of-life, the team will typically propose a
         mission extension. This extension needs to include all
         applicable costs to maintain and communicate with the
         spacecraft. It is then evaluated for cost & benefit.
+
     -   In the case Voyager, the DSN 70-meter stations continue to be
         maintained to support communication, along with supporting
         personnel, spacecraft knowledge, etc.
@@ -2248,6 +2236,7 @@ Az/El; Terrain
 -   Translational Motion
 
     -   Changes in the position and velocity of an object
+
     -   For spacecraft design, this primarily corresponds with
         understanding position relative a gravity field and changes in
         ∆V (vs. thrust)
@@ -2255,6 +2244,7 @@ Az/El; Terrain
 -   Rotational Motion
 
     -   Changes in the attitude of an object
+
     -   For spacecraft design, this corresponds to attitude
         determination and control.
 
@@ -2265,15 +2255,13 @@ Az/El; Terrain
 
 -   Precision of sensors & actuators required
 
--   Performance capability to meet payload,
-
-    -   ascent/descent, communication, and/or other requirements
+-   Performance capability to meet payload, ascent/descent,
+    communication, and/or other requirements
 
 -   Amount of propellant required
 
--   Detailed Concept of Operations, including required
-
-    -   spacecraft behavior and responses
+-   Detailed Concept of Operations, including required spacecraft
+    behavior and responses
 
 -   Margin/risk assessment
 
@@ -2283,10 +2271,12 @@ Az/El; Terrain
 
 > **Source: Slide 73**
 
--   Comments
+Comments
+
 -   Since the angular velocity varies with the radius, it is more
     difficult to calculate basic physical relationships, and thus the
     next several charts are intended to provide additional background
+
 -   I'm reusing charts from Joel Sercel's class, which should provide a
     good discussion found across numerous references
 
@@ -2298,14 +2288,20 @@ Az/El; Terrain
 
 > **Source: Slide 74**
 
--   Comments
+Comments
+
 -   Kinetic Energy equation leads to K = ½ Iz ω\^2
+
 -   Where Iz is a constant (ie, rotational inertia) that governs how a
     body behaves when a force (ie, torque) is applied.
+
 -   This is similar to mass in translational physics
+
 -   Iz is the moment of inertia about the z-axis
 
 *From ADCS Handout, Joel Sercel, 2003*
+
+### Equation(s)
 
 ``` math
 K=\frac{1}{2}I_z\omega^2
@@ -2317,12 +2313,16 @@ K=\frac{1}{2}I_z\omega^2
 
 > **Source: Slide 75**
 
--   Comments
+Comments
+
 -   Moment of Inertia can now be related to Newton's 2nd Law (F=ma),
     resulting in a loose equivalent wrt torques
+
 -   α = angular acceleration (eg, radians/s\^2)
 
 *From ADCS Handout, Joel Sercel, 2003*
+
+### Equation(s)
 
 ``` math
 \tau_z=I_z\alpha
@@ -2334,13 +2334,18 @@ K=\frac{1}{2}I_z\omega^2
 
 > **Source: Slide 76**
 
--   Comments
+Comments
+
 -   Note that ρ is density here
+
 -   Effectively, you are integrating x,y over the volume at a given
     density to calculate the moment of inertia about the z-axis
+
 -   SI units are kg m\^2
 
 *From ADCS Handout, Joel Sercel, 2003*
+
+### Equation(s)
 
 ``` math
 I_z=\sum_{i=1}^{n}m_i(x_i^2+y_i^2)
@@ -2356,7 +2361,8 @@ I_z=\int(x^2+y^2)\,dm
 
 > **Source: Slide 77**
 
--   Comments
+Comments
+
 -   Example for Iz of a thin 'ring'
 
 *From ADCS Handout, Joel Sercel, 2003*
@@ -2367,13 +2373,11 @@ I_z=\int(x^2+y^2)\,dm
 
 > **Source: Slide 78**
 
--   Sources
+Sources
 
 -   https://en.wikipedia.org/wiki/Moment_of_inertia
 
--   https://en.wikipedia.org/wiki/List_of_moments_of_inertia
-
-    -   Comments
+-   https://en.wikipedia.org/wiki/List_of_moments_of_inertia Comments
 
 -   Many published formulas exist for basic shapes
 
@@ -2395,11 +2399,14 @@ I_z=\int(x^2+y^2)\,dm
 
 > **Source: Slide 79**
 
--   Comments
+Comments
+
 -   This formula is critical to combining moments of inertia in order to
     estimate more complex shapes.
 
 *From ADCS Handout, Joel Sercel, 2003*
+
+### Equation(s)
 
 ``` math
 I=I_{CM}+Mh^2
@@ -2412,6 +2419,8 @@ I=I_{CM}+Mh^2
 > **Source: Slide 80**
 
 *From ADCS Handout, Joel Sercel, 2003*
+
+### Equation(s)
 
 ``` math
 I_{CM}=\frac{1}{2}mR^2
@@ -2427,11 +2436,14 @@ I=I_{CM}+mR^2=\frac{3}{2}mR^2
 
 > **Source: Slide 81**
 
--   Comments
+Comments
+
 -   This is helpful for "thin" objects that are dominated by inertias
     about x & y
 
 *From ADCS Handout, Joel Sercel, 2003*
+
+### Equation(s)
 
 ``` math
 I_z=I_x+I_y
@@ -2443,22 +2455,28 @@ I_z=I_x+I_y
 
 > **Source: Slide 82**
 
--   Comments
+Comments
+
 -   This is the equivalent of moment = mass x velocity (but wrt
     rotation)
+
 -   Whereas in translational physics, we can just use 'mass', here we
     need to use a 2nd order tensor to fully define the inertia
+
 -   We need each inertial component about the axis (and their products
     for asymmetric shapes)
 
 *From ADCS Handout, Joel Sercel, 2003*
 
+### Equation(s)
+
 ``` math
 \mathbf h=\mathbf I\boldsymbol{\omega}
 ```
 
-**Figure / diagram labels shown on slide:** Angular rates are about each
-axis. This equation defines the momentum (h) about each axis
+**Figure description:** The slide includes labeled visual elements:
+Angular rates are about each axis. This equation defines the momentum
+(h) about each axis.
 
 ------------------------------------------------------------------------
 
@@ -2466,23 +2484,28 @@ axis. This equation defines the momentum (h) about each axis
 
 > **Source: Slide 83**
 
-ω
+Conservation of Angular Momentum
 
--   Comments
+Comments
+
 -   This is the equivalent of our translational h = mv
+
 -   Previously, we used total impulse (=Ft) to solve for thrust
+
 -   Similarly, this will allow us to solve for the torques required to
     change rotational velocity
+
 -   Note: momentum often defined as 'h' or 'L'
 
 *From ADCS Handout, Joel Sercel, 2003*
+
+### Equation(s)
 
 ``` math
 \mathbf h=\mathbf I\boldsymbol{\omega}
 ```
 
-**Figure / diagram labels shown on slide:** Conservation of Angular
-Momentum
+**Figure description:** The slide includes labeled visual elements: ω.
 
 ------------------------------------------------------------------------
 
@@ -2490,8 +2513,10 @@ Momentum
 
 > **Source: Slide 84**
 
--   Comments
+Comments
+
 -   Note that moments of inertia (x, y, z) are always positive
+
 -   Products of inertia (xy, yz, etc.) are measures of symmetry. If an
     object is symmetrical across a plane (eg, XY plane), then the
     products associated with any axis perpendicular are zero (Ixz, Iyz =
@@ -2505,11 +2530,15 @@ Momentum
 
 > **Source: Slide 85**
 
--   Comments
+Comments
+
 -   Note the restrictions above (rigid body, etc.)
+
 -   For example, if goal is to maintain constant angular moment, then we
     need to offset disturbances with counter torques From ADCS Handout,
     Joel Sercel, 2003
+
+### Equation(s)
 
 ``` math
 \mathbf T=\frac{d\mathbf h}{dt}
@@ -2521,11 +2550,15 @@ Momentum
 
 > **Source: Slide 86**
 
--   Comments
+Comments
+
 -   These equations dictate the rotational movement of a rigid body with
     respect to each axis
+
 -   ω is angular velocity and h = angular momentum; h = I ω From ADCS
     Handout, Joel Sercel, 2003
+
+### Equation(s)
 
 ``` math
 \tau_1=\dot h_1+\omega_2h_3-\omega_3h_2
@@ -2545,13 +2578,17 @@ Momentum
 
 > **Source: Slide 87**
 
--   Comments
+Comments
+
 -   These equations that relate the change in momentum to the torques
     acting on a spacecraft can then be used to create an attitude
     control simulation
+
 -   This will be part of HW3c
 
 *From ADCS Handout, Joel Sercel, 2003*
+
+### Equation(s)
 
 ``` math
 \dot h_1=I_1\dot\omega_1=T_1+(I_2-I_3)\omega_2\omega_3
@@ -2571,7 +2608,8 @@ Momentum
 
 > **Source: Slide 88**
 
--   Comments
+Comments
+
 -   Which leads us all the way back to roll, pitch, and yaw and
     introduces rotation matrices. From ADCS Handout, Joel Sercel, 2003
 
@@ -2639,9 +2677,8 @@ Momentum
 
     -   Phoenix flight software
 
-    -   ADAMS model (mechanical simulation)
-
-    -   Resulting Higher-Level Models
+    -   ADAMS model (mechanical simulation) Resulting Higher-Level
+        Models
 
 -   6-DOF Langley simulation
 
@@ -2651,9 +2688,7 @@ Momentum
 
 -   Flowtran Lander simulation
 
--   Flight software simulation
-
-    -   Validated by Tests & Peer Reviews
+-   Flight software simulation Validated by Tests & Peer Reviews
 
 -   Extensive literature & past missions (eg, Mars atmosphere, winds,
     terrain, etc.)
@@ -2674,10 +2709,14 @@ Momentum
     simplified model for the radar which made the following assumptions:
 
     -   Infinite, sloped, flat plain
+
     -   Noise/bias characteristics that matched the requirements
+
     -   Very sharp, single-peak FFT velocity measurement outputs
+
     -   Assumed perfect angle-of-arrival (radar beam canted to be an
         offset from this)
+
     -   The radar will only have one target (ground only)
 
 -   Those assumptions proved to be inadequate via field test data and
@@ -2685,12 +2724,16 @@ Momentum
 
     -   Terrain relief and brightness variation causes the look-vector
         to migrate
+
     -   Noise/bias characteristics change with varying terrain and
         target brightness
+
     -   FFT signatures are broader and show multiple peaks from nadir
         contamination, and wider FFT spectra peaks
+
     -   The angle of arrival is actually biased towards nadir from the
         original assumed angle
+
     -   The radar is guaranteed to see two targets (ground + heatshield)
 
 ------------------------------------------------------------------------
@@ -2702,15 +2745,11 @@ Momentum
 -   Several Key Items...
 
     -   Multiple targets can confuse the search logic in the radar
-        firmware to cause
-
-    -   locks on false targets and ambiguities
+        firmware to cause locks on false targets and ambiguities
 
     -   Never-before-discovered bugs in the radar firmware which can
-        cause the
-
-    -   radar to have prolonged lockup times under certain thermal &
-        timing conditions
+        cause the radar to have prolonged lockup times under certain
+        thermal & timing conditions
 
     -   Bi-modal lock-up behavior under certain conditions
 
@@ -2765,9 +2804,8 @@ also uncovered new anomalies....
 
     -   Phoenix flight software
 
-    -   ADAMS model (mechanical simulation)
-
-    -   Resulting Higher-Level Models
+    -   ADAMS model (mechanical simulation) Resulting Higher-Level
+        Models
 
 -   6-DOF Langley simulation
 
@@ -2777,9 +2815,7 @@ also uncovered new anomalies....
 
 -   Flowtran Lander simulation
 
--   Flight software simulation
-
-    -   Validated by Tests & Peer Reviews
+-   Flight software simulation Validated by Tests & Peer Reviews
 
 -   Extensive literature & past missions (eg, Mars atmosphere, winds,
     terrain, etc.)
@@ -2823,22 +2859,30 @@ also uncovered new anomalies....
 
     -   Matches star images to a catalog to produce a full 3- axis
         attitude with respect to a standard CS reference (eg, J2000)
+
     -   Can quickly determine attitude without any initial knowledge
+
     -   Can't sustain lock under fast rotations
+
     -   Requires clear view of the sky (can be dazzled by bright objects
         near by or in FOV)
+
     -   Needs adequate star density
 
 -   Gyros
 
     -   Provide angular rates, which can be integrated over time to
         obtain angular position relative to a given reference
+
     -   Generally operate in "relative mode", relative to an assumed
         reference and propagating changes in attitude without having
         absolute knowledge
+
     -   Able function under relatively "fast" rotations whereas other
         sensors may not
+
     -   Low signal-to-noise ratio (ie, less accurate)
+
     -   Generally, there is bias "or drift" rate over long periods of
         integration without an absolute reference
 
@@ -2846,10 +2890,13 @@ also uncovered new anomalies....
 
     -   Combines weighted measurement from multiple sensors into a
         single attitude estimate
+
     -   Typically uses include gyro(s) for rate data and star tracker(s)
         for celestial attitude data
+
     -   Able to propagate for limited times in the absence of star
         tracker data (given an initial reference)
+
     -   Weights chosen to match strengths of sensor
 
 -   Low weights indicate that the sensor cannot abruptly change the
@@ -2868,6 +2915,7 @@ also uncovered new anomalies....
 
     -   In safe mode, it uses gyros and sun sensors, holding +Y axis on
         the sun and rotating once every 4 hours ("sunline" ACS state)
+
     -   Star trackers are mounted on the backside, facing somewhat
         anti-sun. They are not used at the beginning of the mission
 
@@ -2889,7 +2937,8 @@ also uncovered new anomalies....
 -   The nominal plan is that after the ATE has converged, the ground
     will command the spacecraft to go from safe-mode to 3-axis control
 
-**Figure / diagram labels shown on slide:** Star Trackers
+**Figure description:** The slide includes labeled visual elements: Star
+Trackers.
 
 ------------------------------------------------------------------------
 
@@ -2920,9 +2969,7 @@ also uncovered new anomalies....
     suggests possible ST alignment issue
 
 -   Data suggests this issue is occurring when star trackers are pointed
-    towards celestial true north
-
-    -   Possible Issues
+    towards celestial true north Possible Issues
 
 -   Star tracker alignment
 
@@ -2943,6 +2990,7 @@ also uncovered new anomalies....
 
     -   A 90-deg rotation to translate from mechanical from to
         spacecraft frame was dropped...
+
     -   All three star trackers (including impactor) had incorrect
         alignments
 
@@ -2952,6 +3000,9 @@ also uncovered new anomalies....
 
 > **Source: Slide 104**
 
+Star Tracker pointing "Twisted" refers to the 90-deg coordinate frame
+error
+
 Virtual Star Tracker When both star trackers on and in- lock, the
 attitude algorithm only uses the boresight vectors of the actual
 trackers (which are correct)
@@ -2960,14 +3011,13 @@ However, when only 1 star tracker is in-lock, the whole quaternion from
 the star tracker is used for the attitude, which includes the 90-deg
 error
 
-**Figure / diagram labels shown on slide:** Star Tracker pointing
-"Twisted" refers to the 90-deg coordinate frame error
-
 ------------------------------------------------------------------------
 
 ## Another Discovery...
 
 > **Source: Slide 105**
+
+Star Catalog (representation)
 
 -   Star Catalogs contain large numbers of stars, indexed, and sorted by
     declination
@@ -2984,9 +3034,6 @@ error
 
 -   Thus, the failure to lock attitude near the celestial North Pole
 
-**Figure / diagram labels shown on slide:** Star Catalog
-(representation)
-
 ------------------------------------------------------------------------
 
 ## Lessons Learned
@@ -2997,8 +3044,10 @@ error
 
     -   "Virtual Star Tracker" seemed like a good idea, but it obscured
         the problem...
+
     -   Fortunately, safe mode wasn't relying on ATE for attitude
         estimate
+
     -   This allowed the anomaly to be de-bugged while in sunline mode
         (via coarse sun sensors)
 
@@ -3006,6 +3055,7 @@ error
 
     -   A star tracker phasing test "should" have identified the
         mis-alignment.
+
     -   Unclear whether it occurred or properly verified
 
 -   Explain All the Observables
@@ -3013,6 +3063,7 @@ error
     -   Multiple errors occasionally occur and require significant
         exploration even after some/most of the issues have been
         explained
+
     -   This is the benefit of using a fishbone diagram and driving to
         closure
 
