@@ -110,9 +110,10 @@ actuators, sensors, and onboard logic/control.
 -   **G&C:** Guidance and Control System
 -   **GN&C:** Guidance, Navigation, and Control
 -   **PCS:** Pointing Control System
--   ...
 
 ## Attitude Control Subsystem
+
+> **Source: Slides 4**
 
 ### Function
 
@@ -434,7 +435,7 @@ The general torque relationship is:
 
 where:
 
--   **rCP** = radius from center of mass
+-   **$\mathbf{r}_{CP}$** = radius from center of mass
 -   **F** = force
 
 Examples:
