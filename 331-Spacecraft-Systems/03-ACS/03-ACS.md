@@ -436,7 +436,7 @@ The general torque relationship is:
 where:
 
 -   **$\mathbf{r}_{CP}$** = radius from center of mass
--   **F** = force
+-   **$\mathbf{F}$** = force
 
 Examples:
 
@@ -472,12 +472,12 @@ F_a=\frac{1}{2}\rho S C_Dv^2
 
 where:
 
--   **rCP** = center of pressure position vector in body fixed frame
--   **Fa** = aerodynamic force
--   **ρ** = atmospheric density
--   **v** = spacecraft velocity
--   **S** = projected area (perpendicular to v)
--   **CD** = drag coefficient (use 2 as for a worst case analysis)
+- $\mathbf{r}_{CP}$ = center of pressure position vector in body fixed frame
+- $\mathbf{F}_a$ = aerodynamic force
+- $\rho$ = atmospheric density
+- $v$ = spacecraft velocity
+- $S$ = projected area (perpendicular to $v$)
+- $C_D$ = drag coefficient (use 2 as for a worst case analysis)
 
 For example, at 400 km altitude, there might be a **3.11 × 10⁻⁵ N·m
 torque**, which would result in an attitude error of **82-deg after one
