@@ -1851,6 +1851,7 @@ Using principal axes:
 \dot h_3=I_3\dot\omega_3=T_3+(I_1-I_2)\omega_1\omega_2
 ```
 
+
 These equations relate the change in momentum to the torques acting on a
 spacecraft and can be used to create an attitude-control simulation.
 
