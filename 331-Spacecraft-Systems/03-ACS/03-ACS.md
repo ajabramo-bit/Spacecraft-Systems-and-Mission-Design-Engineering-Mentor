@@ -884,21 +884,11 @@ hardware measures the spacecraft state and feeds the controller.
 The lecture compares sensor accuracy against **cost, mass, power, &
 complexity**.
 
-  -----------------------------------------------------------------------
-  Relative Class          Sensors                 Approximate Accuracy /
-                                                  Cost Region
-  ----------------------- ----------------------- -----------------------
-  **Low**                 Magnetometers; Coarse   Around 0.1-deg; \<
-                          sun sensors; IR Earth   \$100k region
-                          sensors                 
-
-  **Medium**              Digital Sun Sensors;    Around 0.01-deg; \<
-                          Earth sensors; Gyros;   \$1M region
-                          GPS Receivers           
-
-  **High**                Star Trackers; Fine sun Around 0.001-deg; \<
-                          sensors                 \$10M region
-  -----------------------------------------------------------------------
+| Relative Class | Sensors | Approximate Accuracy / Cost Region |
+|---|---|---|
+| **Low** | Magnetometers; Coarse sun sensors; IR Earth sensors | Around 0.1-deg; < $100K region |
+| **Medium** | Digital Sun Sensors; Earth sensors; Gyros; GPS Receivers | Around 0.01-deg; < $1M region |
+| **High** | Star Trackers; Fine sun sensors | Around 0.001-deg; < $10M region |
 
 Additionally, custom sensors can be built or payload instruments can be
 leveraged to perform similar functions.
