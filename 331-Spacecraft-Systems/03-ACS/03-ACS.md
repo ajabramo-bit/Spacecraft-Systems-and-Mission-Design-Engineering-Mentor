@@ -556,12 +556,12 @@ solar intensity, speed of light, and distance from the Sun.
 
 Typical values for a spacecraft in Earth orbit:
 
--   r = 0.1 m
--   S⊥ = 5 m²
--   Is = 1400 W/m² (Solar intensity at 1 AU)
--   K = 0.5
--   c = 3 × 10⁸ m/s
--   τs = 3.5 × 10⁻⁶ N·m
+- $r = 0.1\ \text{m}$
+- $S_{\perp} = 5\ \text{m}^2$
+- $I_s = 1400\ \text{W/m}^2$ (Solar intensity at 1 AU)
+- $K = 0.5$
+- $c = 3 \times 10^8\ \text{m/s}$
+- $\tau_s = 3.5 \times 10^{-6}\ \text{N}\cdot\text{m}$
 
 Dominant effect in:
 
