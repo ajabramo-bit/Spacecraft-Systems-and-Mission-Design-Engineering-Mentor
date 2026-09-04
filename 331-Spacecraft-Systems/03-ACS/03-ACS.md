@@ -1016,6 +1016,8 @@ satellites.
 
 ## Summary of Sensors
 
+> **Source: Slides 47**
+
 -   **Sun Sensor**
     -   Simple, reliable, cheap, but also intermittent depending on sun.
 -   **Earth Sensor**
@@ -1614,10 +1616,6 @@ The moment of inertia for discrete particles is:
 ``` math
 I_z=\sum_{i=1}^{n}m_i(x_i^2+y_i^2)
 ```
-
-**Figure description:** The slide compares translational kinetic energy,
-( `\frac{1}{2}`{=tex}mv\^2 ), with rotational kinetic energy, (
-`\frac{1}{2}`{=tex}I`\omega`{=tex}\^2 ).
 
 ## Moment of Inertia and Angular Acceleration
 
